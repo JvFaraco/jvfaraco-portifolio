@@ -1,0 +1,141 @@
+body{
+    overflow-x: hidden;
+}
+#menu{
+    display: grid;
+    grid-template-columns: 1fr,1fr;
+  
+}
+#logo{
+    justify-content: center;
+}
+#check{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#mobile_menu{
+    display: block;
+}
+#mobile_menu div{
+    transition: all 0.5s ease-in-out;
+}
+#mobile_menu div:hover{
+    background-color: red;
+}
+.hide {
+    display: none;
+  }
+#navbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#nav_menu{
+   display: none;  
+
+}
+
+header{
+        display: grid;
+        grid-template-columns: 1 1fr; 
+       
+   
+}
+
+#about{
+    display: grid;
+    grid-template-columns: 1 2fr; 
+    max-width: 100%;
+    overflow: hidden;
+    padding: 0 46px;
+    height: 100%;
+}
+#right h1{
+    font-size: 40px;
+}
+#left{
+    width: 300px;
+}
+#right{
+    width: 300px;
+    white-space:normal;
+}
+#about p{
+    transition: none;
+}
+#about:hover p{
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+#typing-animation{
+    font-size: 36px;
+}
+#home{
+    overflow:auto;
+    width: 350px;
+    height: 100%;
+}
+#img_margem{
+width: 390px;
+height: 220px;
+
+}
+#rolagem{
+    display: none;
+}
+#icones{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) ;
+    gap: 50px;
+    align-items: center;
+    grid-gap: 30px;
+}
+#cards{
+    display: grid;
+    justify-self:center;
+    align-self: center;
+}
+#projects{
+    display: grid;
+    grid-template-columns: 1 1fr;
+    gap: 50px;
+    padding: 25px;
+}
+#email{
+    font-size: 16px;
+}
+#titulo_projetos h1{
+    text-align: center;
+}
+#figure5,#figure,#figure2,#figure3,#figure4,#figure6{
+    font-size: 5.04rem;
+}
+
+#final{
+    height: 240px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#menu_fundo{
+   flex-direction: column;
+   gap: 2px;
+   align-items: center;
+   
+   padding: 0 10px;
+   font-size: 14px;
+   width: 100%;
+   margin-right: 70px;
+}
+#seta{
+    margin-left: 40px;
+    font-size: 1.4rem;
+    height: 30px;
+    width: 30px;
+}
+#menu h1{
+    font-size: 36px;
+}

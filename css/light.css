@@ -1,0 +1,145 @@
+body.light {
+    background-color: aliceblue;
+    transition: all 0.4s ease-in-out;
+}
+body.light .label{
+    background-color: black;
+}
+body.light .label .ball{
+    background-color: black;
+}
+body.light #menu{
+    color: black;
+
+}
+body.light #mobile_menu div{
+    background-color: black;
+}
+body.light #logo_imagem{
+    background-color: aliceblue;
+}
+
+body.light #item_menu{
+    color: black;
+}
+
+body.light #contato_fundo{
+    background-color: gray;
+}
+
+body.light h1{
+    color: black;
+}
+
+body.light #typing-animation{
+    color: black;
+}
+
+body.light p{
+    color: black;
+}
+
+body.light #img_margem{
+    box-shadow: 0 0 26px black;
+}
+
+body.light #seta{
+    color: antiquewhite;
+    background-color: black;
+}
+
+body.light #about{
+    background-color:cornsilk;
+}
+
+body.light #space_pequeno{
+    background-color:cornsilk;
+}
+
+body.light #instagram,#linkedin,#github,#whatsapp{
+    border:  1px solid black;
+}
+
+body.light #habilidades{
+    background-color: cornsilk;
+}
+
+body.light #cards{
+    background-color: black;
+}
+
+body.light #cards p{
+    color: aliceblue;
+}
+
+body.light #figure4{
+    color: aliceblue;
+}
+
+body.light #bloco_projeto{
+    box-shadow: 0 0 20px black;
+}
+
+body.light #bloco_projeto  #card_texto{
+    background-color: black;
+}
+body.light #bloco_projeto  #card_texto2{
+    background-color: black;
+}
+body.light #arrow_cima{
+   font-size: 30px;
+   color: black;
+}
+body.light #clover{
+    color: black;
+}
+body.light #fundo_arrow{
+    background-color: aliceblue;
+ }
+
+body.light #card_texto p{
+    color: aliceblue;
+}
+
+body.light #card_texto h1{
+    color: aliceblue;
+}
+
+body.light #card_texto2 h1{
+    color: aliceblue;
+}
+
+body.light #card_texto2 p{
+    color: aliceblue;
+}
+
+
+body.light #menu{
+    backdrop-filter: blur(8px);
+}
+
+body.light #contact{
+    background-color: cornsilk;
+}
+
+body.light #email{
+    color: black;
+}
+
+body.light .copy-email{
+    color: black;
+}
+
+body.light #numero{
+    color: black;
+}
+
+body.light .copy-number{
+    color: black;
+}
+
+body.light .animated-text{
+    color: black;
+}
+
+@keyframes text-shadow-animation {}

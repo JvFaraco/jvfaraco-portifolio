@@ -1,0 +1,715 @@
+
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background-color: black;
+}
+.checkbox{
+    opacity: 0;
+}
+#check{
+    padding: 0px 10px;
+}
+.label{
+    background-color: aliceblue;
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    position: relative;
+    height: 16px;
+    width: 40px;
+    transform: scale(1.5);
+    margin-bottom: 22px;
+    margin-left: 20px;
+    
+}
+.label .ball{
+    background-color: aliceblue;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    height: 22px;
+    width: 22px;
+    transform: translateX(0px);
+    transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .label .ball{
+    transform: translateX(24px);
+}
+.fa-moon{
+    color: #f1c40f;
+    font-size: 1.0rem; 
+}
+.fa-sun{
+    color: #f39c12;
+    font-size: 1.0rem; 
+}
+#menu{
+    display: flex;
+    justify-content: space-around;
+    color: rgb(255, 255, 255);
+   width: 100%;
+   position: fixed;
+    top: 0s;
+    z-index: 999;
+    backdrop-filter: blur(6px);
+}
+#mobile_menu div{
+    width: 36px;
+    height: 5px;
+    background-color: aliceblue;
+    margin: 8px;
+
+}
+
+#mobile_menu{
+    display: none;
+    cursor: pointer;
+}
+#logo{
+    display: flex;
+    align-items: center;
+    gap:30px;
+    padding: 0 46px;
+   
+}
+#item_menu{
+    transition: all 0.5s ease-in-out;
+}
+#item_menu:hover{
+    letter-spacing: 5px;
+}
+#logo_letra{
+    background: linear-gradient(to top, #eceaea, #c9c9ca);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Lubalin Graph ITC Turner Bold', sans-serif;
+    letter-spacing: 2px;
+    font-size: 20px;
+    
+}
+#clover{
+    font-size: 2.5rem;
+}
+#logo_imagem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: black;
+    animation: text-shadow-animation 2s infinite;
+}
+#nav_menu{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding: 0 46px;
+    gap: 22px;
+    font-family: 'Lubalin Graph ITC Turner Bold', sans-serif;
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+#navbar{
+    list-style: none;
+    display: flex;
+}
+#nav_menu a{
+    text-decoration: none;
+    color: aliceblue;
+}
+#contato_fundo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(68, 67, 67);
+    width: 120px;
+    height: 45px;
+}
+#typing-animation{
+        font-family: 'Lubalin Graph ITC Turner Bold', sans-serif;
+        color: aliceblue;
+        font-size: 48px;
+        letter-spacing: 4px;
+        white-space: nowrap;
+        overflow: hidden;
+        width: fit-content;
+}
+h1{
+    font-family: 'Lubalin Graph ITC Turner Bold', sans-serif;
+    color: aliceblue;
+    font-size: 48px;
+    letter-spacing: 4px;
+}
+p{
+    color: aliceblue;
+    font-family: 'Lubalin Graph ITC Turner Bold', sans-serif;
+}
+#space{  
+    height: 180px;
+}
+#space_pequeno{
+    width: 100%;
+    height: 100px;
+    background-color:  rgb(19, 19, 19);
+}
+#img_margem{
+    display: flex;
+    width: 400px;
+    height: 490px;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 0 26px rgb(241, 241, 240);
+}
+
+#foto{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+header{
+    display: flex;
+    justify-content: space-around;
+    padding: 0 46px;
+}
+
+#paragrafo{
+    display: flex;
+    align-items: baseline;
+    
+    
+}
+
+#home{
+    width: 560px;
+    margin-top: 50px;
+    
+}
+#degrade{
+    color: red;
+    width: 140px;
+    height: 6px;
+    
+}
+
+  
+#home p{
+    margin-left: 40px;  
+    font-size: 18px; 
+    transition: font-size 0.2s ease-in-out;
+}  
+#about p{
+    margin-left: 40px;  
+    font-size: 18px; 
+    transition: font-size 0.6s ease-in-out;
+}   
+#about:hover p{
+    font-size: 24px;
+    letter-spacing: 4px;
+}
+#home:hover p{
+    font-size: 28px;
+    letter-spacing: 4px;
+}
+#home h1,p{
+    font-family: 'Lubalin Graph ITC Turner Bold', sans-serif;
+    color: aliceblue;
+    letter-spacing: 2px;
+}
+#seta{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    height: 50px;
+    width: 50px;
+    background-color: aliceblue;
+    opacity: 0.7;
+    color: black;
+    animation: slideDown 2s infinite linear;
+}
+
+@keyframes slideDown {
+        0% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(10px);
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
+#rolar{
+    font-size: 14px;
+    font-family: 'Lubalin Graph ITC Turner Bold', sans-serif;
+    color: gray;
+    opacity: 0.7;
+}
+#rolagem{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+#about{
+    display: flex;
+    justify-content: space-around;
+    
+    padding: 0 90px;  
+    background-color:  rgb(19, 19, 19);
+}
+
+#left{
+    width: 300px;
+
+}
+#right{
+    width: 600px;
+    
+}
+#social_media{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3.5rem;
+    color: rgb(255, 255, 255);
+    margin-right: 20px;
+    margin-top: 30px;
+}
+#instagram,#linkedin,#github,#whatsapp{
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s;
+    font-size: 1.25rem;  
+    border:  1px solid aliceblue;
+}
+.footer-link{
+    text-decoration: none;
+    color: #f5f5f5;
+}
+
+@keyframes shake{
+    10%{
+        transform: rotate(25deg);
+    }
+    30%{
+        transform: rotate(-25deg);
+    }
+    50%{
+        transform: rotate(15deg);
+    }
+    70%{
+        transform: rotate(-15deg);
+    }
+}
+#whatsapp:hover{
+    opacity: 0.8;
+    color: #f5f5f5;
+    height: 3.5rem;
+    width: 3.5rem;
+    font-size: 1.75rem; 
+    animation: shake 0.25s; 
+    border: 1px solid #25D366;
+}
+#instagram:hover{
+    opacity: 0.8;  
+    color: #f5f5f5;
+    height: 3.5rem;
+    width: 3.5rem;
+    font-size: 1.75rem; 
+    animation: shake 0.25s; 
+    outline-offset: 4px;
+    border: 1px solid #ff2992;
+}
+#linkedin:hover{
+    opacity: 0.8;
+    color: #f5f5f5;
+    height: 3.5rem;
+    width: 3.5rem;
+    font-size: 1.75rem; 
+    animation: shake 0.25s; 
+    border: 1px solid #0e76a8;
+}
+#github:hover{
+    opacity: 0.8;
+    color: #f5f5f5;
+    height: 3.5rem;
+    width: 3.5rem;
+    font-size: 1.75rem; 
+    animation: shake 0.25s; 
+    border: 1px solid #171515;
+}
+#instagram{
+    background: linear-gradient(#7f37c9, #ff2992, #ff9807);
+}
+#linkedin{
+    background-color: #0e76a8;
+}
+#github{
+    background-color: #171515;
+}
+#whatsapp{
+    background-color: #25D366;
+}
+#habilidades{
+    background-color:  rgb(19, 19, 19);
+}
+#titulo_skills{
+    display:flex;
+    justify-content: center;
+    text-align: center;
+}
+#icones{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  
+}
+#cards{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100px;
+    height: 90px;
+    border-radius: 20px;
+    background-color: rgb(233, 229, 229);
+    transition: all 0.2s ease;
+    padding: 10px 10px;
+}
+#cards p{  
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    text-align: center;
+    transition: font-size 0.2 ease-in-out;
+}
+#cards:hover{
+    width: 120px;
+    height: 120px;
+    font-size: 40px;
+}
+
+
+#figure{
+    font-size: 5rem;
+    color: #F16529;
+    text-align: center;
+}
+#figure2{
+    font-size: 5rem;
+    color: #2076A0;
+    text-align: center;
+}
+#figure3{
+    font-size: 5rem;
+    background-image: linear-gradient(to top, #ffd43b, #3776ab);
+    text-align: center;
+    -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+}
+#figure4{
+    font-size: 5rem;
+    color: #181717;
+    text-align: center;
+}
+#figure5{
+    font-size: 4.2rem;
+    color: #23df0a;
+    text-align: center;
+}
+#figure6{
+    font-size: 5rem;
+    color:  #F7DF1E;
+    text-align: center;
+}
+#titulo_projetos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#projetos{  
+    padding: 0 46px;
+}
+#projects{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#bloco_projeto{
+   display: flex;
+   justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    height: 480px;
+    width: 400px;
+    box-shadow: 0 0 20px aliceblue;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+}
+#arrow_cima{
+    font-size: 26px;
+    padding: 10px ;
+    margin-bottom: 10px;
+    color: aliceblue;
+    transition: all 0.5s ease-in-out;
+    transform: rotate(-180deg);
+}
+#fundo_arrow{
+    background-color: black;
+    width: 100%;
+    text-align: center;
+}
+#bloco_projeto:hover #fundo_arrow{
+    background-color: aliceblue;
+}
+#bloco_projeto:hover #arrow_cima{
+    transform: rotate(0);
+    color: black;
+}
+#bloco_projeto  #card_texto{
+    background-color:  aliceblue;
+ max-width: 100%;
+ height: 0;
+ transition: all 0.5s ease-in-out;
+ padding: 0 20px;
+ text-align: center;
+ overflow: hidden;
+ transform: translateY(30px);
+}
+#bloco_projeto:hover{
+    height: 760px;
+}
+#bloco_projeto:hover #card_texto{
+    padding: 20px;
+    height: 312px;
+    transform: translateY(0);
+    
+}
+#card_texto h1{
+    font-size: 25px;
+    letter-spacing: 2px;
+    color: black;
+}
+#card_texto p{
+    font-size: 15px;
+    color: black;
+}
+#card_imagem{
+    width: 360px;
+    height: 360px;
+    background-image: url(../img/fran\ site.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+  
+    transition: all 0.5s ease-in-out;
+    filter: blur(2px);
+}
+#bloco_projeto:hover #card_imagem{
+  width: 400px;
+    height: 415px;
+    filter: none;
+}
+#card_imagem2{
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/gestao\ condo.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center top;
+    transition: all 0.5s ease-in-out;
+    filter: blur(2px);
+}
+#bloco_projeto:hover #card_imagem2{
+    width: 100%;
+      height: 100%;
+      filter: none;
+  }
+  #bloco_projeto  #card_texto2{
+    background-color:  aliceblue;
+ max-width: 100%;
+ height: 0;
+ transition: all 0.5s ease-in-out;
+ padding: 0 20px;
+ text-align: center;
+ overflow: hidden;
+ transform: translateY(30px);
+}
+#bloco_projeto:hover #card_texto2{
+    padding: 20px;
+    height: 750px;
+    transform: translateY(0);
+    
+}
+#card_texto2 h1{
+    font-size: 25px;
+    letter-spacing: 2px;
+    color: black;
+}
+#card_texto2 p{
+    font-size: 15px;
+    color: black;
+}
+#contact{
+    background-color:  rgb(19, 19, 19);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(204, 198, 198);
+    }
+#typing-text {
+    font-family: 'Lubalin Graph ITC Turner Bold', sans-serif;
+    color: aliceblue;
+    font-size: 48px;
+    letter-spacing: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+#contact #contato{
+        text-align: center;
+        padding: 6rem 2rem 1rem;
+        max-width: 47rem;
+        color: (29, 28, 27);    
+}
+#final{
+    height: 130px;
+}
+#email{
+    
+    font-size: 20px;
+    font-family: 'Lubalin Graph ITC Turner Bold', sans-serif;
+    letter-spacing: 6px;
+    color: aliceblue
+}
+.copy-email {
+    position: relative;
+    text-decoration: none;
+    font-family: 'Lubalin Graph ITC Turner Bold', sans-serif;
+    letter-spacing: 1px;
+    color: rgb(204, 198, 198);
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 1s ease-in-out;
+    
+  }
+  .copy-email:hover{
+    font-size: 20px;
+    font-family: 'Lubalin Graph ITC Turner Bold', sans-serif;
+    letter-spacing: 4px;
+    
+  }
+  .copy-email:before {
+    position: absolute;
+    left: -50px;
+    opacity: 0;
+    
+  }
+  .copy-email:hover:before {
+    opacity: 1;
+  }
+  .copy-number {
+    position: relative;
+    text-decoration: none;
+    font-family: 'Lubalin Graph ITC Turner Bold', sans-serif;
+    letter-spacing: 1px;
+    color: rgb(204, 198, 198);
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 1s;
+  }
+  .copy-number:hover{
+    font-size: 20px;
+    font-family: 'Lubalin Graph ITC Turner Bold', sans-serif;
+    letter-spacing: 4px;
+    
+  }
+  .copy-number:before {
+    position: absolute;
+    left: -50px;
+    opacity: 0;
+  }
+  .copy-number:hover:before {
+    opacity: 1;
+  }
+  #numero{
+    font-size: 20px;
+   
+    font-family: 'Lubalin Graph ITC Turner Bold', sans-serif;
+    letter-spacing: 6px;
+    color: aliceblue
+}
+#footer_copyright{
+    color: aliceblue;
+    text-align: center;
+    font-size: 12px;
+    
+}
+#copyright{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#menu_fundo{
+    display: flex;
+    padding: 0 46px;
+    gap: 22px;
+    font-family: 'Lubalin Graph ITC Turner Bold', sans-serif;
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+#item_menu{
+    color: aliceblue;
+    text-decoration: none;
+}
+.animated-text {
+    text-shadow: 0 0 0 transparent;
+    animation: text-shadow-animation 2s infinite;
+  }
+.space_footer{
+    background-color: black; 
+    width: 100%;
+     display: flex; 
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+}
+  
+  @keyframes text-shadow-animation {
+    0% {
+      text-shadow: 0 0 12px aliceblue;
+  
+    }
+   50%{
+       text-shadow: none;
+    }
+    100%{
+        text-shadow: 0 0 12px aliceblue;
+    }
+  
+  }
+#menu_fundo #seta{
+    width: 44px;
+    height: 40px;
+    margin-top: 10px;
+}
+#plane{
+    font-size: 1.5rem;
+}
+#phone{
+    font-size: 1.5rem;
+}

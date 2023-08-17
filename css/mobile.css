@@ -3,7 +3,8 @@ body{
 }
 #menu{
     display: grid;
-    grid-template-columns: 1fr,1fr;
+    background-color: black;
+    opacity: 0.9;
   
 }
 #logo{

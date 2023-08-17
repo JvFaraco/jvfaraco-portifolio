@@ -164,7 +164,7 @@
                     <h1>Site de Links</h1>
                     <p> A função do projeto é fornecer aos clientes da terapeuta uma forma fácil de se conectar com
                         todos os
-                        tipos de links servido pela profissional
+                        tipos de links servidos pela profissional
                         <br>
                         <br>
                         Projeto em desenvolvimento como uma forma de desafio para conhecer mais as linguagens de
@@ -173,7 +173,7 @@
                         CSS
                         <br>
                         <br>
-                        A terapeuta está consciente do site, e será um projeto que irá avançar futuramente
+                        A terapeuta está ciente do site, e será um projeto que avançará futuramente
                     </p>
 
                 </div>
@@ -190,10 +190,11 @@
                     <p>O projeto foi criado na faculdade na qual eu estudo junto com
                         um
                         grupo
-                        de 5 pessoas, criamos uma agenda digital
+                        de 5 pessoas
                         <br>
                         <br>
-                        A agenda consiste em um aplicativo feito em Java com funções de marcar e cadastrar funcionários
+                        A agenda consiste em um aplicativo feito em Java com funções de marcar eventos e cadastrar
+                        funcionários
                         ou moradores
                         <br>
                         <br>
@@ -319,6 +320,13 @@
     }
 </script>
 <script>
+    const chk = document.getElementById('chk')
+
+    chk.addEventListener('change', () => {
+        document.body.classList.toggle('light')
+    })
+</script>
+<script>
     document.addEventListener('DOMContentLoaded', function () {
         const copyEmailLinks = document.querySelectorAll('.copy-email');
 
@@ -361,20 +369,6 @@
             textField.remove();
             alert('Número copiado para a área de transferência: ' + text);
         }
-    });
-</script>
-<script>
-    const chk = document.getElementById('chk')
-
-    chk.addEventListener('change', () => {
-        document.body.classList.toggle('light')
-    })
-</script>
-<script>
-    const bloco_projeto = document.getElementById("#bloco_projeto");
-
-    bloco_projeto.addEventListener("click", function () {
-        bloco_projeto.classList.add("clicked");
     });
 </script>
 

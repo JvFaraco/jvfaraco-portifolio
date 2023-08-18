@@ -10,7 +10,7 @@ body.light .label .ball{
 }
 body.light #menu{
     color: black;
-
+     background-color: aliceblue;
 }
 body.light #mobile_menu div{
     background-color: black;

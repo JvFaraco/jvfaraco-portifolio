@@ -26,6 +26,10 @@ body.light #item_menu{
 body.light #contato_fundo{
     background-color: gray;
 }
+body.light #final #space_pequeno{
+    background-color: aliceblue;
+}
+
 
 body.light h1{
     color: black;

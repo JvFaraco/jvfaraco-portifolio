@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,10 +8,10 @@
     <link rel="stylesheet" media="screen and (max-width: 1000px)" href="./css/mobile.css">
     <link href="https://fonts.cdnfonts.com/css/lubalin-graph-itc-turner" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="./script.js"></script>
 
     <title>João Victor Faraco | Portifólio</title>
 </head>
-
 <body>
     <nav>
         <div id="menu">
@@ -25,7 +24,6 @@
                     <div class="line3"></div>
                 </div>
             </div>
-
             <div id="nav_menu">
                 <ul id="navbar">
                     <li><a href="#home" id="item_menu">Inicío</a>
@@ -58,7 +56,6 @@
         <div id="home">
             <h1 id="typing-animation"></h1>
             <span id="cursor-animation"></span>
-
             <br>
             <div id="paragrafo">
                 <div id="degrade"></div>
@@ -67,11 +64,6 @@
                 </p>
             </div>
             <div id="space"></div>
-            <div id="rolagem">
-
-                <a href='#about'> <i class="fa-solid fa-arrow-down" id="seta"></a></i>
-                <span id="rolar">Role Para Baixo</span>
-            </div>
         </div>
 
         <div id="img_margem">
@@ -157,13 +149,11 @@
         <div id="space"></div>
         <div id="projects">
             <div id="bloco_projeto">
-                <div id="card_imagem" class="img">
+                <div id="card_imagem">
 
                 </div>
                 <div id="card_texto" class="content">
                     <h1>EM BREVE</h1>
-                    <p> 
-                    </p>
 
                 </div>
                 <div id="fundo_arrow">
@@ -254,118 +244,5 @@
             ©️ 2023 João Victor Faraco. Todos os direitos reservados.
         </p>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </body>
-<script>
-    function showCustomAlert() {
-        const customAlert = document.getElementById('customAlert');
-        customAlert.style.display = 'flex';
-    }
-
-    function closeCustomAlert() {
-        const customAlert = document.getElementById('customAlert');
-        customAlert.style.display = 'none';
-    }
-</script>
-<script>
-    const text = "João Victor Faraco";
-    let index = 0;
-
-    function type() {
-        const typingAnimation = document.getElementById("typing-animation");
-        typingAnimation.textContent = text.slice(0, index);
-
-        if (index >= text.length) {
-            clearInterval(interval);
-        } else {
-            index++;
-        }
-    }
-
-    const interval = setInterval(type, 100);
-</script>
-<script>
-    function toggleNavbar() {
-        var nav_menu = document.getElementById("nav_menu");
-
-        if (nav_menu.style.display === "none") {
-            nav_menu.style.display = "block";
-        } else {
-            nav_menu.style.display = "none";
-        }
-    }
-</script>
-<script>
-    const chk = document.getElementById('chk')
-
-    chk.addEventListener('change', () => {
-        document.body.classList.toggle('light')
-    })
-</script>
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const copyEmailLinks = document.querySelectorAll('.copy-email');
-
-        copyEmailLinks.forEach(link => {
-            link.addEventListener('click', function (event) {
-                event.preventDefault();
-                const email = this.getAttribute('data-email');
-                copyToClipboard(email);
-            });
-        });
-
-        function copyToClipboard(text) {
-            const textField = document.createElement('textarea');
-            textField.innerText = text;
-            document.body.appendChild(textField);
-            textField.select();
-            document.execCommand('copy');
-            textField.remove();
-            alert('E-mail copiado para a área de transferência: ' + text);
-        }
-    });
-</script>
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const copyNumberElements = document.querySelectorAll('.copy-number');
-
-        copyNumberElements.forEach(element => {
-            element.addEventListener('click', function () {
-                const number = this.getAttribute('data-number');
-                copyToClipboard(number);
-            });
-        });
-
-        function copyToClipboard(text) {
-            const textField = document.createElement('textarea');
-            textField.innerText = text;
-            document.body.appendChild(textField);
-            textField.select();
-            document.execCommand('copy');
-            textField.remove();
-            alert('Número copiado para a área de transferência: ' + text);
-        }
-    });
-</script>
-<script>
-    const bloco_projeto = document.getElementById("#bloco_projeto");
-
-    bloco_projeto.addEventListener("click", function () {
-        bloco_projeto.classList.add("clicked");
-    });
-</script>
-
 </html>

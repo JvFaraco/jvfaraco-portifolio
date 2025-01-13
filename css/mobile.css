@@ -1,6 +1,7 @@
 body{
     overflow-x: hidden;
 }
+
 #menu{
     display: grid;
     background-color: black;
@@ -36,6 +37,9 @@ body{
 #nav_menu{
    display: none;  
 
+}
+#nav_menu.active {
+    display: block; /* Mostra quando a classe é adicionada */
 }
 
 header{

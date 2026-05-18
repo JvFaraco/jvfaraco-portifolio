@@ -418,8 +418,15 @@
       box-shadow: 0 8px 24px rgba(255,199,44,0.1);
     }
 
-    .skill-card i { font-size: 2.4rem; margin-bottom: 0.6rem; }
-    .skill-card span { font-size: 0.78rem; font-family: 'Fira Code', monospace; color: var(--muted); letter-spacing: 0.05em; }
+    .skill-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+    }
+    .skill-card i { font-size: 2.4rem; }
+    .skill-card span { font-size: 0.78rem; font-family: 'Fira Code', monospace; color: var(--muted); letter-spacing: 0.05em; text-align: center; }
 
     .skill-html  i { color: #F16529; }
     .skill-css   i { color: #2076A0; }
@@ -439,7 +446,7 @@
 
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
       gap: 1.5rem;
     }
 
@@ -909,10 +916,7 @@
         <div class="skill-card skill-react"><i class="fa-brands fa-react"></i><span>React</span></div>
         <div class="skill-card skill-py"><i class="fa-brands fa-python"></i><span>Python</span></div>
         <div class="skill-card skill-git"><i class="fa-brands fa-git-alt"></i><span>Git</span></div>
-        <div class="skill-card skill-ai"><i class="fa-solid fa-robot"></i><span>Copilot Studio</span></div>
-        <div class="skill-card skill-azure"><i class="fa-brands fa-microsoft"></i><span>Azure OpenAI</span></div>
         <div class="skill-card skill-bi"><i class="fa-solid fa-chart-bar"></i><span>Power BI</span></div>
-        <div class="skill-card skill-linux"><i class="fa-brands fa-linux"></i><span>Linux</span></div>
       </div>
     </div>
   </section>
@@ -983,10 +987,8 @@
             </div>
             <h3 class="project-title">Agenda Digital para Condomínio</h3>
             <p class="project-desc">Aplicativo desenvolvido em equipe para um condomínio em São José, SC. Sistema de agendamento de eventos e cadastro de moradores e funcionários. Utilizado em produção até hoje.</p>
-            <div class="project-links">
-              <a href="https://github.com/JvFaraco" class="project-link" target="_blank"><i class="fa-brands fa-github"></i> Ver projeto</a>
-            </div>
           </div>
+        </div>
 
         <div class="project-card">
           <div class="project-thumb"><i class="fa-solid fa-diagram-project"></i></div>
@@ -998,9 +1000,6 @@
             </div>
             <h3 class="project-title">Fluxograma Operacional Alarme 365</h3>
             <p class="project-desc">Documento interno que padroniza todos os fluxos operacionais do Alarme 365 — Instalações, Manutenções e Desinstalações — com taxonomy TIPO / MOTIVO / PROBLEMA / SOLUÇÃO e regras de classificação para Operação, NAC e BackOffice.</p>
-            <div class="project-links">
-              <a href="https://github.com/JvFaraco" class="project-link" target="_blank"><i class="fa-brands fa-github"></i> Documentação</a>
-            </div>
           </div>
         </div>
 
@@ -1113,7 +1112,7 @@
 
   <!-- ===== FOOTER ===== -->
   <footer>
-    <p>© 2025 <a href="#home">João Victor Faraco</a> · Feito com <i class="fa-solid fa-heart" style="color:var(--yellow)"></i> em São José, SC</p>
+    <p>© 2023 <a href="#home">João Victor Faraco</a></p>
   </footer>
 
   <!-- Back to top -->

@@ -497,6 +497,10 @@
       font-size: 1rem;
       font-weight: 600;
       color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
     }
 
     .project-desc {
@@ -961,7 +965,7 @@
               <span class="project-tag">OpenStreetMap</span>
               <span class="project-tag">HTML5</span>
             </div>
-            <h3 class="project-title">Mapa Inteligente de Rotas</h3>
+            <h3 class="project-title">Mapa Inteligente de Rotas <span class="badge-wip">POC</span></h3>
             <p class="project-desc">POC de otimização de rotas para especialistas de campo com algoritmo nearest-neighbor, agrupamento por EPV, detecção de proximidade e reordenação drag-and-drop.</p>
             <div class="project-links">
               <a href="https://github.com/JvFaraco" class="project-link" target="_blank"><i class="fa-brands fa-github"></i> Ver código</a>
@@ -981,6 +985,21 @@
             <p class="project-desc">Aplicativo desenvolvido em equipe para um condomínio em São José, SC. Sistema de agendamento de eventos e cadastro de moradores e funcionários. Utilizado em produção até hoje.</p>
             <div class="project-links">
               <a href="https://github.com/JvFaraco" class="project-link" target="_blank"><i class="fa-brands fa-github"></i> Ver projeto</a>
+            </div>
+          </div>
+
+        <div class="project-card">
+          <div class="project-thumb"><i class="fa-solid fa-diagram-project"></i></div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span class="project-tag">Documentação</span>
+              <span class="project-tag">Processos</span>
+              <span class="project-tag">Operações</span>
+            </div>
+            <h3 class="project-title">Fluxograma Operacional Alarme 365</h3>
+            <p class="project-desc">Documento interno que padroniza todos os fluxos operacionais do Alarme 365 — Instalações, Manutenções e Desinstalações — com taxonomy TIPO / MOTIVO / PROBLEMA / SOLUÇÃO e regras de classificação para Operação, NAC e BackOffice.</p>
+            <div class="project-links">
+              <a href="https://github.com/JvFaraco" class="project-link" target="_blank"><i class="fa-brands fa-github"></i> Documentação</a>
             </div>
           </div>
         </div>
@@ -1067,13 +1086,7 @@
                 <span>joaovictorfaraco@gmail.com</span>
               </div>
             </button>
-            <button class="contact-item" data-copy="48991582388" data-label="Número copiado!">
-              <i class="fa-solid fa-phone"></i>
-              <div>
-                <small>telefone / whatsapp</small>
-                <span>(48) 99158-2388</span>
-              </div>
-            </button>
+
           </div>
         </div>
         <div class="contact-socials">

@@ -39,20 +39,6 @@ jvfaraco-portifolio/
     └── Eu.jpg   # Foto de perfil
 ```
 
----
-
-## 🚀 Como rodar localmente
-
-```bash
-git clone https://github.com/JvFaraco/jvfaraco-portifolio.git
-cd jvfaraco-portifolio
-# Abra o index.html no navegador
-```
-
-Não precisa de servidor nem dependências — abre direto no browser.
-
----
-
 ## 📫 Contato
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/joão-victor-faraco-01066423a)

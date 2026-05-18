@@ -1,108 +1,63 @@
-<!-- Header animado -->
-<div align="center">
+# 🗂️ Portfólio Pessoal — João Victor Faraco
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&duration=2800&pause=400&color=1E3A8A&background=FFFFFF00&random=false&width=700&height=70&lines=Ol%C3%A1%2C+eu+sou+Jo%C3%A3o+Victor+Faraco+%F0%9F%91%8B;Analista+de+Sistemas+%7C+MBA+em+Intelig%C3%AAncia+Artificial;Construindo+IA+aplicada+em+opera%C3%A7%C3%B5es+reais;Python+%7C+Power+BI+%7C+Copilot+Studio+%7C+Azure)](https://git.io/typing-svg)
+Site de portfólio pessoal desenvolvido com HTML5, CSS3 e JavaScript puro. Apresenta minha trajetória profissional, habilidades, projetos e informações de contato.
 
-</div>
-
----
-
-## 🧠 Sobre Mim
-
-Analista de Sistemas com foco em **IA aplicada a processos operacionais**. Atuo na Orsegups desenvolvendo projetos que combinam automação, inteligência de dados e agentes de IA em operações reais — do campo ao dashboard.
-
-Atualmente cursando **MBA em Inteligência Artificial** na Estácio de Sá, com formação em Gestão da Tecnologia da Informação.
-
-> *"Não basta implementar IA. Precisa resolver o problema certo."*
+🔗 **[Ver online](https://jvfaraco.github.io/jvfaraco-portifolio/)**
 
 ---
 
-## 🚀 O que estou construindo
+## ✨ Funcionalidades
 
-| Projeto | Descrição | Stack |
-|--------|-----------|-------|
-| 🤖 **Agente de Classificação de O.S** | Agente de IA que classifica Ordens de Serviço por especialistas de campo usando taxonomy padronizada | Copilot Studio · Azure OpenAI · Power Automate |
-| 📊 **Dashboard Operacional Alarme 365** | Sistema de análise e controle de O.S com login, importação de dados e múltiplas visões operacionais | HTML5 · CSS3 · JavaScript |
-| 🗺️ **Mapa Inteligente de Rotas** | POC de otimização de rotas para especialistas de campo com algoritmo nearest-neighbor | Leaflet · OpenStreetMap · HTML5 |
-| 🔍 **Validador de O.S com IA** | Sistema de validação automática de ordens de serviço técnicas usando LLMs | Python · Claude API *(em desenvolvimento)* |
+- Dark / Light mode com toggle
+- Animação de typing com frases rotativas
+- Navbar responsiva com menu hamburguer para mobile
+- Seção de projetos com cards e tags de tecnologia
+- Timeline de experiência profissional
+- Copiar e-mail e telefone com um clique
+- Botão de voltar ao topo
 
 ---
 
-## 🛠️ Tecnologias & Ferramentas
-
-**IA & Dados**
-
-![Python](https://img.shields.io/badge/Python-%233776AB.svg?&style=for-the-badge&logo=python&logoColor=white)
-![Power BI](https://img.shields.io/badge/Power%20BI-%23F2C811.svg?&style=for-the-badge&logo=powerbi&logoColor=black)
-![Azure OpenAI](https://img.shields.io/badge/Azure%20OpenAI-%230078D4.svg?&style=for-the-badge&logo=microsoftazure&logoColor=white)
-![Copilot Studio](https://img.shields.io/badge/Copilot%20Studio-%23742774.svg?&style=for-the-badge&logo=microsoft&logoColor=white)
-![Pandas](https://img.shields.io/badge/Pandas-%23150458.svg?&style=for-the-badge&logo=pandas&logoColor=white)
-
-**Frontend & Web**
+## 🛠️ Tecnologias
 
 ![HTML5](https://img.shields.io/badge/HTML5-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-%231572B6.svg?&style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-%23F7DF1E.svg?&style=for-the-badge&logo=javascript&logoColor=black)
-![React](https://img.shields.io/badge/React-%2361DAFB.svg?&style=for-the-badge&logo=react&logoColor=black)
 
-**Plataformas & Infra**
-
-![Microsoft 365](https://img.shields.io/badge/Microsoft%20365-%230078D4.svg?&style=for-the-badge&logo=microsoft&logoColor=white)
-![Git](https://img.shields.io/badge/Git-%23F05032.svg?&style=for-the-badge&logo=git&logoColor=white)
-![Linux](https://img.shields.io/badge/Linux-%23FCC624.svg?&style=for-the-badge&logo=linux&logoColor=black)
-![Windows](https://img.shields.io/badge/Windows-%230078D6.svg?&style=for-the-badge&logo=windows&logoColor=white)
+- **Font Awesome 6** — ícones
+- **Google Fonts** — Fira Code + DM Sans
+- **GitHub Pages** — hospedagem
 
 ---
 
-## 📚 Educação & Aprendizado
+## 📁 Estrutura
 
-- 🎓 **MBA em Inteligência Artificial** — Estácio de Sá *(em andamento)*
-- 🎓 **Gestão da Tecnologia da Informação** — Estácio de Sá *(2025)*
-- 📖 Anthropic Academy — Building with Claude API
-
----
-
-## 💼 Experiência Profissional
-
-**Orsegups** · Analista de Sistemas · *03/2025 — Atual*
-- Desenvolvimento de agentes de IA para classificação e validação de Ordens de Serviço
-- Business Intelligence operacional com Power BI
-- Automação de processos com Azure OpenAI e Copilot Studio
-- Padronização de fluxos operacionais e taxonomy de dados
-
-**Orsegups** · Técnico de Informática · *09/2024 — 03/2025*
-
-**Figueirense Futebol Clube** · Estágio TI · *02/2024 — 09/2024*
-
-**Instituto São José** · Estágio TI · *10/2022 — 10/2023*
+```
+jvfaraco-portifolio/
+├── index.html   # Aplicação completa (HTML + CSS + JS)
+└── img/
+    └── Eu.jpg   # Foto de perfil
+```
 
 ---
 
-## 📊 Estatísticas GitHub
+## 🚀 Como rodar localmente
 
-<div align="center">
+```bash
+git clone https://github.com/JvFaraco/jvfaraco-portifolio.git
+cd jvfaraco-portifolio
+# Abra o index.html no navegador
+```
 
-![Estatísticas GitHub](https://github-readme-stats.vercel.app/api?username=JvFaraco&show_icons=true&count_private=true&theme=tokyonight&hide_border=true)
-
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=JvFaraco&layout=compact&theme=tokyonight&hide_border=true)
-
-</div>
+Não precisa de servidor nem dependências — abre direto no browser.
 
 ---
 
-## 📫 Conecte-se Comigo
-
-<div align="center">
+## 📫 Contato
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/joão-victor-faraco-01066423a)
-[![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?&style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/jvfaraco/)
-[![Portfolio](https://img.shields.io/badge/Portfolio-%231E3A8A.svg?&style=for-the-badge&logo=githubpages&logoColor=white)](https://jvfaraco.github.io/jvfaraco-portifolio/)
-[![Email](https://img.shields.io/badge/Email-%23EA4335.svg?&style=for-the-badge&logo=gmail&logoColor=white)](mailto:joaovictorfaraco@gmail.com)
-
-</div>
+[![GitHub](https://img.shields.io/badge/GitHub-%23181717.svg?&style=for-the-badge&logo=github&logoColor=white)](https://github.com/JvFaraco)
 
 ---
 
-<div align="center">
-  <img src="https://komarev.com/ghpvc/?username=JvFaraco&color=1E3A8A&style=flat-square&label=Visualizações+do+perfil" alt="profile views" />
-</div>
+<p align="center">Feito por <a href="https://github.com/JvFaraco">João Victor Faraco</a> · © 2025</p>

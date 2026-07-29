@@ -11,9 +11,11 @@ Site de portfólio pessoal desenvolvido com HTML5, CSS3 e JavaScript puro. Apres
 - Dark / Light mode com toggle
 - Animação de typing com frases rotativas
 - Navbar responsiva com menu hamburguer para mobile
-- Seção de projetos com cards e tags de tecnologia
+- Habilidades agrupadas por trilha (IA, Backend, Frontend, Infra)
+- Seção de projetos com cards, tags de tecnologia e links para demos ao vivo
 - Timeline de experiência profissional
-- Copiar e-mail e telefone com um clique
+- Copiar e-mail com um clique
+- Animação de fade-in por scroll (IntersectionObserver)
 - Botão de voltar ao topo
 
 ---
@@ -39,6 +41,19 @@ jvfaraco-portifolio/
     └── Eu.jpg   # Foto de perfil
 ```
 
+---
+
+## 🚀 Projetos em destaque
+
+| Projeto | O quê | Stack |
+|---|---|---|
+| [Route Coverage Map](https://github.com/JvFaraco/mapaderotas) · [demo](https://jvfaraco.github.io/mapaderotas/) | Pipeline geoespacial de cobertura de rotas com geocodificação em cascata, malha do IBGE, Voronoi e privacidade por allowlist | Python, Leaflet, GIS |
+| [Operations Dashboard Platform](https://github.com/JvFaraco/operational-dashboard-platform) · [demo](https://jvfaraco.github.io/operational-dashboard-platform/) | Plataforma de acompanhamento de O.S, agendas, pendências e indicadores de campo | Flask, pandas, Chart.js |
+
+Projetos internos (Portal A365, validação de O.S com IA, vazão do dia) ficam em repositórios privados — descritos no portfólio sem código ou dado exposto.
+
+---
+
 ## 📫 Contato
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/joão-victor-faraco-01066423a)
@@ -46,4 +61,4 @@ jvfaraco-portifolio/
 
 ---
 
-<p align="center">Feito por <a href="https://github.com/JvFaraco">João Victor Faraco</a> · © 2025</p>
+<p align="center">Feito por <a href="https://github.com/JvFaraco">João Victor Faraco</a></p>

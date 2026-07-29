@@ -431,13 +431,44 @@
     .skill-html  i { color: #F16529; }
     .skill-css   i { color: #2076A0; }
     .skill-js    i { color: #F7DF1E; }
-    .skill-react i { color: #61DAFB; }
     .skill-py    i { color: #3776ab; }
-    .skill-git   i { color: #F05032; }
     .skill-ai    i { color: var(--yellow); }
     .skill-bi    i { color: #F2C811; }
     .skill-linux i { color: #FCC624; }
     .skill-azure i { color: #0078D4; }
+    .skill-api   i { color: #009688; }
+    .skill-db    i { color: #4479A1; }
+    .skill-data  i { color: #150458; }
+    .skill-flask i { color: #7f8c9b; }
+    .skill-map   i { color: #199900; }
+    .skill-chart i { color: #FF6384; }
+    .skill-test  i { color: #6DB33F; }
+    .skill-ci    i { color: #8b5cf6; }
+    .skill-sec   i { color: #34d399; }
+
+    body.light .skill-data i { color: #3b3bb3; }
+
+    /* Agrupamento de habilidades por trilha */
+    .skill-groups { display: flex; flex-direction: column; gap: 2.5rem; }
+
+    .skill-group-title {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.8rem;
+      color: var(--text);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+
+    .skill-group-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
 
     /* =============================================
        PROJETOS
@@ -545,6 +576,28 @@
       background: rgba(255,199,44,0.15);
       color: var(--yellow);
       border: 1px solid rgba(255,199,44,0.3);
+    }
+
+    .badge-private {
+      font-size: 0.65rem;
+      font-family: 'Fira Code', monospace;
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      background: rgba(148,163,184,0.12);
+      color: var(--muted);
+      border: 1px solid var(--border);
+    }
+
+    .project-note {
+      font-size: 0.75rem;
+      font-family: 'Fira Code', monospace;
+      color: var(--muted);
+      margin-top: auto;
+      padding-top: 0.8rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
     }
 
     /* =============================================
@@ -840,7 +893,7 @@
       </h1>
       <span id="typing-animation"></span>
       <p class="hero-desc">
-        Construindo soluções de IA aplicadas a operações reais. Do agente de classificação ao dashboard operacional — tecnologia que resolve problemas de verdade.
+        Construindo soluções de IA e dados aplicadas a operações reais. Do agente de classificação ao portal interno que a operação usa todo dia — tecnologia que resolve problemas de verdade.
       </p>
       <div class="hero-actions">
         <a href="#projetos" class="btn-primary">Ver Projetos</a>
@@ -861,7 +914,13 @@
       <div class="about-grid">
         <div class="about-text">
           <p>
-            Sou <strong>Analista de Sistemas</strong> na Orsegups com foco em <strong>inteligência artificial aplicada a processos operacionais</strong>. Desenvolvo agentes de IA, dashboards e automações que geram impacto real no dia a dia da operação.
+            Sou <strong>Analista de Sistemas</strong> na Orsegups com foco em <strong>inteligência artificial aplicada a processos operacionais</strong>. Desenvolvo agentes de IA, coletores de dados, dashboards e automações que geram impacto real no dia a dia da operação.
+          </p>
+          <p>
+            Na prática, isso significa ir da ponta à ponta: <strong>backend em Python</strong> (FastAPI, pandas, integração com APIs), <strong>frontend e visualização</strong> (JavaScript, Chart.js, Leaflet) e o <strong>deploy</strong> que coloca aquilo na mão de quem precisa.
+          </p>
+          <p>
+            Trato <strong>privacidade e LGPD como requisito de arquitetura</strong>, não como checklist do fim: minimização de PII, allowlist no payload e retenção apenas do que é agregado — decisões que ficam registradas no próprio código.
           </p>
           <p>
             Atualmente cursando <strong>MBA em Inteligência Artificial</strong> na Estácio de Sá, aprofundando conhecimentos em LLMs, engenharia de prompts e arquitetura de sistemas inteligentes.
@@ -922,14 +981,52 @@
       <p class="section-tag">// tecnologias</p>
       <h2 class="section-title">Habilidades</h2>
       <div class="section-line"></div>
-      <div class="skills-grid">
-        <div class="skill-card skill-html fade-in"><i class="fa-brands fa-html5"></i><span>HTML5</span></div>
-        <div class="skill-card skill-css fade-in"><i class="fa-brands fa-css3-alt"></i><span>CSS3</span></div>
-        <div class="skill-card skill-js fade-in"><i class="fa-brands fa-js"></i><span>JavaScript</span></div>
-        <div class="skill-card skill-react fade-in"><i class="fa-brands fa-react"></i><span>React</span></div>
-        <div class="skill-card skill-py fade-in"><i class="fa-brands fa-python"></i><span>Python</span></div>
-        <div class="skill-card skill-git fade-in"><i class="fa-brands fa-git-alt"></i><span>Git</span></div>
-        <div class="skill-card skill-bi fade-in"><i class="fa-solid fa-chart-bar"></i><span>Power BI</span></div>
+      <div class="skill-groups">
+
+        <div>
+          <h3 class="skill-group-title">IA &amp; Automação</h3>
+          <div class="skills-grid">
+            <div class="skill-card skill-ai fade-in"><i class="fa-solid fa-robot"></i><span>Agentes de IA</span></div>
+            <div class="skill-card skill-azure fade-in"><i class="fa-solid fa-cloud"></i><span>Azure OpenAI</span></div>
+            <div class="skill-card skill-azure fade-in"><i class="fa-brands fa-microsoft"></i><span>Copilot Studio</span></div>
+            <div class="skill-card skill-ai fade-in"><i class="fa-solid fa-terminal"></i><span>Prompt Engineering</span></div>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="skill-group-title">Backend &amp; Dados</h3>
+          <div class="skills-grid">
+            <div class="skill-card skill-py fade-in"><i class="fa-brands fa-python"></i><span>Python</span></div>
+            <div class="skill-card skill-api fade-in"><i class="fa-solid fa-bolt"></i><span>FastAPI</span></div>
+            <div class="skill-card skill-flask fade-in"><i class="fa-solid fa-flask"></i><span>Flask</span></div>
+            <div class="skill-card skill-data fade-in"><i class="fa-solid fa-table"></i><span>pandas</span></div>
+            <div class="skill-card skill-db fade-in"><i class="fa-solid fa-database"></i><span>SQLite / SQL</span></div>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="skill-group-title">Frontend &amp; Visualização</h3>
+          <div class="skills-grid">
+            <div class="skill-card skill-html fade-in"><i class="fa-brands fa-html5"></i><span>HTML5</span></div>
+            <div class="skill-card skill-css fade-in"><i class="fa-brands fa-css3-alt"></i><span>CSS3</span></div>
+            <div class="skill-card skill-js fade-in"><i class="fa-brands fa-js"></i><span>JavaScript</span></div>
+            <div class="skill-card skill-chart fade-in"><i class="fa-solid fa-chart-line"></i><span>Chart.js</span></div>
+            <div class="skill-card skill-map fade-in"><i class="fa-solid fa-map-location-dot"></i><span>Leaflet / GIS</span></div>
+            <div class="skill-card skill-bi fade-in"><i class="fa-solid fa-chart-bar"></i><span>Power BI</span></div>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="skill-group-title">Infra, Qualidade &amp; Privacidade</h3>
+          <div class="skills-grid">
+            <div class="skill-card skill-ci fade-in"><i class="fa-solid fa-code-branch"></i><span>GitHub Actions</span></div>
+            <div class="skill-card skill-linux fade-in"><i class="fa-brands fa-linux"></i><span>Linux / VPS</span></div>
+            <div class="skill-card skill-test fade-in"><i class="fa-solid fa-vial"></i><span>pytest</span></div>
+            <div class="skill-card skill-test fade-in"><i class="fa-solid fa-eye"></i><span>Playwright E2E</span></div>
+            <div class="skill-card skill-sec fade-in"><i class="fa-solid fa-shield-halved"></i><span>LGPD by Design</span></div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -943,18 +1040,82 @@
       <div class="projects-grid">
 
         <div class="project-card fade-in">
-          <div class="project-thumb"><i class="fa-solid fa-chart-line"></i></div>
+          <div class="project-thumb"><i class="fa-solid fa-map-location-dot"></i></div>
           <div class="project-body">
             <div class="project-tags">
-              <span class="project-tag">HTML5</span>
-              <span class="project-tag">CSS3</span>
-              <span class="project-tag">JavaScript</span>
+              <span class="project-tag">Python</span>
+              <span class="project-tag">Leaflet</span>
+              <span class="project-tag">GIS</span>
+              <span class="project-tag">IBGE</span>
             </div>
-            <h3 class="project-title">Dashboard Operacional Alarme 365</h3>
-            <p class="project-desc">Sistema de análise e controle de Ordens de Serviço com login, importação de dados e múltiplas visões operacionais. Desenvolvido para apoiar a gestão de campo e BackOffice.</p>
+            <h3 class="project-title">Route Coverage Map <span class="badge-wip">demo ao vivo</span></h3>
+            <p class="project-desc">Pipeline geoespacial que transforma planilhas de rotas (só nomes, sem coordenadas) em um mapa autocontido: geocodificação progressiva, malha oficial do IBGE, fallback por Voronoi, corte de sobreposição entre áreas e allowlist de privacidade no payload. CI com lint, tipos e piso de 80% de cobertura.</p>
             <div class="project-links">
-              <a href="https://github.com/JvFaraco/operational-dashboard-platform" class="project-link" target="_blank"><i class="fa-brands fa-github"></i> Ver código</a>
+              <a href="https://jvfaraco.github.io/mapaderotas/" class="project-link" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Ver demo</a>
+              <a href="https://github.com/JvFaraco/mapaderotas" class="project-link" target="_blank"><i class="fa-brands fa-github"></i> Código</a>
             </div>
+          </div>
+        </div>
+
+        <div class="project-card fade-in">
+          <div class="project-thumb"><i class="fa-solid fa-gauge-high"></i></div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span class="project-tag">Flask</span>
+              <span class="project-tag">pandas</span>
+              <span class="project-tag">Chart.js</span>
+              <span class="project-tag">Leaflet</span>
+            </div>
+            <h3 class="project-title">Operations Dashboard Platform <span class="badge-wip">demo ao vivo</span></h3>
+            <p class="project-desc">Plataforma em Flask que transforma planilhas operacionais dispersas em cinco módulos navegáveis: controle de O.S, agendadas, não agendadas, risco contratual e mapa de cobertura. Upload de Excel, normalização com pandas, cache invalidado por data de modificação e APIs JSON internas.</p>
+            <div class="project-links">
+              <a href="https://jvfaraco.github.io/operational-dashboard-platform/" class="project-link" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Ver demo</a>
+              <a href="https://github.com/JvFaraco/operational-dashboard-platform" class="project-link" target="_blank"><i class="fa-brands fa-github"></i> Código</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card fade-in">
+          <div class="project-thumb"><i class="fa-solid fa-brain"></i></div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">IA</span>
+              <span class="project-tag">Integração de APIs</span>
+              <span class="project-tag">LGPD</span>
+            </div>
+            <h3 class="project-title">Validação de O.S com IA <span class="badge-private">privado</span></h3>
+            <p class="project-desc">Backend que lê Ordens de Serviço de instalação, monta o pacote completo (telemetria da central, equipamentos, fotos, eventos) e aplica uma régua determinística de checagens antes de qualquer IA. Anexa automaticamente o contrato assinado convertendo o PDF em imagens, com autenticação por rotação de token, deduplicação em reentrada e minimização de PII em duas camadas de payload.</p>
+            <p class="project-note"><i class="fa-solid fa-lock"></i> Repositório interno · Orsegups</p>
+          </div>
+        </div>
+
+        <div class="project-card fade-in">
+          <div class="project-thumb"><i class="fa-solid fa-shield-halved"></i></div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span class="project-tag">FastAPI</span>
+              <span class="project-tag">SQLite</span>
+              <span class="project-tag">argon2id</span>
+              <span class="project-tag">VPS</span>
+            </div>
+            <h3 class="project-title">Portal A365 <span class="badge-private">privado</span></h3>
+            <p class="project-desc">Portal interno que reúne as ferramentas da operação atrás de um único login: dashboard de O.S atualizado a cada 60s, mapa de cobertura de rotas e área administrativa. Senha em argon2id, sessão em cookie httpOnly e redefinição de senha sem e-mail — o admin aprova e gera senha temporária, mas nunca vê a senha final. Deploy em VPS com três serviços systemd atrás de HTTPS.</p>
+            <p class="project-note"><i class="fa-solid fa-lock"></i> Repositório interno · Orsegups</p>
+          </div>
+        </div>
+
+        <div class="project-card fade-in">
+          <div class="project-thumb"><i class="fa-solid fa-right-left"></i></div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">Playwright</span>
+              <span class="project-tag">Acessibilidade</span>
+            </div>
+            <h3 class="project-title">Vazão do Dia <span class="badge-private">privado</span></h3>
+            <p class="project-desc">Coletor e dashboard que respondem "estamos zerando ou acumulando chamado?" — O.S abertas × fechadas no dia, com saldo e quebras por supervisor, regional e tipo. Janela do dia tratada no fuso de São Paulo para não errar a virada, histórico só agregado por decisão de LGPD e paleta validada para daltonismo e contraste nos dois temas.</p>
+            <p class="project-note"><i class="fa-solid fa-lock"></i> Repositório interno · Orsegups</p>
           </div>
         </div>
 
@@ -967,52 +1128,8 @@
               <span class="project-tag">Microsoft 365</span>
             </div>
             <h3 class="project-title">Agente de Classificação de O.S <span class="badge-wip">em produção</span></h3>
-            <p class="project-desc">Agente de IA que classifica Ordens de Serviço por especialistas de campo usando taxonomy padronizada TIPO / MOTIVO / PROBLEMA / SOLUÇÃO, reduzindo erros e retrabalho.</p>
-            <div class="project-links">
-              <a href="https://github.com/JvFaraco" class="project-link" target="_blank"><i class="fa-brands fa-github"></i> Documentação</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-card fade-in">
-          <div class="project-thumb"><i class="fa-solid fa-map-location-dot"></i></div>
-          <div class="project-body">
-            <div class="project-tags">
-              <span class="project-tag">Leaflet</span>
-              <span class="project-tag">OpenStreetMap</span>
-              <span class="project-tag">HTML5</span>
-            </div>
-            <h3 class="project-title">Mapa Inteligente de Rotas <span class="badge-wip">POC</span></h3>
-            <p class="project-desc">POC de otimização de rotas para especialistas de campo com algoritmo nearest-neighbor, agrupamento por EPV, detecção de proximidade e reordenação drag-and-drop.</p>
-            <div class="project-links">
-              <a href="https://github.com/JvFaraco" class="project-link" target="_blank"><i class="fa-brands fa-github"></i> Ver código</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-card fade-in">
-          <div class="project-thumb"><i class="fa-solid fa-building"></i></div>
-          <div class="project-body">
-            <div class="project-tags">
-              <span class="project-tag">Java</span>
-              <span class="project-tag">Banco de Dados</span>
-              <span class="project-tag">Projeto Acadêmico</span>
-            </div>
-            <h3 class="project-title">Agenda Digital para Condomínio</h3>
-            <p class="project-desc">Aplicativo desenvolvido em equipe para um condomínio em São José, SC. Sistema de agendamento de eventos e cadastro de moradores e funcionários. Utilizado em produção até hoje.</p>
-          </div>
-        </div>
-
-        <div class="project-card fade-in">
-          <div class="project-thumb"><i class="fa-solid fa-diagram-project"></i></div>
-          <div class="project-body">
-            <div class="project-tags">
-              <span class="project-tag">Documentação</span>
-              <span class="project-tag">Processos</span>
-              <span class="project-tag">Operações</span>
-            </div>
-            <h3 class="project-title">Fluxograma Operacional Alarme 365</h3>
-            <p class="project-desc">Documento interno que padroniza todos os fluxos operacionais do Alarme 365 — Instalações, Manutenções e Desinstalações — com taxonomy TIPO / MOTIVO / PROBLEMA / SOLUÇÃO e regras de classificação para Operação, NAC e BackOffice.</p>
+            <p class="project-desc">Agente de IA que classifica Ordens de Serviço dos especialistas de campo usando a taxonomia padronizada TIPO / MOTIVO / PROBLEMA / SOLUÇÃO, reduzindo erro de classificação e retrabalho no BackOffice.</p>
+            <p class="project-note"><i class="fa-solid fa-lock"></i> Solução interna · Orsegups</p>
           </div>
         </div>
 
@@ -1032,7 +1149,7 @@
           </div>
         </div>
 
-      </div>
+</div>
     </div>
   </section>
 
@@ -1050,10 +1167,14 @@
             <div class="timeline-role">Analista de Sistemas</div>
             <div class="timeline-company">Orsegups</div>
             <ul class="timeline-desc">
-              <li>Desenvolvimento de agentes de IA para classificação e validação de O.S</li>
-              <li>Business Intelligence operacional com Power BI</li>
-              <li>Padronização de fluxos e taxonomy de dados de campo</li>
-              <li>Automação de processos com Azure OpenAI e Copilot Studio</li>
+              <li>Construí um portal interno em FastAPI + SQLite que reúne as ferramentas da operação atrás de um único login, com deploy em VPS (systemd + HTTPS)</li>
+              <li>Desenvolvi o backend de validação de O.S com IA: coleta autenticada, régua determinística de checagens e anexo automático do contrato assinado</li>
+              <li>Automatizei coletores que substituíram a extração manual de planilhas, alimentando dashboards que atualizam sozinhos</li>
+              <li>Criei dashboards operacionais de O.S, produtividade e vazão do dia usados por supervisores em 22 regionais</li>
+              <li>Mapeei a cobertura geográfica das rotas de campo com pipeline geoespacial (geocodificação em cascata, malha do IBGE e Voronoi)</li>
+              <li>Apliquei privacidade por design em todos os projetos: minimização de PII, allowlist de payload e retenção só de dado agregado</li>
+              <li>Padronizei os fluxos e a taxonomia de dados de campo (TIPO / MOTIVO / PROBLEMA / SOLUÇÃO) usada pela Operação, NAC e BackOffice</li>
+              <li>Automação de processos com Azure OpenAI e Copilot Studio, e BI operacional com Power BI</li>
             </ul>
           </div>
         </div>
@@ -1137,7 +1258,7 @@
 
   <!-- ===== FOOTER ===== -->
   <footer>
-    <p>© 2023 <a href="#home">João Victor Faraco</a></p>
+    <p>© <span id="year">2026</span> <a href="#home">João Victor Faraco</a></p>
   </footer>
 
   <!-- Back to top -->
@@ -1152,7 +1273,8 @@
     const phrases = [
       'Analista de Sistemas',
       'MBA em Inteligência Artificial',
-      'Python · Power BI · Azure OpenAI',
+      'Python · FastAPI · pandas · Leaflet',
+      'Agentes de IA · Azure OpenAI · Copilot Studio',
       'Construindo IA aplicada a operações reais',
     ];
     let phraseIdx = 0, charIdx = 0, deleting = false;
@@ -1171,6 +1293,9 @@
       }
     }
     type();
+
+    // Ano do rodapé
+    document.getElementById('year').textContent = new Date().getFullYear();
 
     // Theme toggle
     document.getElementById('themeToggle').addEventListener('click', () => {

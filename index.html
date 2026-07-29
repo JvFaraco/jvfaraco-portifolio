@@ -584,6 +584,31 @@
       border: 1px solid var(--border);
     }
 
+    /* Card com múltiplos blocos de texto: o .project-note (margin-top:auto)
+       resolve o rodapé, então os parágrafos não devem disputar o espaço extra. */
+    .project-desc.desc-flow { flex: 0 0 auto; }
+
+    .project-list {
+      font-size: 0.84rem;
+      color: var(--muted);
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .project-list li {
+      padding-left: 1rem;
+      position: relative;
+    }
+
+    .project-list li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--yellow);
+    }
+
     .project-note {
       font-size: 0.75rem;
       font-family: 'Fira Code', monospace;
@@ -1092,20 +1117,6 @@
         </div>
 
         <div class="project-card fade-in">
-          <div class="project-thumb"><i class="fa-solid fa-right-left"></i></div>
-          <div class="project-body">
-            <div class="project-tags">
-              <span class="project-tag">Python</span>
-              <span class="project-tag">Playwright</span>
-              <span class="project-tag">Acessibilidade</span>
-            </div>
-            <h3 class="project-title">Vazão do Dia <span class="badge-private">privado</span></h3>
-            <p class="project-desc">Coletor e dashboard que respondem "estamos zerando ou acumulando chamado?" — O.S abertas × fechadas no dia, com saldo e quebras por supervisor, regional e tipo. Janela do dia tratada no fuso de São Paulo para não errar a virada, histórico só agregado por decisão de LGPD e paleta validada para daltonismo e contraste nos dois temas.</p>
-            <p class="project-note"><i class="fa-solid fa-lock"></i> Repositório interno · Orsegups</p>
-          </div>
-        </div>
-
-        <div class="project-card fade-in">
           <div class="project-thumb"><i class="fa-solid fa-robot"></i></div>
           <div class="project-body">
             <div class="project-tags">
@@ -1113,8 +1124,16 @@
               <span class="project-tag">Azure OpenAI</span>
               <span class="project-tag">Microsoft 365</span>
             </div>
-            <h3 class="project-title">Agente de Classificação de O.S <span class="badge-wip">em produção</span></h3>
-            <p class="project-desc">Agente de IA que classifica Ordens de Serviço dos especialistas de campo usando a taxonomia padronizada TIPO / MOTIVO / PROBLEMA / SOLUÇÃO, reduzindo erro de classificação e retrabalho no BackOffice.</p>
+            <h3 class="project-title">Assistente de O.S com IA <span class="badge-wip">em desenvolvimento</span></h3>
+            <p class="project-desc desc-flow">Assistente que orienta o especialista de campo <strong>antes</strong> de a O.S seguir para validação. O especialista informa o que fez no atendimento e a IA analisa a coerência do conjunto — tipo da O.S, equipamentos, movimentações, motivo, serviço executado e as regras operacionais de cada situação.</p>
+            <ul class="project-list">
+              <li>Diz se a O.S está pronta para ser enviada</li>
+              <li>Aponta o que está incorreto, incoerente ou incompleto</li>
+              <li>Indica o problema e a solução correspondentes</li>
+              <li>Sugere uma observação clara e padronizada</li>
+              <li>Orienta o que corrigir antes do envio</li>
+            </ul>
+            <p class="project-desc desc-flow">Cobre instalação, manutenção, desinstalação e administrativa, aplicando a regra de cada tipo. <strong>Não finaliza nem aprova a O.S</strong> — entrega a análise para o especialista revisar, reduzindo devolução e retrabalho na validação.</p>
             <p class="project-note"><i class="fa-solid fa-lock"></i> Solução interna · Orsegups</p>
           </div>
         </div>

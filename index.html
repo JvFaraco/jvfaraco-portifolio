@@ -1087,16 +1087,39 @@
         </div>
 
         <div class="project-card fade-in">
-          <div class="project-thumb"><i class="fa-solid fa-brain"></i></div>
+          <div class="project-thumb"><i class="fa-solid fa-robot"></i></div>
           <div class="project-body">
             <div class="project-tags">
               <span class="project-tag">Python</span>
-              <span class="project-tag">IA</span>
-              <span class="project-tag">Integração de APIs</span>
-              <span class="project-tag">LGPD</span>
+              <span class="project-tag">Copilot Studio</span>
+              <span class="project-tag">OCR</span>
+              <span class="project-tag">SQLite</span>
             </div>
-            <h3 class="project-title">Validação de O.S com IA <span class="badge-private">privado</span></h3>
-            <p class="project-desc">Backend que lê Ordens de Serviço de instalação, monta o pacote completo (telemetria da central, equipamentos, fotos, eventos) e aplica uma régua determinística de checagens antes de qualquer IA. Anexa automaticamente o contrato assinado convertendo o PDF em imagens, com autenticação por rotação de token, deduplicação em reentrada e minimização de PII em duas camadas de payload.</p>
+            <h3 class="project-title">Validador de O.S com IA <span class="badge-wip">em produção</span></h3>
+            <p class="project-desc desc-flow">Pré-validação automática das O.S de pós-venda e de instalação nova. Quando o especialista pausa a O.S para triagem, o sistema coleta e sanitiza o pacote completo (equipamentos, movimentações, eventos, notas, cadastro) e lê por OCR local o contrato e o comprovante de "de acordo".</p>
+            <ul class="project-list">
+              <li>Regras determinísticas primeiro; a IA entra só onde exige interpretação</li>
+              <li>Problema e solução escolhidos só entre as 111 combinações válidas do catálogo</li>
+              <li>Tudo certo → envia para validação; pendência → devolve com nota de correção</li>
+              <li>Allowlist do que sai para a IA; nenhuma imagem sai da máquina</li>
+              <li>Locks, idempotência, reconciliação e escrita atrás de feature flags</li>
+            </ul>
+            <p class="project-desc desc-flow"><strong>Não aprova nem reprova</strong> — a decisão final continua humana. Agente do Copilot Studio em uso desde set/2026; próximo passo é a leitura de imagens (multimodal).</p>
+            <p class="project-note"><i class="fa-solid fa-lock"></i> Repositório interno · Orsegups</p>
+          </div>
+        </div>
+
+        <div class="project-card fade-in">
+          <div class="project-thumb"><i class="fa-solid fa-file-signature"></i></div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">Integração de APIs</span>
+              <span class="project-tag">PDF</span>
+              <span class="project-tag">CRM</span>
+            </div>
+            <h3 class="project-title">Integração UbiDesk × Ploomes <span class="badge-private">privado</span></h3>
+            <p class="project-desc">Loop que roda sozinho a cada 5 minutos sobre a fila de instalações em validação: extrai o ID do contrato das notas da O.S, busca o contrato (RPL) no CRM, converte as páginas relevantes do PDF em imagem e anexa na O.S — tarefa que antes era manual. Também registra na O.S o "de acordo" e desistências do cliente vindos da timeline do CRM. Sem API oficial: usuário dedicado reproduzindo as chamadas do próprio sistema, token com rotação, deduplicação e modos de simulação antes de escrever.</p>
             <p class="project-note"><i class="fa-solid fa-lock"></i> Repositório interno · Orsegups</p>
           </div>
         </div>
@@ -1111,30 +1134,29 @@
               <span class="project-tag">VPS</span>
             </div>
             <h3 class="project-title">Portal A365 <span class="badge-private">privado</span></h3>
-            <p class="project-desc">Portal interno que reúne as ferramentas da operação atrás de um único login: dashboard de O.S atualizado a cada 60s, mapa de cobertura de rotas e área administrativa. Senha em argon2id, sessão em cookie httpOnly e redefinição de senha sem e-mail — o admin aprova e gera senha temporária, mas nunca vê a senha final. Deploy em VPS com três serviços systemd atrás de HTTPS.</p>
+            <p class="project-desc">Portal interno que reúne as ferramentas da operação atrás de um único login: dashboard de O.S alimentado por um coletor próprio, mapa de cobertura de rotas e área administrativa. Senha em argon2id, sessão em cookie httpOnly e redefinição de senha sem e-mail — o admin aprova e gera senha temporária, mas nunca vê a senha final. Coletor com blocklist recursiva de PII e credencial protegida por DPAPI; deploy em VPS com serviços systemd atrás de HTTPS.</p>
             <p class="project-note"><i class="fa-solid fa-lock"></i> Repositório interno · Orsegups</p>
           </div>
         </div>
 
         <div class="project-card fade-in">
-          <div class="project-thumb"><i class="fa-solid fa-robot"></i></div>
+          <div class="project-thumb"><i class="fa-solid fa-toolbox"></i></div>
           <div class="project-body">
             <div class="project-tags">
-              <span class="project-tag">Copilot Studio</span>
-              <span class="project-tag">Azure OpenAI</span>
-              <span class="project-tag">Microsoft 365</span>
+              <span class="project-tag">Python</span>
+              <span class="project-tag">openpyxl</span>
+              <span class="project-tag">pytest</span>
             </div>
-            <h3 class="project-title">Assistente de O.S com IA <span class="badge-wip">em desenvolvimento</span></h3>
-            <p class="project-desc desc-flow">Assistente que orienta o especialista de campo <strong>antes</strong> de a O.S seguir para validação. O especialista informa o que fez no atendimento e a IA analisa a coerência do conjunto — tipo da O.S, equipamentos, movimentações, motivo, serviço executado e as regras operacionais de cada situação.</p>
+            <h3 class="project-title">Kit de automações de campo <span class="badge-private">privado</span></h3>
+            <p class="project-desc desc-flow">Ferramentas somente leitura que substituem conferências manuais no sistema de O.S, empacotadas como executável ou atalho de duplo clique para quem não programa:</p>
             <ul class="project-list">
-              <li>Diz se a O.S está pronta para ser enviada</li>
-              <li>Aponta o que está incorreto, incoerente ou incompleto</li>
-              <li>Indica o problema e a solução correspondentes</li>
-              <li>Sugere uma observação clara e padronizada</li>
-              <li>Orienta o que corrigir antes do envio</li>
+              <li>Relatório de movimentação de equipamentos para comissionamento de técnicos</li>
+              <li>Equipamentos removidos em O.S pausadas e reprovadas, com histórico de "já analisada"</li>
+              <li>Auditoria de contas sem rota ou com rota sem especialista</li>
+              <li>Relatórios de manutenção remota</li>
             </ul>
-            <p class="project-desc desc-flow">Cobre instalação, manutenção, desinstalação e administrativa, aplicando a regra de cada tipo. <strong>Não finaliza nem aprova a O.S</strong> — entrega a análise para o especialista revisar, reduzindo devolução e retrabalho na validação. Fase atual: mapeando e validando as regras operacionais e as informações que alimentam o modelo.</p>
-            <p class="project-note"><i class="fa-solid fa-lock"></i> Solução interna · Orsegups</p>
+            <p class="project-desc desc-flow">Todas nascem de um esqueleto comum: autenticação com rotação de token, duas travas de escrita independentes, contratos de API medidos e suíte de testes 100% offline.</p>
+            <p class="project-note"><i class="fa-solid fa-lock"></i> Ferramentas internas · Orsegups</p>
           </div>
         </div>
 
@@ -1173,8 +1195,9 @@
             <div class="timeline-company">Orsegups</div>
             <ul class="timeline-desc">
               <li>Construí um portal interno em FastAPI + SQLite que reúne as ferramentas da operação atrás de um único login, com deploy em VPS (systemd + HTTPS)</li>
-              <li>Desenvolvi o backend de validação de O.S com IA: coleta autenticada, régua determinística de checagens e anexo automático do contrato assinado</li>
-              <li>Automatizei coletores que substituíram a extração manual de planilhas, alimentando dashboards que atualizam sozinhos</li>
+              <li>Coloquei em produção a pré-validação de O.S com IA (Copilot Studio): regras determinísticas primeiro, OCR local do contrato e decisão final sempre humana</li>
+              <li>Integrei o sistema de O.S ao CRM sem API oficial, anexando o contrato assinado e o "de acordo" do cliente automaticamente a cada 5 minutos</li>
+              <li>Automatizei coletores e relatórios (comissionamento, equipamentos removidos, auditoria de rotas) que substituíram conferências manuais</li>
               <li>Criei dashboards operacionais de O.S, produtividade e vazão do dia usados por supervisores em 22 regionais</li>
               <li>Mapeei a cobertura geográfica das rotas de campo com pipeline geoespacial (geocodificação em cascata, malha do IBGE e Voronoi)</li>
               <li>Apliquei privacidade por design em todos os projetos: minimização de PII, allowlist de payload e retenção só de dado agregado</li>

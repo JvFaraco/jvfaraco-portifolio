@@ -50,7 +50,7 @@ jvfaraco-portifolio/
 | [Route Coverage Map](https://github.com/JvFaraco/mapaderotas) · [demo](https://jvfaraco.github.io/mapaderotas/) | Pipeline geoespacial de cobertura de rotas com geocodificação em cascata, malha do IBGE, Voronoi e privacidade por allowlist | Python, Leaflet, GIS |
 | [Operations Dashboard Platform](https://github.com/JvFaraco/operational-dashboard-platform) · [demo](https://jvfaraco.github.io/operational-dashboard-platform/) | Plataforma de acompanhamento de O.S, agendas, pendências e indicadores de campo | Flask, pandas, Chart.js |
 
-Projetos internos (Portal A365, validação de O.S com IA, vazão do dia) ficam em repositórios privados — descritos no portfólio sem código ou dado exposto.
+Projetos internos (Portal A365, Validador de O.S com IA, integração UbiDesk × Ploomes, City Route Divider e o kit de automações de campo) ficam em repositórios privados — descritos no portfólio sem código ou dado exposto.
 
 ---
 

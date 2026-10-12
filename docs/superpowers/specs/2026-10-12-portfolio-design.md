@@ -4,6 +4,10 @@
 
 Apresentar João Victor Faraco a recrutadores de automação, Python e IA aplicada, com estudos de caso verificáveis, links públicos funcionais e uma interface profissional com movimento acessível. Atualizar o site existente e o README do perfil, mantendo a publicação no GitHub Pages.
 
+## Revisão solicitada pelo autor — direção final
+
+O autor considerou que a primeira implementação mudou demais o portfólio e pediu “menos IA”. Esta orientação substitui as escolhas visuais e a estrutura propostas abaixo: preservar azul/amarelo, foto em cores e as seções originais início, sobre, habilidades, projetos, experiência e contato. A apresentação inicial destaca nome, cargo, Python, automação e integrações, com linguagem direta. Projetos públicos aparecem primeiro; o validador com IA fica como um dos projetos. Remover a demonstração interativa de IA, diagramas de sistema e tipografia editorial em itálico. Manter filtros, detalhes acessíveis, tema persistente, controle de movimento e animações discretas. Preservar Google Fonts e Font Awesome do original. Os critérios de conteúdo, privacidade e verificação continuam válidos; o teste dos cenários removidos deixa de se aplicar. O README do perfil já foi integrado com autorização, e a revisão solicitada nesta etapa se concentra no portfólio.
+
 ## Escopo autorizado
 
 O usuário pediu revisão dos projetos locais e do GitHub, pesquisa de tendências e atualização do portfólio e do README do perfil. Confirmou foco em recrutadores para automação, Python e IA aplicada. A implementação e as escolhas visuais de rotina podem avançar dentro desse escopo. Trabalhar em clones e branches dedicadas; preparar resultado verificável e revisão antes da integração remota final.

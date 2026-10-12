@@ -20,17 +20,16 @@ test('estudo de caso abre por teclado e devolve foco ao fechar com Escape', asyn
   await expect(page.getByRole('dialog')).toBeHidden(); await expect(trigger).toBeFocused();
 });
 
-test('demonstração diferencia evidência completa, ausente e fora de escopo', async ({ page }) => {
-  await page.goto('./');
-  const scenario = page.getByLabel('Cenário da demonstração');
-  await scenario.selectOption('complete', { timeout: 2000 });
-  await expect(page.locator('#scenario-result')).toContainText('Pronto para conferência humana');
-  await scenario.selectOption('missing');
-  await expect(page.locator('#scenario-result')).toContainText('Evidência insuficiente');
-  await scenario.selectOption('outside');
-  await expect(page.locator('#scenario-result')).toContainText('Fora do escopo');
-  await page.getByRole('button', { name: 'Etapa 2: Regras' }).click();
-  await expect(page.locator('#stage-description')).toContainText('escopo');
+test('voltar ao início aparece após rolar e fica fora do foco quando oculto', async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' }); await page.goto('./');
+  const backTop = page.locator('#backTop');
+  await expect(backTop).toBeHidden();
+  await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight));
+  await expect(backTop).toBeVisible();
+  await expect(backTop).toHaveCSS('opacity', '1');
+  await backTop.click();
+  await expect.poll(() => page.evaluate(() => window.scrollY)).toBeLessThan(100);
+  await expect(backTop).toBeHidden();
 });
 
 test('tema persiste entre carregamentos', async ({ page }) => {
@@ -52,7 +51,7 @@ test('armazenamento bloqueado não impede filtros nem troca de tema', async ({ p
 test('preferência de movimento reduzido mantém conteúdo legível e animações desligadas', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' }); await page.goto('./');
   await expect(page.locator('html')).toHaveAttribute('data-motion', 'off');
-  await expect(page.getByRole('heading', { name: /Automação que conecta/ })).toBeVisible();
+  await expect(page.getByRole('heading', { name: /João Victor Faraco/ })).toBeVisible();
   await expect(page.locator('.reveal').first()).toHaveCSS('opacity', '1');
 });
 
@@ -61,6 +60,7 @@ test('mobile permite navegar sem overflow e fecha menu com Escape', async ({ pag
   const menu = page.getByRole('button', { name: 'Abrir navegação' });
   await menu.click({ timeout: 2000 });
   await expect(page.getByRole('navigation', { name: 'Principal' })).toBeVisible();
+  await expect(page.locator('#navigation')).toBeVisible();
   await page.keyboard.press('Escape'); await expect(menu).toBeFocused();
   await expect(menu).toHaveAttribute('aria-expanded', 'false');
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBeTruthy();
@@ -106,7 +106,6 @@ test('subpath resolve assets sem erro de módulo ou imagem', async ({ page }) =>
   const errors = []; page.on('pageerror', e => errors.push(e.message));
   const failed = []; page.on('response', r => { if (r.url().startsWith('http://127.0.0.1:4173') && r.status() >= 400) failed.push(r.url()); });
   await page.goto('./'); await page.waitForLoadState('networkidle');
-  await expect(page.locator('#scenario-result')).toContainText('Pronto para conferência humana');
   expect(errors).toEqual([]); expect(failed).toEqual([]);
   expect(await page.locator('img').evaluateAll(images => images.every(i => i.complete && i.naturalWidth > 0))).toBeTruthy();
 });

@@ -1,135 +1,348 @@
-﻿<!doctype html>
-<html lang="pt-BR" data-theme="dark" data-motion="on">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>João Victor Faraco — Automação, Python e IA aplicada</title>
-  <meta name="description" content="Analista de Sistemas em São José, SC. Estudos de caso de automação Python, IA aplicada, integrações, dashboards e geoprocessamento.">
-  <meta name="theme-color" content="#17191b">
-  <link rel="canonical" href="https://jvfaraco.github.io/jvfaraco-portifolio/">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="João Victor Faraco — Automação, Python e IA aplicada">
-  <meta property="og:description" content="Da operação ao código. Projetos, decisões de engenharia e demonstrações com dados fictícios.">
-  <meta property="og:url" content="https://jvfaraco.github.io/jvfaraco-portifolio/">
-  <meta property="og:image" content="https://jvfaraco.github.io/jvfaraco-portifolio/img/Eu.jpg">
-  <meta property="og:locale" content="pt_BR">
-  <meta name="twitter:card" content="summary">
-  <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="assets/styles.css">
-  <script type="module" src="assets/app.js"></script>
+<!DOCTYPE html>
+<html lang="pt-br" data-theme="dark" data-motion="on"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>João Victor Faraco | Python e Automação</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&amp;family=DM+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<link rel="stylesheet" href="assets/styles.css">
+<meta name="description" content="Portfólio de João Victor Faraco. Python, automação de processos, integrações de sistemas, dashboards e projetos de IA aplicada.">
+<meta name="theme-color" content="#0a0f1e">
+<link rel="canonical" href="https://jvfaraco.github.io/jvfaraco-portifolio/">
+<link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:title" content="João Victor Faraco | Python e Automação">
+<meta property="og:description" content="Projetos, experiência profissional e tecnologias.">
+<meta property="og:url" content="https://jvfaraco.github.io/jvfaraco-portifolio/">
+<meta property="og:image" content="https://jvfaraco.github.io/jvfaraco-portifolio/img/Eu.jpg">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary">
+<script type="module" src="assets/app.js"></script>
 </head>
-<body>
-<a class="skip-link" href="#main">Pular para o conteúdo</a>
-<header class="site-header">
-  <div class="nav-shell">
-    <a class="brand" href="#inicio" aria-label="João Victor Faraco, início"><span class="brand-mark" aria-hidden="true">jvf<span>.</span></span><span class="brand-caption">Sistemas & automação</span></a>
-    <nav id="navigation" aria-label="Principal">
-      <a href="#projetos">Projetos</a><a href="#processo">Como trabalho</a><a href="#trajetoria">Trajetória</a><a href="#contato">Contato <span aria-hidden="true">↗</span></a>
-    </nav>
-    <div class="nav-controls">
-      <button id="theme-toggle" class="icon-button js-control" aria-label="Ativar tema claro" title="Alternar tema"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg></button>
-      <button id="menu-toggle" class="icon-button menu-toggle js-control" aria-label="Abrir navegação" aria-expanded="false" aria-controls="navigation"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+<body><a href="#main" class="skip-link">Pular para o conteúdo</a>
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="site-header"><nav aria-label="Principal">
+    <div class="nav-inner">
+      <div class="nav-logo">
+        <i class="fa-solid fa-code"></i>
+        JvFaraco
+      </div>
+      <ul class="nav-links" id="navigation">
+        <li><a href="#home">início</a></li>
+        <li><a href="#about">sobre</a></li>
+        <li><a href="#habilidades">skills</a></li>
+        <li><a href="#projetos">projetos</a></li>
+        <li><a href="#experiencia">experiência</a></li>
+        <li><a href="#contact" class="btn-contato">contato</a></li>
+        <li>
+          <button class="theme-toggle" id="theme-toggle" aria-label="Alternar tema">
+            <i class="fa-solid fa-moon icon-moon"></i>
+            <i class="fa-solid fa-sun icon-sun"></i>
+          </button>
+        </li>
+      </ul>
+      <button class="hamburger js-control" id="menu-toggle" aria-label="Abrir navegação" aria-expanded="false" aria-controls="navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav><div class="reading-progress" aria-hidden="true"><span id="reading-progress"></span></div>
+</header><main id="main"><div id="home">
+    <div class="hero-text">
+      <span class="hero-tag">// analista de sistemas</span>
+      <h1 class="hero-title">
+        João Victor <span class="highlight">Faraco</span>
+      </h1>
+      <span id="typing-animation">Python · Automação · Integração de sistemas</span>
+      <p class="hero-desc">Desenvolvo ferramentas para automatizar tarefas, integrar sistemas e organizar dados. Aqui você encontra meus projetos, as tecnologias que uso e minha trajetória em TI.</p>
+      <div class="hero-actions">
+        <a href="#projetos" class="btn-primary">Ver Projetos</a>
+        <a href="#contact" class="btn-outline">Entre em Contato</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img src="./img/Eu.jpg" alt="João Victor Faraco" fetchpriority="high">
     </div>
   </div>
-  <div class="reading-progress" aria-hidden="true"><span id="reading-progress"></span></div>
-</header>
-<main id="main">
-  <section id="inicio" class="hero shell">
-    <div class="hero-main">
-      <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> ANALISTA DE SISTEMAS / PYTHON + IA</p>
-      <p class="hero-name">João Victor Faraco.</p>
-      <h1>Automação que conecta<br><span class="serif-word">operação,</span> dados e IA<span class="accent">.</span></h1>
-      <p class="hero-description">Transformo processos operacionais em sistemas que executam, organizam dados e apoiam decisões. Com Python, integrações resilientes e IA aplicada com critérios claros.</p>
-      <div class="hero-actions"><a class="button primary" href="#projetos">Explorar projetos <span aria-hidden="true">↘</span></a><a class="button text-button" href="https://www.linkedin.com/in/jo%C3%A3o-victor-faraco-01066423a/" target="_blank" rel="noopener noreferrer">Conversar no LinkedIn <span aria-hidden="true">↗</span></a></div>
-      <div class="hero-context"><span>Orsegups · Analista de Sistemas</span><span>São José, Santa Catarina</span></div>
-    </div>
-    <aside class="hero-aside" aria-label="Sobre João Victor">
-      <div class="portrait-frame"><img src="img/Eu.jpg" alt="João Victor Faraco" width="340" height="380" fetchpriority="high"><span class="portrait-index" aria-hidden="true">JVF / 01</span><span class="portrait-caption">Tecnologia próxima<br>de quem usa.</span></div>
-      <div class="system-sketch" aria-hidden="true"><div class="sketch-top"><span>DA OPERAÇÃO AO CÓDIGO</span><span>↗</span></div><div class="sketch-flow"><span>Dados</span><i></i><span class="sketch-node">Regras<br>+ IA</span><i></i><span>Decisão</span></div><p>Contexto antes de automação.</p></div>
-    </aside>
-  </section>
-  <div class="competency-strip shell" aria-label="Áreas de atuação"><span>Python & APIs</span><span>IA aplicada</span><span>Dados & dashboards</span><span>Geoprocessamento</span></div>
-
-  <section id="projetos" class="section shell">
-    <div class="section-heading reveal"><div><p class="eyebrow">01 / PROJETOS SELECIONADOS</p><h2>Problemas reais.<br><span class="muted">Decisões de engenharia.</span></h2></div><p>Um olhar sobre o que construí,<br>como funciona e por que importa.</p></div>
-    <div class="filter-bar js-control" role="group" aria-label="Filtrar projetos"><button class="filter active" data-filter="all" aria-pressed="true">Todos</button><button class="filter" data-filter="ia" aria-pressed="false">IA aplicada</button><button class="filter" data-filter="automation" aria-pressed="false">Automação</button><button class="filter" data-filter="data" aria-pressed="false">Dados e web</button><span id="filter-count" role="status" aria-live="polite">7 projetos</span></div>
-    <div class="projects-grid">
-      <article class="project-card project-featured reveal" data-category="ia" data-project="validator">
-        <div class="card-top"><span class="project-number">01 / IA APLICADA</span><span class="project-status">Projeto interno</span></div>
-        <div class="validator-visual" aria-hidden="true"><div class="visual-line"><span class="tiny-label">PACOTE DE ATENDIMENTO</span><span class="signal-label">contexto sanitizado</span></div><div class="packet-row"><span>Equipamentos</span><span>Eventos</span><span>OCR local</span></div><div class="visual-pipeline"><span>Regras</span><span class="pipeline-arrow">→</span><span class="active-node">IA</span><span class="pipeline-arrow">→</span><span>Conferente</span></div><div class="visual-footer"><span class="status-dot"></span> Decisão final humana</div></div>
-        <div class="card-copy"><h3>Validador de O.S. com IA</h3><p>Um pacote completo para conferir o atendimento. Regras determinísticas filtram o problema; a IA interpreta o contexto e prepara a classificação.</p><div class="tags"><span>Python</span><span>Copilot Studio</span><span>OCR</span><span>SQLite</span></div><p class="proof-line"><strong>1.503 testes offline</strong><span>Snapshot local · 12/10/2026</span></p></div>
-        <button class="case-button js-control" data-case="validator" aria-label="Explorar caso: Validador de O.S. com IA">Explorar caso <span aria-hidden="true">↗</span></button>
-      </article>
-      <article class="project-card project-portal reveal" data-category="data" data-project="portal">
-        <div class="card-top"><span class="project-number">02 / SISTEMAS WEB</span><span class="project-status">Projeto interno</span></div>
-        <div class="portal-visual" aria-hidden="true"><div class="mini-sidebar"><i></i><i></i><i></i><i></i></div><div class="mini-content"><span class="tiny-label">VISÃO OPERACIONAL</span><div class="mini-stats"><b>OS</b><b>Rotas</b><b>Contas</b></div><div class="chart-bars"><i style="--bar:40%"></i><i style="--bar:68%"></i><i style="--bar:55%"></i><i style="--bar:85%"></i><i style="--bar:70%"></i><i style="--bar:95%"></i></div></div></div>
-        <div class="card-copy"><h3>Portal Operacional A365</h3><p>OS, produtividade, rotas e contas em um portal com autenticação, coleta incremental e dados projetados para a operação.</p><div class="tags"><span>FastAPI</span><span>SQLite</span><span>JavaScript</span></div></div>
-        <button class="case-button js-control" data-case="portal" aria-label="Explorar caso: Portal Operacional A365">Explorar caso <span aria-hidden="true">↗</span></button>
-      </article>
-      <article class="project-card project-third reveal" data-category="data" data-project="routes">
-        <div class="card-top"><span class="project-number">03 / GEOPROCESSAMENTO</span><span class="project-status public">Demo pública</span></div>
-        <div class="map-visual" aria-hidden="true"><svg viewBox="0 0 320 130"><path class="map-base" d="M15 70L58 19l60 12 45-20 46 27 58-6 37 48-43 39-57-17-54 15-45-29-60 10Z"/><path d="M58 19l43 68 62-76m-45 20 32 86m59-79-59 79 54-15 63-70m-104-21 41 91"/><circle cx="99" cy="65" r="6"/><circle cx="183" cy="74" r="6"/><circle cx="246" cy="69" r="6"/></svg></div>
-        <div class="card-copy"><h3>Route Coverage Map</h3><p>Descrições de território viram áreas navegáveis. Geocodificação em cascata, limites do IBGE e tratamento explícito das aproximações.</p><div class="tags"><span>Python</span><span>Leaflet</span><span>GIS</span></div></div>
-        <div class="card-links"><a href="https://jvfaraco.github.io/mapaderotas/" target="_blank" rel="noopener noreferrer">Ver demo ↗</a><a href="https://github.com/JvFaraco/mapaderotas" target="_blank" rel="noopener noreferrer">Código ↗</a><button class="inline-case js-control" data-case="routes" aria-label="Explorar caso: Route Coverage Map">Caso ↗</button></div>
-      </article>
-      <article class="project-card project-third reveal" data-category="data" data-project="dashboard">
-        <div class="card-top"><span class="project-number">04 / VISUALIZAÇÃO</span><span class="project-status public">Demo pública</span></div>
-        <div class="dashboard-visual" aria-hidden="true"><span class="tiny-label">PLANILHAS → INDICADORES</span><div class="dashboard-preview"><div class="mini-ring"></div><div class="mini-list"><i></i><i></i><i></i></div></div></div>
-        <div class="card-copy"><h3>Operations Dashboard</h3><p>Cinco módulos para explorar OS, agendas, pendências e cobertura. Backend Flask com normalização de planilhas em pandas.</p><div class="tags"><span>Flask</span><span>pandas</span><span>Chart.js</span></div></div>
-        <div class="card-links"><a href="https://jvfaraco.github.io/operational-dashboard-platform/" target="_blank" rel="noopener noreferrer">Ver demo ↗</a><a href="https://github.com/JvFaraco/operational-dashboard-platform" target="_blank" rel="noopener noreferrer">Código ↗</a><button class="inline-case js-control" data-case="dashboard" aria-label="Explorar caso: Operations Dashboard">Caso ↗</button></div>
-      </article>
-      <article class="project-card project-third reveal" data-category="automation" data-project="crm">
-        <div class="card-top"><span class="project-number">05 / INTEGRAÇÕES</span><span class="project-status">Projeto interno</span></div>
-        <div class="integration-visual" aria-hidden="true"><div class="integration-node">OS</div><div class="integration-route"><span>sincronizar</span><i></i><span>reconciliar</span></div><div class="integration-node">CRM</div></div>
-        <div class="card-copy"><h3>Integração de OS com CRM</h3><p>Contratos, anexos e timeline no atendimento certo. Sincronização que considera mudanças, deduplicação e falhas de comunicação.</p><div class="tags"><span>Python</span><span>APIs</span><span>PDF</span></div></div>
-        <button class="case-button js-control" data-case="crm" aria-label="Explorar caso: Integração de OS com CRM">Explorar caso <span aria-hidden="true">↗</span></button>
-      </article>
-      <article class="project-card project-toolkit reveal" data-category="automation" data-project="toolkit">
-        <div class="card-top"><span class="project-number">06 / AUTOMAÇÃO DE PROCESSOS</span><span class="project-status">Projetos internos</span></div>
-        <div class="toolkit-visual" aria-hidden="true"><span>Relatórios</span><span>Auditoria</span><span>Reagendamento</span><span>Agenda</span></div>
-        <div class="card-copy"><h3>Ferramentas para a operação</h3><p>Comissão, equipamentos removidos, auditoria de rotas e reagendamento. Uma base de autenticação e contratos medidos também sustenta um assistente de agenda em validação.</p><div class="tags"><span>Python</span><span>openpyxl</span><span>pytest</span><span>Chrome MV3</span></div></div>
-        <button class="case-button js-control" data-case="toolkit" aria-label="Explorar caso: Ferramentas para a operação">Explorar caso <span aria-hidden="true">↗</span></button>
-      </article>
-      <article class="project-card project-bot reveal" data-category="automation" data-project="bot">
-        <div class="card-top"><span class="project-number">07 / AUTOMAÇÃO AGENDADA</span><span class="project-status public">Código público</span></div>
-        <div class="bot-visual" aria-hidden="true"><span class="tiny-label">ALERTA / TELEGRAM</span><div class="bot-message"><span>Critérios atendidos.</span><small>preço + desconto + palavras-chave</small><b>Enviar uma vez <span>✓</span></b></div></div>
-        <div class="card-copy"><h3>Bot de alertas no Telegram</h3><p>Coleta ofertas, aplica critérios configuráveis e envia alertas sem repetir notificações. Execução agendada com estado no GitHub Actions.</p><div class="tags"><span>Python</span><span>Scraping</span><span>GitHub Actions</span></div></div>
-        <div class="card-links"><a href="https://github.com/JvFaraco/bot-telegram" target="_blank" rel="noopener noreferrer">Ver código ↗</a><button class="inline-case js-control" data-case="bot" aria-label="Explorar caso: Bot de alertas no Telegram">Explorar caso ↗</button></div>
-      </article>
-    </div>
-    <p class="section-footnote">Os visuais acima são ilustrações. As demos públicas usam dados fictícios; os sistemas internos são apresentados sem informações operacionais.</p>
-  </section>
-
-  <section id="processo" class="process-section">
-    <div class="shell section">
-      <div class="section-heading reveal"><div><p class="eyebrow">02 / COMO TRABALHO</p><h2>Contexto primeiro.<br><span class="muted">Automação com critério.</span></h2></div><p>O modelo é parte do sistema.<br>As regras e a conferência também.</p></div>
-      <div class="process-grid">
-        <div class="process-intro reveal"><p>Antes de chamar a IA, identifico o escopo, coleto evidências e aplico regras verificáveis. O que exige interpretação segue com contexto; o que está incompleto continua explícito.</p><ol class="principles"><li><span>01</span><div><h3>Dados que a fonte sustenta</h3><p>Ausência de leitura não vira resultado negativo. Contratos são medidos, e dados pessoais são minimizados.</p></div></li><li><span>02</span><div><h3>Escrita que pode ser conferida</h3><p>Timeout exige reconciliação. Retomar o processo não deve duplicar OS, anexos ou eventos.</p></div></li><li><span>03</span><div><h3>Decisão com responsabilidade</h3><p>A pré-validação apoia quem confere o atendimento. Aprovação final permanece humana.</p></div></li></ol></div>
-        <div class="pipeline-demo reveal">
-          <div class="demo-header"><span class="eyebrow">DEMONSTRAÇÃO INTERATIVA</span><span class="demo-label">Dados fictícios</span></div>
-          <label for="scenario">Cenário da demonstração</label><select id="scenario" class="js-control"><option value="complete">Pacote completo</option><option value="missing">Evidência incompleta</option><option value="outside">Atendimento fora do escopo</option></select>
-          <div class="pipeline-steps js-control" role="group" aria-label="Explorar etapas do fluxo"><button data-stage="0" aria-label="Etapa 1: Dados" aria-pressed="false"><span>01</span>Dados</button><button data-stage="1" aria-label="Etapa 2: Regras" aria-pressed="false"><span>02</span>Regras</button><button data-stage="2" aria-label="Etapa 3: IA" aria-pressed="false"><span>03</span>IA</button><button data-stage="3" aria-label="Etapa 4: Conferência" aria-pressed="true" class="active"><span>04</span>Conferência</button></div>
-          <div class="demo-detail" aria-live="polite"><span id="stage-label" class="tiny-label">04 / CONFERÊNCIA</span><h3 id="stage-title">O sistema prepara. A pessoa confere.</h3><p id="stage-description">A classificação e a observação acompanham as evidências para a conferência humana.</p></div>
-          <div id="scenario-result" class="scenario-result" role="status" aria-live="polite"><span class="status-dot" aria-hidden="true"></span><div><strong>Pronto para conferência humana</strong><small>Exemplo ilustrativo; não representa uma OS real.</small></div></div>
-          <noscript><p>Este exemplo representa coleta → regras → interpretação → conferência humana. Ative JavaScript para explorar os cenários.</p></noscript>
+<section id="about">
+    <div class="section-inner">
+      <p class="section-tag">// sobre mim</p>
+      <h2 class="section-title">Quem sou eu?</h2>
+      <div class="section-line"></div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>Sou <strong>Analista de Sistemas na Orsegups</strong>. Trabalho com automação de processos, integração de APIs e ferramentas para a operação, principalmente em Python.</p>
+          <p>
+            Na prática, isso significa ir da ponta à ponta: <strong>backend em Python</strong> (FastAPI, pandas, integração com APIs), <strong>frontend e visualização</strong> (JavaScript, Chart.js, Leaflet) e o <strong>deploy</strong> que coloca aquilo na mão de quem precisa.
+          </p>
+          <p>Nos projetos internos, cuido da coleta de dados, do tratamento de falhas e da conferência das alterações. Também uso IA em tarefas específicas de leitura e classificação, quando ela ajuda a resolver o problema.</p>
+          <p>
+            Atualmente cursando <strong>MBA em Inteligência Artificial</strong> na Estácio de Sá, aprofundando conhecimentos em LLMs, engenharia de prompts e arquitetura de sistemas inteligentes.
+          </p>
+          <p>Comecei com suporte e infraestrutura, passei por testes de hardware e hoje desenvolvo sistemas. Essa experiência me ajuda a entender quem usa as ferramentas e o que precisa funcionar no dia a dia.</p>
+          <div class="about-socials">
+            <a href="https://www.linkedin.com/in/joão-victor-faraco-01066423a/" class="social-btn linkedin" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://github.com/JvFaraco" class="social-btn github" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.instagram.com/jvfaraco/" class="social-btn instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="about-info">
+          <div class="info-card">
+            <i class="fa-solid fa-location-dot"></i>
+            <div class="info-card-text">
+              <small>localização</small>
+              <span>São José, Santa Catarina</span>
+            </div>
+          </div>
+          <div class="info-card">
+            <i class="fa-solid fa-briefcase"></i>
+            <div class="info-card-text">
+              <small>cargo atual</small>
+              <span>Analista de Sistemas · Orsegups</span>
+            </div>
+          </div>
+          <div class="info-card">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <div class="info-card-text">
+              <small>educação</small>
+              <span>MBA em Inteligência Artificial</span>
+            </div>
+          </div>
+          <div class="info-card">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <div class="info-card-text">
+              <small>graduação</small>
+              <span>Gestão da TI · Estácio de Sá · 2025</span>
+            </div>
+          </div>
+          <div class="info-card">
+            <i class="fa-solid fa-language"></i>
+            <div class="info-card-text">
+              <small>idiomas</small>
+              <span>Português nativo · Inglês intermediário</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
+<section id="habilidades">
+    <div class="section-inner">
+      <p class="section-tag">// tecnologias</p>
+      <h2 class="section-title">Habilidades</h2>
+      <div class="section-line"></div>
+      <div class="skill-groups"><div>
+          <h3 class="skill-group-title">Backend &amp; Dados</h3>
+          <div class="skills-grid">
+            <div class="skill-card skill-py fade-in reveal"><i class="fa-brands fa-python"></i><span>Python</span></div>
+            <div class="skill-card skill-api fade-in reveal"><i class="fa-solid fa-bolt"></i><span>FastAPI</span></div>
+            <div class="skill-card skill-flask fade-in reveal"><i class="fa-solid fa-flask"></i><span>Flask</span></div>
+            <div class="skill-card skill-data fade-in reveal"><i class="fa-solid fa-table"></i><span>pandas</span></div>
+            <div class="skill-card skill-db fade-in reveal"><i class="fa-solid fa-database"></i><span>SQLite / SQL</span></div>
+          </div>
+        </div>
 
-  <section id="trajetoria" class="section shell">
-    <div class="section-heading reveal"><div><p class="eyebrow">03 / TRAJETÓRIA & COMPETÊNCIAS</p><h2>Da infraestrutura<br><span class="muted">à inteligência aplicada.</span></h2></div><p>Conhecer a operação<br>muda a forma de construir.</p></div>
-    <div class="career-grid">
-      <div class="timeline reveal"><article><span class="timeline-date">MAR 2025 — ATUAL</span><h3>Analista de Sistemas</h3><p class="company">Orsegups</p><p>Automações, integrações, pré-validação com IA, coletores, dashboards e cobertura geográfica. Trabalho próximo de operação, suporte e backoffice.</p></article><article><span class="timeline-date">SET 2024 — MAR 2025</span><h3>Especialista em Testes de Hardware</h3><p class="company">Orsegups</p><p>Dashboards do ciclo de vida dos equipamentos e organização dos fluxos de novos equipamentos e RMA.</p></article><article><span class="timeline-date">2022 — 2024</span><h3>Base em suporte e infraestrutura</h3><p>Estágios no Figueirense Futebol Clube (fev–set/2024) e no Instituto São José (out/2022–out/2023).</p></article></div>
-      <div class="skills-panel reveal"><div class="skill-row"><span>BACKEND & AUTOMAÇÃO</span><p>Python · FastAPI · Flask · APIs HTTP<br>SQL / SQLite · openpyxl · PDF</p></div><div class="skill-row"><span>IA & DADOS</span><p>Copilot Studio · Azure OpenAI · OCR local<br>JSON Schema · pandas · Power BI</p></div><div class="skill-row"><span>INTERFACE & GEOGRAFIA</span><p>JavaScript · Chart.js · Leaflet<br>Shapely · IBGE · Chrome MV3</p></div><div class="skill-row"><span>ENTREGA & QUALIDADE</span><p>GitHub Actions · pytest · Playwright<br>Git · Linux · testes offline</p></div><div class="education"><span class="eyebrow">FORMAÇÃO</span><p><strong>MBA em Inteligência Artificial</strong><br>Estácio de Sá · em andamento</p><p><strong>Gestão da Tecnologia da Informação</strong><br>Estácio de Sá · concluída em 2025</p></div></div>
+        <div>
+          <h3 class="skill-group-title">IA aplicada</h3>
+          <div class="skills-grid">
+            <div class="skill-card skill-ai fade-in reveal"><i class="fa-solid fa-robot"></i><span>Agentes de IA</span></div>
+            <div class="skill-card skill-azure fade-in reveal"><i class="fa-solid fa-cloud"></i><span>Azure OpenAI</span></div>
+            <div class="skill-card skill-azure fade-in reveal"><i class="fa-brands fa-microsoft"></i><span>Copilot Studio</span></div>
+            <div class="skill-card skill-ai fade-in reveal"><i class="fa-solid fa-terminal"></i><span>Prompt Engineering</span></div>
+          </div>
+        </div>
+
+
+
+        <div>
+          <h3 class="skill-group-title">Frontend &amp; Visualização</h3>
+          <div class="skills-grid">
+            <div class="skill-card skill-html fade-in reveal"><i class="fa-brands fa-html5"></i><span>HTML5</span></div>
+            <div class="skill-card skill-css fade-in reveal"><i class="fa-brands fa-css3-alt"></i><span>CSS3</span></div>
+            <div class="skill-card skill-js fade-in reveal"><i class="fa-brands fa-js"></i><span>JavaScript</span></div>
+            <div class="skill-card skill-chart fade-in reveal"><i class="fa-solid fa-chart-line"></i><span>Chart.js</span></div>
+            <div class="skill-card skill-map fade-in reveal"><i class="fa-solid fa-map-location-dot"></i><span>Leaflet / GIS</span></div>
+            <div class="skill-card skill-bi fade-in reveal"><i class="fa-solid fa-chart-bar"></i><span>Power BI</span></div>
+          </div>
+        </div>
+
+
+      </div>
     </div>
-    <div class="publication reveal"><span class="eyebrow">ALÉM DO CÓDIGO</span><div><h3>Pense Melhor com a I.A.</h3><p>Publicação digital sobre contexto, prompts e uso consciente da inteligência artificial.</p></div><a href="https://joaovictorfaraco.hotmart.host/pense-melhor-com-a-i-a-clareza-mental-em-um-mundo-automatizado-34ee7b07-ad4b-4df5-a28d-48307744dfc4" target="_blank" rel="noopener noreferrer">Ver publicação <span aria-hidden="true">↗</span></a></div>
   </section>
+<section id="projetos">
+    <div class="section-inner">
+      <p class="section-tag">// portfólio</p>
+      <h2 class="section-title">Projetos</h2>
+      <div class="section-line"></div>
+      <div class="filter-bar js-control" role="group" aria-label="Filtrar projetos"><button class="filter active" data-filter="all" aria-pressed="true">Todos</button><button class="filter" data-filter="ia" aria-pressed="false">IA aplicada</button><button class="filter" data-filter="automation" aria-pressed="false">Automação</button><button class="filter" data-filter="data" aria-pressed="false">Dados e web</button><span id="filter-count" role="status" aria-live="polite">7 projetos</span></div><div class="projects-grid">
+<article class="project-card fade-in reveal" data-project="routes" data-category="data"><div class="project-thumb" aria-hidden="true"><i class="fa-solid fa-map-location-dot"></i></div>
+<div class="project-body">
+<div class="project-tags"><span class="project-tag">Python</span><span class="project-tag">Leaflet</span><span class="project-tag">GIS</span></div>
+<h3 class="project-title">Route Coverage Map</h3>
+<p class="project-desc">Descrições de território viram áreas navegáveis. Geocodificação em cascata, limites do IBGE e tratamento explícito das aproximações.</p>
+<p class="project-note">Demo pública</p>
+<div class="project-links"><a href="https://jvfaraco.github.io/mapaderotas/" target="_blank" rel="noopener noreferrer" class="project-link">Ver demo ↗</a><a href="https://github.com/JvFaraco/mapaderotas" target="_blank" rel="noopener noreferrer" class="project-link">Código ↗</a><button class="project-link case-link js-control" data-case="routes" aria-label="Explorar caso: Route Coverage Map">Caso ↗</button></div></div></article>
+<article class="project-card fade-in reveal" data-project="dashboard" data-category="data"><div class="project-thumb" aria-hidden="true"><i class="fa-solid fa-gauge-high"></i></div>
+<div class="project-body">
+<div class="project-tags"><span class="project-tag">Flask</span><span class="project-tag">pandas</span><span class="project-tag">Chart.js</span></div>
+<h3 class="project-title">Operations Dashboard</h3>
+<p class="project-desc">Cinco módulos para explorar OS, agendas, pendências e cobertura. Backend Flask com normalização de planilhas em pandas.</p>
+<p class="project-note">Demo pública</p>
+<div class="project-links"><a href="https://jvfaraco.github.io/operational-dashboard-platform/" target="_blank" rel="noopener noreferrer" class="project-link">Ver demo ↗</a><a href="https://github.com/JvFaraco/operational-dashboard-platform" target="_blank" rel="noopener noreferrer" class="project-link">Código ↗</a><button class="project-link case-link js-control" data-case="dashboard" aria-label="Explorar caso: Operations Dashboard">Caso ↗</button></div></div></article>
+<article class="project-card fade-in reveal" data-project="crm" data-category="automation"><div class="project-thumb" aria-hidden="true"><i class="fa-solid fa-file-signature"></i></div>
+<div class="project-body">
+<div class="project-tags"><span class="project-tag">Python</span><span class="project-tag">APIs</span><span class="project-tag">PDF</span></div>
+<h3 class="project-title">Integração de OS com CRM</h3>
+<p class="project-desc">Contratos, anexos e timeline no atendimento certo. Sincronização que considera mudanças, deduplicação e falhas de comunicação.</p>
+<p class="project-note">Projeto interno</p>
+<div class="project-links"><button class="project-link case-link js-control" data-case="crm" aria-label="Explorar caso: Integração de OS com CRM">Explorar caso <span aria-hidden="true">↗</span></button></div></div></article>
+<article class="project-card fade-in reveal" data-project="portal" data-category="data"><div class="project-thumb" aria-hidden="true"><i class="fa-solid fa-shield-halved"></i></div>
+<div class="project-body">
+<div class="project-tags"><span class="project-tag">FastAPI</span><span class="project-tag">SQLite</span><span class="project-tag">JavaScript</span></div>
+<h3 class="project-title">Portal Operacional A365</h3>
+<p class="project-desc">OS, produtividade, rotas e contas em um portal com autenticação, coleta incremental e dados projetados para a operação.</p>
+<p class="project-note">Projeto interno</p>
+<div class="project-links"><button class="project-link case-link js-control" data-case="portal" aria-label="Explorar caso: Portal Operacional A365">Explorar caso <span aria-hidden="true">↗</span></button></div></div></article>
+<article class="project-card fade-in reveal" data-project="toolkit" data-category="automation"><div class="project-thumb" aria-hidden="true"><i class="fa-solid fa-toolbox"></i></div>
+<div class="project-body">
+<div class="project-tags"><span class="project-tag">Python</span><span class="project-tag">openpyxl</span><span class="project-tag">pytest</span><span class="project-tag">Chrome MV3</span></div>
+<h3 class="project-title">Ferramentas para a operação</h3>
+<p class="project-desc">Comissão, equipamentos removidos, auditoria de rotas e reagendamento. Uma base de autenticação e contratos medidos também sustenta um assistente de agenda em validação.</p>
+<p class="project-note">Projetos internos</p>
+<div class="project-links"><button class="project-link case-link js-control" data-case="toolkit" aria-label="Explorar caso: Ferramentas para a operação">Explorar caso <span aria-hidden="true">↗</span></button></div></div></article>
+<article class="project-card fade-in reveal" data-project="bot" data-category="automation"><div class="project-thumb" aria-hidden="true"><i class="fa-solid fa-paper-plane"></i></div>
+<div class="project-body">
+<div class="project-tags"><span class="project-tag">Python</span><span class="project-tag">Scraping</span><span class="project-tag">GitHub Actions</span></div>
+<h3 class="project-title">Bot de alertas no Telegram</h3>
+<p class="project-desc">Coleta ofertas, aplica critérios configuráveis e envia alertas sem repetir notificações. Execução agendada com estado no GitHub Actions.</p>
+<p class="project-note">Código público</p>
+<div class="project-links"><a href="https://github.com/JvFaraco/bot-telegram" target="_blank" rel="noopener noreferrer" class="project-link">Ver código ↗</a><button class="project-link case-link js-control" data-case="bot" aria-label="Explorar caso: Bot de alertas no Telegram">Explorar caso ↗</button></div></div></article>
+<article class="project-card fade-in reveal" data-project="validator" data-category="ia"><div class="project-thumb" aria-hidden="true"><i class="fa-solid fa-list-check"></i></div>
+<div class="project-body">
+<div class="project-tags"><span class="project-tag">Python</span><span class="project-tag">Copilot Studio</span><span class="project-tag">OCR</span><span class="project-tag">SQLite</span></div>
+<h3 class="project-title">Validador de O.S. com IA</h3>
+<p class="project-desc">Um pacote completo para conferir o atendimento. Regras determinísticas filtram o problema; a IA interpreta o contexto e prepara a classificação.</p>
+<p class="project-note">Projeto interno</p>
+<div class="project-links"><button class="project-link case-link js-control" data-case="validator" aria-label="Explorar caso: Validador de O.S. com IA">Explorar caso <span aria-hidden="true">↗</span></button></div></div></article></div><p class="section-footnote">As demos públicas usam dados fictícios. Projetos internos são apresentados sem dados da operação.</p>
+    </div>
+  </section>
+<section id="experiencia">
+    <div class="section-inner">
+      <p class="section-tag">// trajetória</p>
+      <h2 class="section-title">Experiência</h2>
+      <div class="section-line"></div>
+      <div class="timeline">
 
-  <section id="contato" class="contact-section shell reveal"><p class="eyebrow">04 / PRÓXIMA CONVERSA</p><h2>Seu próximo desafio<br>precisa de <span class="serif-word">automação?</span></h2><p>Tenho interesse em oportunidades de desenvolvimento Python, automação e IA aplicada. Vamos conversar sobre o problema e o que podemos construir.</p><div class="contact-actions"><a class="button primary" href="mailto:joaovictorfaraco@gmail.com" aria-label="Enviar e-mail">joaovictorfaraco@gmail.com <span aria-hidden="true">↗</span></a><button id="copy-email" class="button outline js-control">Copiar e-mail</button></div><div class="contact-links"><a href="https://www.linkedin.com/in/jo%C3%A3o-victor-faraco-01066423a/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="https://github.com/JvFaraco" target="_blank" rel="noopener noreferrer">GitHub ↗</a><span>São José, SC · Brasil</span></div></section>
+        <div class="timeline-item fade-in reveal">
+          <div class="timeline-date">mar 2025 — atual</div>
+          <div class="timeline-body">
+            <div class="timeline-role">Analista de Sistemas</div>
+            <div class="timeline-company">Orsegups</div>
+            <ul class="timeline-desc">
+              <li>Desenvolvi um portal interno com FastAPI e SQLite para reunir dashboards, rotas e ferramentas da operação</li>
+              <li>Coloquei em produção a pré-validação de O.S com IA (Copilot Studio): regras determinísticas primeiro, OCR local do contrato e decisão final sempre humana</li>
+              <li>Integrei o sistema de O.S ao CRM sem API oficial, anexando o contrato assinado e o "de acordo" do cliente automaticamente a cada 5 minutos</li>
+              <li>Automatizei coletores e relatórios (comissionamento, equipamentos removidos, auditoria de rotas) que substituíram conferências manuais</li>
+              <li>Criei dashboards de O.S., produtividade e acompanhamento diário para supervisores</li>
+              <li>Mapeei a cobertura geográfica das rotas de campo com pipeline geoespacial (geocodificação em cascata, malha do IBGE e Voronoi)</li>
+              <li>Apliquei privacidade por design em todos os projetos: minimização de PII, allowlist de payload e retenção só de dado agregado</li>
+              <li>Padronizei os fluxos e a taxonomia de dados de campo (TIPO / MOTIVO / PROBLEMA / SOLUÇÃO) usada pela Operação, NAC e BackOffice</li>
+              <li>Automação de processos com Azure OpenAI e Copilot Studio, e BI operacional com Power BI</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item fade-in reveal">
+          <div class="timeline-date">set 2024 — mar 2025</div>
+          <div class="timeline-body">
+            <div class="timeline-role">Especialista em Testes de Hardware</div>
+            <div class="timeline-company">Orsegups</div>
+            <ul class="timeline-desc">
+              <li>Desenvolvi dashboards para monitoramento do ciclo de vida de equipamentos (RMA, novos, testados e em campo), suportando análise estruturada e tomada de decisão</li>
+              <li>Reestruturei o sistema de testes da fábrica dividindo o fluxo em NOVOS vs. RMA, eliminando input manual crítico que gerava erros de classificação e retrabalho</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item fade-in reveal">
+          <div class="timeline-date">fev 2024 — set 2024</div>
+          <div class="timeline-body">
+            <div class="timeline-role">Estagiário de TI</div>
+            <div class="timeline-company">Figueirense Futebol Clube</div>
+            <ul class="timeline-desc">
+              <li>Suporte técnico e manutenção de infraestrutura</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item fade-in reveal">
+          <div class="timeline-date">out 2022 — out 2023</div>
+          <div class="timeline-body">
+            <div class="timeline-role">Estagiário de TI</div>
+            <div class="timeline-company">Instituto São José</div>
+            <ul class="timeline-desc">
+              <li>Suporte técnico e administração de sistemas</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+<section id="contact">
+    <div class="section-inner">
+      <p class="section-tag">// vamos conversar?</p>
+      <h2 class="section-title">Entre em Contato</h2>
+      <div class="section-line"></div>
+      <div class="contact-grid">
+        <div class="contact-text">
+          <h2>Vamos Conversar?</h2>
+          <p>Aberto a novas oportunidades, colaborações e projetos desafiadores. Me manda uma mensagem.</p>
+          <div class="contact-items">
+            <a href="mailto:joaovictorfaraco@gmail.com" class="contact-item" aria-label="Enviar e-mail">
+              <i class="fa-regular fa-envelope"></i>
+              <div>
+                <small>e-mail</small>
+                <span>joaovictorfaraco@gmail.com</span>
+              </div>
+            </a><button id="copy-email" class="button outline js-control">Copiar e-mail</button>
+
+          </div>
+        </div>
+        <div class="contact-socials">
+          <a href="https://www.linkedin.com/in/joão-victor-faraco-01066423a/" class="social-card" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-linkedin"></i>
+            <span>LinkedIn</span>
+          </a>
+          <a href="https://github.com/JvFaraco" class="social-card" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-github"></i>
+            <span>GitHub</span>
+          </a>
+<a href="https://www.instagram.com/jvfaraco/" class="social-card" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-instagram"></i>
+            <span>Instagram</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
-<footer class="shell"><span>© <span id="year">2026</span> João Victor Faraco</span><div><button id="motion-toggle" class="footer-control js-control" aria-pressed="false">Pausar animações</button><a href="#inicio">Voltar ao início ↑</a></div></footer>
-<dialog id="project-dialog" aria-labelledby="dialog-title"><div class="dialog-header"><span id="dialog-category" class="eyebrow"></span><button id="close-dialog" class="icon-button" aria-label="Fechar estudo de caso">×</button></div><h2 id="dialog-title"></h2><p id="dialog-intro" class="dialog-intro"></p><div id="dialog-content"></div><div id="dialog-links" class="dialog-links"></div><p class="dialog-note">Estudo descritivo. Dados e visuais da apresentação são ilustrativos.</p></dialog>
-<div id="feedback" class="feedback" role="status" aria-live="polite"></div>
-</body>
-</html>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>© <span id="year">2026</span> <a href="#home">João Victor Faraco</a></p>
+  <button id="motion-toggle" class="footer-control js-control" aria-pressed="false">Pausar animações</button></footer>
+
+  <!-- Back to top -->
+  <a href="#home" class="back-top" id="backTop" hidden aria-label="Voltar ao início"><i class="fa-solid fa-angles-up"></i></a>
+
+  <!-- Toast -->
+
+
+  <!-- ===== JAVASCRIPT ===== -->
+
+
+
+<dialog id="project-dialog" aria-labelledby="dialog-title"><div class="dialog-header"><span id="dialog-category" class="eyebrow"></span><button id="close-dialog" class="icon-button" aria-label="Fechar estudo de caso">×</button></div><h2 id="dialog-title"></h2><p id="dialog-intro" class="dialog-intro"></p><div id="dialog-content"></div><div id="dialog-links" class="dialog-links"></div><p class="dialog-note">Estudo descritivo. Dados e visuais da apresentação são ilustrativos.</p></dialog><div id="feedback" class="feedback" role="status" aria-live="polite"></div></body></html>

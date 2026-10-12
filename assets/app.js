@@ -14,7 +14,7 @@ let motionPaused = storage.get('jvf-motion') === 'off';
 
 function syncTheme() {
   themeToggle.setAttribute('aria-label', root.dataset.theme === 'dark' ? 'Ativar tema claro' : 'Ativar tema escuro');
-  document.querySelector('meta[name="theme-color"]').content = root.dataset.theme === 'dark' ? '#17191b' : '#f7f5ef';
+  document.querySelector('meta[name="theme-color"]').content = root.dataset.theme === 'dark' ? '#0a0f1e' : '#f0f4ff';
 }
 function syncMotion() {
   const off = motionPaused || reducedMotion.matches;
@@ -47,7 +47,7 @@ menuToggle.addEventListener('click', () => {
 navigation.querySelectorAll('a').forEach(link => link.addEventListener('click', () => closeMenu()));
 document.addEventListener('keydown', event => { if (event.key === 'Escape' && navigation.classList.contains('open')) closeMenu(true); });
 document.addEventListener('click', event => { if (!event.target.closest('.site-header')) closeMenu(); });
-window.matchMedia('(min-width: 761px)').addEventListener('change', event => { if (event.matches) closeMenu(); });
+window.matchMedia('(min-width: 901px)').addEventListener('change', event => { if (event.matches) closeMenu(); });
 
 const cards = [...document.querySelectorAll('.project-card')];
 document.querySelectorAll('[data-filter]').forEach(button => button.addEventListener('click', () => {
@@ -94,39 +94,6 @@ dialog.addEventListener('click', event => {
 });
 dialog.addEventListener('close', () => { document.body.style.overflow = ''; if (dialogTrigger && !dialogTrigger.closest('[hidden]')) dialogTrigger.focus(); });
 
-const scenarios = {
-  complete: { result: 'Pronto para conferência humana', descriptions: [
-    ['Contexto reunido e projetado.', 'Equipamentos, eventos, notas e OCR compõem um pacote sanitizado. Dados fictícios ilustram a entrada.'],
-    ['O escopo sustenta a análise.', 'As regras verificam escopo e evidências antes da interpretação. O pacote deste cenário está completo.'],
-    ['Interpretação dentro do catálogo.', 'A IA interpreta as notas e propõe uma combinação válida, apoiada pelas evidências; não cria labels.'],
-    ['O sistema prepara. A pessoa confere.', 'A classificação e a observação acompanham as evidências para a conferência humana.'] ] },
-  missing: { result: 'Evidência insuficiente', descriptions: [
-    ['Uma leitura está faltando.', 'O pacote fictício contém uma lacuna. Ela é registrada como não verificada, não como ausência de problema.'],
-    ['O escopo é conhecido; a evidência não.', 'As regras identificam a informação que falta. Interpretação não substitui uma leitura necessária.'],
-    ['Sem completar o que a fonte não diz.', 'A IA não fabrica evidências para preencher a lacuna. O cenário segue com uma pendência explícita.'],
-    ['Pendência objetiva para revisão.', 'O conferente recebe o que falta verificar. Este exemplo não sugere aprovação automática.'] ] },
-  outside: { result: 'Fora do escopo', descriptions: [
-    ['O contexto descreve outro atendimento.', 'Dados fictícios representam um atendimento que não pertence ao escopo deste fluxo de pré-validação.'],
-    ['A regra de escopo interrompe o fluxo.', 'Fora do escopo, o sistema não tenta encaixar o atendimento em uma classificação que não se aplica.'],
-    ['O modelo não precisa ser chamado.', 'A verificação determinística já resolveu o encaminhamento. Não é necessário interpretar este pacote com IA.'],
-    ['Encaminhamento transparente.', 'O resultado comunica o limite do fluxo. Nenhuma OS real é consultada ou alterada por esta demonstração.'] ] }
-};
-const stageNames = ['DADOS', 'REGRAS', 'IA', 'CONFERÊNCIA'];
-let stage = 3;
-const scenario = document.querySelector('#scenario');
-function renderScenario() {
-  const selected = scenarios[scenario.value] || scenarios.complete;
-  document.querySelector('#stage-label').textContent = `0${stage + 1} / ${stageNames[stage]}`;
-  document.querySelector('#stage-title').textContent = selected.descriptions[stage][0];
-  document.querySelector('#stage-description').textContent = selected.descriptions[stage][1];
-  const result = document.querySelector('#scenario-result'); result.dataset.result = scenario.value;
-  result.querySelector('strong').textContent = selected.result;
-  document.querySelectorAll('[data-stage]').forEach(button => { const active = Number(button.dataset.stage) === stage; button.classList.toggle('active', active); button.setAttribute('aria-pressed', String(active)); });
-}
-scenario.addEventListener('change', renderScenario);
-document.querySelectorAll('[data-stage]').forEach(button => button.addEventListener('click', () => { stage = Number(button.dataset.stage); renderScenario(); }));
-renderScenario();
-
 const feedback = document.querySelector('#feedback'); let feedbackTimeout;
 function announce(message) {
   clearTimeout(feedbackTimeout); feedback.textContent = message; feedback.classList.add('visible');
@@ -151,6 +118,9 @@ let scrollPending = false;
 function updateProgress() {
   const length = root.scrollHeight - window.innerHeight;
   document.querySelector('#reading-progress').style.transform = `scaleX(${length > 0 ? Math.min(1, Math.max(0, window.scrollY / length)) : 0})`;
+  const backTop = document.querySelector('#backTop');
+  backTop.hidden = window.scrollY <= 400;
+  backTop.classList.toggle('visible', !backTop.hidden);
   scrollPending = false;
 }
 window.addEventListener('scroll', () => { if (!scrollPending) { scrollPending = true; requestAnimationFrame(updateProgress); } }, { passive: true });

@@ -56,4 +56,11 @@
 - [x] Executar suite completa, visual QA e checagens de links/segredos.
 - [x] Solicitar revisão independente dos dois diffs; corrigir problemas importantes.
 - [x] Criar commits locais específicos e resultado reviewável. Não incluir arquivos de projetos operacionais ou credenciais.
-- [ ] Usar a autorização do usuário para decidir integração remota; caso não explícita para publicação, aprovação somente após apresentar resultado verificado.
+- [x] Autor recebeu prévia e autorizou o envio dos commits. Perfil integrado; portfólio aguarda a revisão solicitada antes do merge.
+
+## Revisão: preservar o portfólio original e reduzir o destaque de IA
+
+- [x] Restaurar cores, foto, tipografia e seções originais; atualizar descrições com os projetos revisados.
+- [x] Remover demonstração de IA, manter filtros e estudos de caso; adaptar a suíte, incluindo regressão do botão de voltar ao início.
+- [x] Conferir navegação, temas, teclado, 320 px, sem JS e axe local.
+- [ ] Concluir revisão independente, atualizar PR, executar CI e publicar a versão revisada.

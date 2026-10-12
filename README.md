@@ -1,6 +1,6 @@
 ﻿# João Victor Faraco — Portfólio
 
-Apresentação de projetos de **automação, Python e IA aplicada**, orientada a recrutadores. Site estático com estudos de caso, exemplos interativos e trajetória profissional.
+Portfólio de **Python, automação e integração de sistemas**, orientado a recrutadores. Preserva o visual azul e amarelo, a foto em cores e as seções de apresentação, habilidades, projetos e experiência.
 
 **[Abrir portfólio](https://jvfaraco.github.io/jvfaraco-portifolio/)** · [Perfil GitHub](https://github.com/JvFaraco)
 
@@ -8,11 +8,11 @@ Apresentação de projetos de **automação, Python e IA aplicada**, orientada a
 
 - Projetos descritos pelo problema, abordagem, resultado e decisões de engenharia.
 - Filtros por IA, automação e dados/web; detalhes acessíveis em diálogo.
-- Demonstração de pré-validação com três cenários fictícios e etapas exploráveis.
+- Projetos públicos e ferramentas de automação aparecem antes do projeto de IA.
 - Tema claro/escuro persistente, navegação mobile e feedback ao copiar e-mail.
 - Revelação por scroll, progresso de leitura e microinterações curtas.
 - Movimento reduzido conforme o sistema e controle manual de animações.
-- Leitura e links preservados sem JavaScript; sem dependências de produção.
+- Leitura e links preservados sem JavaScript. Fontes e ícones mantêm Google Fonts e Font Awesome do site original; não há framework de produção.
 
 ## Projetos em destaque
 
@@ -49,7 +49,7 @@ $env:PW_CHANNEL = 'msedge'
 npm test
 ```
 
-A suíte cobre filtros, retorno de foco, cenários, menu mobile, tema persistente, localStorage bloqueado, movimento reduzido, conteúdo sem JS, acessibilidade axe e carregamento de assets no subpath. A análise automatizada de acessibilidade complementa a verificação manual; não certifica todo o site.
+A suíte cobre filtros, retorno de foco, menu mobile, tema persistente, localStorage bloqueado, movimento reduzido e pausa manual, largura de 320 px, conteúdo sem JS, acessibilidade axe e carregamento de assets no subpath. A análise automatizada de acessibilidade complementa a verificação manual; não certifica todo o site.
 
 Capturas para revisão visual, com `npm run dev` ativo:
 
@@ -74,7 +74,7 @@ img/Eu.jpg                 foto original
 
 ## Critérios de conteúdo
 
-[Auditoria e fontes](docs/content-audit.md) registram a origem das informações e o escopo da métrica de testes. Nenhum resultado financeiro, ganho percentual ou taxa de acerto foi inventado. Visuais são ilustrações e não se conectam a APIs operacionais. O README do perfil tem uma apresentação complementar, com banner SVG local.
+[Auditoria e fontes](docs/content-audit.md) registram a origem das informações e o escopo da métrica de testes. Nenhum resultado financeiro, ganho percentual ou taxa de acerto foi inventado. As demos públicas usam dados fictícios; o portfólio não se conecta a APIs operacionais. O README do perfil tem uma apresentação complementar, com banner SVG local.
 
 ## Contato
 

@@ -66,6 +66,19 @@ test('mobile permite navegar sem overflow e fecha menu com Escape', async ({ pag
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBeTruthy();
 });
 
+test('viewport de 320px não exige rolagem horizontal', async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 700 });
+  await page.goto('./');
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBeTruthy();
+});
+
+test('pausar animações também desliga scroll suave na raiz', async ({ page }) => {
+  await page.goto('./');
+  await page.getByRole('button', { name: 'Pausar animações' }).click();
+  await expect(page.locator('html')).toHaveAttribute('data-motion', 'off');
+  await expect(page.locator('html')).toHaveCSS('scroll-behavior', 'auto');
+});
+
 test('sem JavaScript os casos e contato continuam disponíveis', async ({ browser }) => {
   const context = await browser.newContext({ javaScriptEnabled: false, viewport: { width: 390, height: 844 } });
   const page = await context.newPage(); await page.goto('http://127.0.0.1:4173/jvfaraco-portifolio/');

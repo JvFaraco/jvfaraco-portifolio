@@ -40,8 +40,8 @@
 
 - [x] Reescrever estrutura semântica e composição editorial.
 - [x] Implementar filtros, diálogo, cenários, menu, tema, movimento, clipboard e progresso.
-- [ ] Rodar suíte e corrigir comportamentos/contraste; inspecionar desktop/mobile.
-- [ ] Verificar conteúdo, links e subpath; registrar fontes em `docs/content-audit.md`.
+- [x] Rodar suíte e corrigir comportamentos/contraste; inspecionar desktop/mobile.
+- [x] Verificar conteúdo, links e subpath; registrar fontes em `docs/content-audit.md`.
 
 ## Task 3 — Perfil e documentação
 
@@ -49,11 +49,11 @@
 
 - [x] Reescrever perfil com três projetos públicos, estudos internos, stack e carreira comprovadas.
 - [x] Adicionar banner local, sem feeds remotos nem estatísticas voláteis.
-- [ ] Documentar execução, testes, capacidades, limites e decisões de design; CI testa sem deploy.
+- [x] Documentar execução, testes, capacidades, limites e decisões de design; CI testa sem deploy.
 
 ## Task 4 — Revisão e integração
 
 - [x] Executar suite completa, visual QA e checagens de links/segredos.
-- [ ] Solicitar revisão independente dos dois diffs; corrigir problemas importantes.
-- [ ] Criar commits locais específicos e resultado reviewável. Não incluir arquivos de projetos operacionais ou credenciais.
+- [x] Solicitar revisão independente dos dois diffs; corrigir problemas importantes.
+- [x] Criar commits locais específicos e resultado reviewável. Não incluir arquivos de projetos operacionais ou credenciais.
 - [ ] Usar a autorização do usuário para decidir integração remota; caso não explícita para publicação, aprovação somente após apresentar resultado verificado.

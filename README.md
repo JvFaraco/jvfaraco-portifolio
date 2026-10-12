@@ -1,64 +1,81 @@
-# 🗂️ Portfólio Pessoal — João Victor Faraco
+﻿# João Victor Faraco — Portfólio
 
-Site de portfólio pessoal desenvolvido com HTML5, CSS3 e JavaScript puro. Apresenta minha trajetória profissional, habilidades, projetos e informações de contato.
+Apresentação de projetos de **automação, Python e IA aplicada**, orientada a recrutadores. Site estático com estudos de caso, exemplos interativos e trajetória profissional.
 
-🔗 **[Ver online](https://jvfaraco.github.io/jvfaraco-portifolio/)**
+**[Abrir portfólio](https://jvfaraco.github.io/jvfaraco-portifolio/)** · [Perfil GitHub](https://github.com/JvFaraco)
 
----
+## O que mudou
 
-## ✨ Funcionalidades
+- Projetos descritos pelo problema, abordagem, resultado e decisões de engenharia.
+- Filtros por IA, automação e dados/web; detalhes acessíveis em diálogo.
+- Demonstração de pré-validação com três cenários fictícios e etapas exploráveis.
+- Tema claro/escuro persistente, navegação mobile e feedback ao copiar e-mail.
+- Revelação por scroll, progresso de leitura e microinterações curtas.
+- Movimento reduzido conforme o sistema e controle manual de animações.
+- Leitura e links preservados sem JavaScript; sem dependências de produção.
 
-- Dark / Light mode com toggle
-- Animação de typing com frases rotativas
-- Navbar responsiva com menu hamburguer para mobile
-- Habilidades agrupadas por trilha (IA, Backend, Frontend, Infra)
-- Seção de projetos com cards, tags de tecnologia e links para demos ao vivo
-- Timeline de experiência profissional
-- Copiar e-mail com um clique
-- Animação de fade-in por scroll (IntersectionObserver)
-- Botão de voltar ao topo
+## Projetos em destaque
 
----
+| Público | Explorar |
+|---|---|
+| Route Coverage Map — Python/Leaflet/IBGE | [Código](https://github.com/JvFaraco/mapaderotas) · [Demo fictícia](https://jvfaraco.github.io/mapaderotas/) |
+| Operations Dashboard — Flask/pandas/Chart.js | [Código](https://github.com/JvFaraco/operational-dashboard-platform) · [Demo estática fictícia](https://jvfaraco.github.io/operational-dashboard-platform/) |
+| Bot de alertas — Python/Telegram/GitHub Actions | [Código](https://github.com/JvFaraco/bot-telegram) |
 
-## 🛠️ Tecnologias
+Estudos internos: validador de OS com IA, portal operacional, integração de OS com CRM e ferramentas de campo/agenda. Não publicam código privado ou dados reais. O assistente de agenda está em validação e seus limites são apresentados no estudo.
 
-![HTML5](https://img.shields.io/badge/HTML5-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-%231572B6.svg?&style=for-the-badge&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-%23F7DF1E.svg?&style=for-the-badge&logo=javascript&logoColor=black)
+## Executar localmente
 
-- **Font Awesome 6** — ícones
-- **Google Fonts** — Fira Code + DM Sans
-- **GitHub Pages** — hospedagem
+O site não precisa de build. Para um servidor estático com suporte ao caminho do GitHub Pages:
 
----
-
-## 📁 Estrutura
-
-```
-jvfaraco-portifolio/
-├── index.html   # Aplicação completa (HTML + CSS + JS)
-└── img/
-    └── Eu.jpg   # Foto de perfil
+```sh
+npm ci
+npm run dev
 ```
 
----
+Abra `http://127.0.0.1:4173/jvfaraco-portifolio/`. Esse servidor é apenas de desenvolvimento e se limita a localhost. Para hospedagem, publique os arquivos estáticos com GitHub Pages; nenhum servidor Node é necessário.
 
-## 🚀 Projetos em destaque
+## Verificação
 
-| Projeto | O quê | Stack |
-|---|---|---|
-| [Route Coverage Map](https://github.com/JvFaraco/mapaderotas) · [demo](https://jvfaraco.github.io/mapaderotas/) | Pipeline geoespacial de cobertura de rotas com geocodificação em cascata, malha do IBGE, Voronoi e privacidade por allowlist | Python, Leaflet, GIS |
-| [Operations Dashboard Platform](https://github.com/JvFaraco/operational-dashboard-platform) · [demo](https://jvfaraco.github.io/operational-dashboard-platform/) | Plataforma de acompanhamento de O.S, agendas, pendências e indicadores de campo | Flask, pandas, Chart.js |
+```sh
+npx playwright install chromium
+npm test
+```
 
-Projetos internos (Portal A365, Validador de O.S com IA, integração UbiDesk × Ploomes e o kit de automações de campo) ficam em repositórios privados — descritos no portfólio sem código ou dado exposto.
+No Windows com Edge instalado, também pode usar:
 
----
+```powershell
+$env:PW_CHANNEL = 'msedge'
+npm test
+```
 
-## 📫 Contato
+A suíte cobre filtros, retorno de foco, cenários, menu mobile, tema persistente, localStorage bloqueado, movimento reduzido, conteúdo sem JS, acessibilidade axe e carregamento de assets no subpath. A análise automatizada de acessibilidade complementa a verificação manual; não certifica todo o site.
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/joão-victor-faraco-01066423a)
-[![GitHub](https://img.shields.io/badge/GitHub-%23181717.svg?&style=for-the-badge&logo=github&logoColor=white)](https://github.com/JvFaraco)
+Capturas para revisão visual, com `npm run dev` ativo:
 
----
+```sh
+node tests/capture.cjs
+```
 
-<p align="center">Feito por <a href="https://github.com/JvFaraco">João Victor Faraco</a></p>
+As imagens são salvas em `.preview/`, ignorada pelo Git. A CI verifica o site sem publicar previews ou alterar a configuração do Pages.
+
+## Estrutura
+
+```text
+index.html                 conteúdo semântico e projetos sem JS
+assets/styles.css          temas, composição responsiva e movimento
+assets/app.js              interações e preferências
+assets/projects.js         conteúdo dos estudos de caso
+assets/mark.svg             marca e favicon
+img/Eu.jpg                 foto original
+ tests/                    servidor local, testes e capturas
+ docs/content-audit.md      fontes, evidências e limites editoriais
+```
+
+## Critérios de conteúdo
+
+[Auditoria e fontes](docs/content-audit.md) registram a origem das informações e o escopo da métrica de testes. Nenhum resultado financeiro, ganho percentual ou taxa de acerto foi inventado. Visuais são ilustrações e não se conectam a APIs operacionais. O README do perfil tem uma apresentação complementar, com banner SVG local.
+
+## Contato
+
+[LinkedIn](https://www.linkedin.com/in/jo%C3%A3o-victor-faraco-01066423a/) · [joaovictorfaraco@gmail.com](mailto:joaovictorfaraco@gmail.com)

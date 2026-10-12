@@ -48,6 +48,6 @@ Todos os visuais de sistema são ilustrações HTML/CSS/SVG. Não há screenshot
 
 Não foram incorporados todos os efeitos populares: animação infinita, cursor personalizado, vídeo pesado e feeds externos de estatísticas não contribuem para este objetivo. O README usa recursos suportados pelo GitHub (Markdown/HTML simples e SVG local), não JavaScript ou CSS de aplicação.
 
-## Verifica??o da apresenta??o
+## Verificação da apresentação
 
-12 testes Playwright passaram no Edge local: filtros, foco dos di?logos, cen?rios, tema, armazenamento bloqueado, movimento reduzido e pausa manual, navega??o m?vel, largura de 320 px, leitura sem JavaScript, axe nos temas e di?logo, e assets no subpath. Capturas desktop/mobile foram inspecionadas. A revis?o independente identificou overflow a 320 px e scroll suave ap?s pausa manual; ambos foram reproduzidos por testes e corrigidos. N?o foram executados testes em Safari/Firefox nem valida??o com leitor de tela. O workflow Ubuntu foi preparado, mas ainda n?o executado no GitHub.
+12 testes Playwright passaram no Edge local: filtros, foco dos diálogos, cenários, tema, armazenamento bloqueado, movimento reduzido e pausa manual, navegação móvel, largura de 320 px, leitura sem JavaScript, axe nos temas e diálogo, e assets no subpath. Capturas desktop/mobile foram inspecionadas. A revisão independente identificou overflow a 320 px e scroll suave após pausa manual; ambos foram reproduzidos por testes e corrigidos. Não foram executados testes em Safari/Firefox nem validação com leitor de tela. O workflow Ubuntu foi preparado, mas ainda não executado no GitHub.

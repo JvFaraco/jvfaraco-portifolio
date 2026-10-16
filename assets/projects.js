@@ -26,15 +26,6 @@ export const projects = {
     decisions: ['Precisão explícita: área aproximada não é apresentada como limite oficial.', 'Recorte de sobreposição com teste de regressão geométrica.', 'Pipeline desacoplado de HTTP para execução e testes offline.', 'Allowlist na geração do payload; endereços pessoais não chegam à vitrine.'],
     limits: 'As métricas do README pertencem ao dataset de demonstração, não à operação real.', links: [['Ver demonstração', 'https://jvfaraco.github.io/mapaderotas/'], ['Ver código', 'https://github.com/JvFaraco/mapaderotas']]
   },
-  dashboard: {
-    title: 'Operations Dashboard', category: 'Dados e visualização / código público',
-    intro: 'Uma visão navegável de ordens de serviço e indicadores a partir de planilhas.',
-    problem: 'Múltiplos arquivos e filtros manuais dificultam comparar filas, agendas, risco contratual e concentração geográfica.',
-    approach: 'Backend Flask lê e normaliza Excel com pandas. APIs JSON separam o processamento das interfaces e o cache é invalidado quando a base muda.',
-    result: 'Cinco módulos: controle de OS, agendadas, não agendadas, risco contratual e cobertura. A demo no GitHub Pages é uma apresentação estática com dados fictícios.',
-    decisions: ['Distinguir a demo pública das funções do backend real.', 'Normalização antes da visualização, evitando regras espalhadas nos templates.', 'Gráficos e prioridades com contexto operacional.', 'Configuração e bases reais ficam fora do repositório público.'],
-    limits: 'A demo pública não executa login, upload ou processamento de dados; essas funções pertencem ao backend Flask.', links: [['Ver demonstração', 'https://jvfaraco.github.io/operational-dashboard-platform/'], ['Ver código', 'https://github.com/JvFaraco/operational-dashboard-platform']]
-  },
   crm: {
     title: 'Integração de OS com CRM', category: 'Automação e integrações / projeto interno',
     intro: 'Contratos, respostas do cliente e histórico sincronizados com a ordem de serviço.',

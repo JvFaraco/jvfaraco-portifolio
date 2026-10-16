@@ -7,7 +7,6 @@ Data: 12/10/2026. Público escolhido pelo autor: recrutadores de automação, Py
 - Site anterior: `JvFaraco/jvfaraco-portifolio`, base `715fab8e84ec7ce9d3f2c51d3b97427470c87d99`.
 - Perfil anterior: `JvFaraco/Jvfaraco`, base `36112b61347ffa5365a4a48b1d579d525eee904c`.
 - [mapaderotas](https://github.com/JvFaraco/mapaderotas): geocodificação, IBGE, fallback por Voronoi, clipping e allowlist; o README separa dataset sintético e métricas da demo.
-- [operational-dashboard-platform](https://github.com/JvFaraco/operational-dashboard-platform): Flask/pandas e cinco módulos; a demo pública é estática, sem login/upload/backend.
 - [bot-telegram](https://github.com/JvFaraco/bot-telegram): monitoramento de produtos/categorias, critérios combinados, cupons, deduplicação e execução por GitHub Actions. Foram lidos README e estrutura; nenhum secret/config privado foi copiado.
 - Repositórios A365 no GitHub identificados como privados. O material novo usa os contratos e fontes locais atuais, que podem estar à frente do remoto.
 

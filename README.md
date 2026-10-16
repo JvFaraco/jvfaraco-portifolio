@@ -19,7 +19,6 @@ Portfólio de **Python, automação e integração de sistemas**, orientado a re
 | Público | Explorar |
 |---|---|
 | Route Coverage Map — Python/Leaflet/IBGE | [Código](https://github.com/JvFaraco/mapaderotas) · [Demo fictícia](https://jvfaraco.github.io/mapaderotas/) |
-| Operations Dashboard — Flask/pandas/Chart.js | [Código](https://github.com/JvFaraco/operational-dashboard-platform) · [Demo estática fictícia](https://jvfaraco.github.io/operational-dashboard-platform/) |
 | Bot de alertas — Python/Telegram/GitHub Actions | [Código](https://github.com/JvFaraco/bot-telegram) |
 
 Estudos internos: validador de OS com IA, portal operacional, integração de OS com CRM e ferramentas de campo/agenda. Não publicam código privado ou dados reais. O assistente de agenda está em validação e seus limites são apresentados no estudo.

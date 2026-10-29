@@ -269,15 +269,15 @@ test('projetos: diálogo com movimento ligado não tem violações axe', async (
   expect(results.violations.map(v => v.id)).toEqual([]);
 });
 
-test('competências: mesmo bloco do README, em texto e sem itens removidos', async ({ browser }) => {
+test('competências: mesmas áreas e itens do README, em etiquetas, sem itens removidos', async ({ browser }) => {
   const context = await browser.newContext({ javaScriptEnabled: false });
   const page = await context.newPage(); await page.goto('http://127.0.0.1:4173/jvfaraco-portifolio/');
   const section = page.locator('#habilidades');
   await expect(section.getByRole('heading', { level: 2 })).toHaveText('Competências');
   await expect(section.locator('.competencia')).toHaveCount(7);
-  await expect(section).toContainText('pandas, SQL/SQLite, pipelines (ETL) e Power BI.');
-  await expect(section).toContainText('Copilot Studio, Azure OpenAI, OCR e JSON Schema, com decisão final humana.');
-  for (const removed of ['Flask', 'Playwright', 'Linux', 'AWS', 'GCP', 'Docker', 'Kubernetes', 'Terraform', 'RAG', 'Portal'])
+  await expect(section.getByRole('list', { name: 'IA aplicada' }).getByRole('listitem')).toHaveText(['Copilot Studio', 'Power Automate', 'OCR', 'JSON Schema', 'Decisão humana']);
+  await expect(section.getByRole('list', { name: 'Dados' }).getByRole('listitem')).toHaveText(['SQL/SQLite', 'ETL', 'Dados geográficos']);
+  for (const removed of ['Flask', 'Playwright', 'Linux', 'AWS', 'GCP', 'Docker', 'Kubernetes', 'Terraform', 'RAG', 'Portal', 'pandas', 'Power BI', 'Azure OpenAI'])
     await expect(section).not.toContainText(removed);
   await expect(page.locator('#experiencia')).not.toContainText('portal interno');
   await context.close();

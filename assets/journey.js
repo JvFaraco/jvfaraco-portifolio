@@ -4,7 +4,7 @@ const journey = document.querySelector('.journey');
 const steps = [...journey.querySelectorAll('.journey-step')];
 const vertical = window.matchMedia('(max-width: 900px)');
 
-// A rail fills as the reader scrolls through the three moments and activates each one in turn.
+// A rail fills as the reader scrolls through the three moments; each moment activates as it enters the screen.
 onMotion(() => {
   const rail = document.createElement('span');
   rail.className = 'journey-rail'; rail.setAttribute('aria-hidden', 'true');
@@ -15,7 +15,8 @@ onMotion(() => {
     const rect = journey.getBoundingClientRect(), viewport = window.innerHeight;
     const progress = Math.min(1, Math.max(0, (viewport * .8 - rect.top) / (rect.height + viewport * .3)));
     rail.style.transform = vertical.matches ? `scaleY(${progress.toFixed(3)})` : `scaleX(${progress.toFixed(3)})`;
-    steps.forEach((step, index) => step.classList.toggle('is-active', progress > index / steps.length + .04));
+    // Each moment wakes when it reaches the screen, so dimmed text never sits in view.
+    steps.forEach(step => step.classList.toggle('is-active', step.getBoundingClientRect().top < viewport * .88));
   };
   const onScroll = () => { if (!pending) { pending = true; requestAnimationFrame(update); } };
   window.addEventListener('scroll', onScroll, { passive: true });

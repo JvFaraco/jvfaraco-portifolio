@@ -83,7 +83,7 @@ test('sem JavaScript os casos e contato continuam disponíveis', async ({ browse
   const context = await browser.newContext({ javaScriptEnabled: false, viewport: { width: 390, height: 844 } });
   const page = await context.newPage(); await page.goto('http://127.0.0.1:4173/jvfaraco-portifolio/');
   await expect(page.getByRole('heading', { name: 'Route Coverage Map', exact: true })).toBeVisible();
-  await expect(page.getByRole('link', { name: 'Enviar e-mail', exact: true })).toHaveAttribute('href', 'mailto:joaovictorfaraco@gmail.com');
+  await expect(page.getByRole('link', { name: 'Enviar e-mail joaovictorfaraco@gmail.com', exact: true })).toHaveAttribute('href', 'mailto:joaovictorfaraco@gmail.com');
   await expect(page.getByRole('navigation', { name: 'Principal' })).toBeVisible();
   await context.close();
 });
@@ -328,4 +328,30 @@ test('contato: com pausa o CTA fica visível e sem animação', async ({ page })
   await page.locator('.contact-cta').scrollIntoViewIfNeeded();
   await expect(page.locator('.contact-cta')).toHaveCSS('opacity', '1');
   await expect(page.locator('.contact-cta')).toHaveCSS('animation-name', 'none');
+});
+
+test('polimento: página inteira com movimento ligado não tem violações axe nos dois temas', async ({ page }) => {
+  await page.goto('./');
+  for (let theme = 0; theme < 2; theme++) {
+    await page.evaluate(async () => { for (let y = 0; y < document.documentElement.scrollHeight; y += 400) { window.scrollTo(0, y); await new Promise(r => setTimeout(r, 60)); } });
+    await page.waitForTimeout(1200);
+    const results = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze();
+    expect(results.violations.map(v => ({ rule: v.id, nodes: v.nodes.map(n => n.target) }))).toEqual([]);
+    if (!theme) { await page.evaluate(() => window.scrollTo(0, 0)); await page.getByRole('button', { name: 'Ativar tema claro' }).click(); }
+  }
+});
+
+test('polimento: tema claro salvo é aplicado antes do app.js', async ({ page }) => {
+  await page.addInitScript(() => localStorage.setItem('jvf-theme', 'light'));
+  await page.route('**/assets/app.js', route => route.abort());
+  await page.goto('./');
+  await expect(page.locator('html')).toHaveAttribute('data-theme', 'light');
+});
+
+test('polimento: teclado alcança o CTA com foco visível', async ({ page }) => {
+  await page.goto('./');
+  const cta = page.getByRole('link', { name: 'Mandar e-mail' });
+  await cta.focus(); await page.keyboard.press('Shift+Tab'); await page.keyboard.press('Tab');
+  await expect(cta).toBeFocused();
+  await expect(cta).toHaveCSS('outline-style', 'solid');
 });

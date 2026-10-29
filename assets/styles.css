@@ -17,7 +17,7 @@
       --accent: #FFC72C;
       --accent-ink: #0a0f1e;
       --raised: #1a2235;
-      --mono: 'Fira Code', monospace;
+      --mono: 'Fira Code', 'Fira Code Fallback', 'Fira Code Fallback 2', monospace;
     }
 
     :root[data-theme=light] {
@@ -40,7 +40,7 @@
     body {
       background-color: var(--bg);
       color: var(--text);
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'DM Sans', 'DM Sans Fallback', sans-serif;
       line-height: 1.6;
       transition: background-color var(--transition), color var(--transition);
     }
@@ -83,7 +83,7 @@
       display: flex;
       align-items: center;
       gap: 0.6rem;
-      font-family: 'Fira Code', monospace;
+      font-family: 'Fira Code', 'Fira Code Fallback', 'Fira Code Fallback 2', monospace;
       font-weight: 600;
       font-size: 1.1rem;
       color: var(--yellow);
@@ -98,7 +98,7 @@
     }
 
     .nav-links a {
-      font-family: 'Fira Code', monospace;
+      font-family: 'Fira Code', 'Fira Code Fallback', 'Fira Code Fallback 2', monospace;
       font-size: 0.85rem;
       letter-spacing: 0.05em;
       color: var(--muted);
@@ -179,7 +179,7 @@
 
     .hero-tag {
       display: inline-block;
-      font-family: 'Fira Code', monospace;
+      font-family: 'Fira Code', 'Fira Code Fallback', 'Fira Code Fallback 2', monospace;
       font-size: 0.8rem;
       color: var(--yellow);
       border: 1px solid rgba(255,199,44,0.35);
@@ -190,7 +190,7 @@
     }
 
     .hero-title {
-      font-family: 'Fira Code', monospace;
+      font-family: 'Fira Code', 'Fira Code Fallback', 'Fira Code Fallback 2', monospace;
       font-size: clamp(2rem, 5vw, 3.5rem);
       font-weight: 700;
       line-height: 1.15;
@@ -202,7 +202,7 @@
     .hero-title .highlight { color: var(--yellow); }
 
     #typing-animation {
-      font-family: 'Fira Code', monospace;
+      font-family: 'Fira Code', 'Fira Code Fallback', 'Fira Code Fallback 2', monospace;
       font-size: clamp(1rem, 2.5vw, 1.3rem);
       color: var(--muted);
       min-height: 2em;
@@ -293,7 +293,7 @@
     }
 
     .section-tag {
-      font-family: 'Fira Code', monospace;
+      font-family: 'Fira Code', 'Fira Code Fallback', 'Fira Code Fallback 2', monospace;
       font-size: 0.75rem;
       color: var(--yellow);
       letter-spacing: 0.15em;
@@ -302,7 +302,7 @@
     }
 
     .section-title {
-      font-family: 'Fira Code', monospace;
+      font-family: 'Fira Code', 'Fira Code Fallback', 'Fira Code Fallback 2', monospace;
       font-size: clamp(1.5rem, 3vw, 2.2rem);
       font-weight: 700;
       margin-bottom: 0.5rem;
@@ -382,7 +382,7 @@
       display: block;
       font-size: 0.72rem;
       color: var(--muted);
-      font-family: 'Fira Code', monospace;
+      font-family: 'Fira Code', 'Fira Code Fallback', 'Fira Code Fallback 2', monospace;
       letter-spacing: 0.05em;
       margin-bottom: 0.15rem;
     }
@@ -426,7 +426,7 @@
       gap: 0.6rem;
     }
     .skill-card i { font-size: 2.4rem; }
-    .skill-card span { font-size: 0.78rem; font-family: 'Fira Code', monospace; color: var(--muted); letter-spacing: 0.05em; text-align: center; }
+    .skill-card span { font-size: 0.78rem; font-family: 'Fira Code', 'Fira Code Fallback', 'Fira Code Fallback 2', monospace; color: var(--muted); letter-spacing: 0.05em; text-align: center; }
 
     .skill-html  i { color: #F16529; }
     .skill-css   i { color: #2076A0; }
@@ -448,7 +448,7 @@
     .skill-groups { display: flex; flex-direction: column; gap: 2.5rem; }
 
     .skill-group-title {
-      font-family: 'Fira Code', monospace;
+      font-family: 'Fira Code', 'Fira Code Fallback', 'Fira Code Fallback 2', monospace;
       font-size: 0.8rem;
       color: var(--text);
       letter-spacing: 0.08em;
@@ -519,7 +519,7 @@
 
     .project-tag {
       font-size: 0.7rem;
-      font-family: 'Fira Code', monospace;
+      font-family: 'Fira Code', 'Fira Code Fallback', 'Fira Code Fallback 2', monospace;
       padding: 0.2rem 0.6rem;
       border-radius: 4px;
       background: rgba(255,199,44,0.1);
@@ -554,7 +554,7 @@
 
     .project-link {
       font-size: 0.8rem;
-      font-family: 'Fira Code', monospace;
+      font-family: 'Fira Code', 'Fira Code Fallback', 'Fira Code Fallback 2', monospace;
       color: var(--muted);
       display: flex;
       align-items: center;
@@ -566,7 +566,7 @@
 
     .badge-wip {
       font-size: 0.65rem;
-      font-family: 'Fira Code', monospace;
+      font-family: 'Fira Code', 'Fira Code Fallback', 'Fira Code Fallback 2', monospace;
       padding: 0.15rem 0.5rem;
       border-radius: 4px;
       background: rgba(255,199,44,0.15);
@@ -576,7 +576,7 @@
 
     .badge-private {
       font-size: 0.65rem;
-      font-family: 'Fira Code', monospace;
+      font-family: 'Fira Code', 'Fira Code Fallback', 'Fira Code Fallback 2', monospace;
       padding: 0.15rem 0.5rem;
       border-radius: 4px;
       background: rgba(148,163,184,0.12);
@@ -611,7 +611,7 @@
 
     .project-note {
       font-size: 0.75rem;
-      font-family: 'Fira Code', monospace;
+      font-family: 'Fira Code', 'Fira Code Fallback', 'Fira Code Fallback 2', monospace;
       color: var(--muted);
       margin-top: auto;
       padding-top: 0.8rem;
@@ -644,7 +644,7 @@
     }
 
     .timeline-date {
-      font-family: 'Fira Code', monospace;
+      font-family: 'Fira Code', 'Fira Code Fallback', 'Fira Code Fallback 2', monospace;
       font-size: 0.72rem;
       color: var(--muted);
       text-align: right;
@@ -680,7 +680,7 @@
     .timeline-company {
       font-size: 0.82rem;
       color: var(--yellow);
-      font-family: 'Fira Code', monospace;
+      font-family: 'Fira Code', 'Fira Code Fallback', 'Fira Code Fallback 2', monospace;
       margin-bottom: 0.7rem;
     }
 
@@ -717,7 +717,7 @@
     }
 
     .contact-text h2 {
-      font-family: 'Fira Code', monospace;
+      font-family: 'Fira Code', 'Fira Code Fallback', 'Fira Code Fallback 2', monospace;
       font-size: clamp(1.5rem, 3vw, 2rem);
       margin-bottom: 1rem;
       animation: glow 2.5s ease-in-out infinite;
@@ -751,7 +751,7 @@
 
     .contact-item:hover { border-color: var(--yellow); transform: translateX(4px); }
     .contact-item i { color: var(--yellow); width: 20px; }
-    .contact-item small { display: block; font-size: 0.7rem; color: var(--muted); font-family: 'Fira Code', monospace; }
+    .contact-item small { display: block; font-size: 0.7rem; color: var(--muted); font-family: 'Fira Code', 'Fira Code Fallback', 'Fira Code Fallback 2', monospace; }
     .contact-item span { font-size: 0.9rem; }
 
     .contact-socials { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
@@ -768,7 +768,7 @@
 
     .social-card:hover { transform: translateY(-4px); border-color: var(--yellow); color: var(--yellow); }
     .social-card i { font-size: 1.6rem; margin-bottom: 0.4rem; display: block; }
-    .social-card span { font-size: 0.78rem; font-family: 'Fira Code', monospace; }
+    .social-card span { font-size: 0.78rem; font-family: 'Fira Code', 'Fira Code Fallback', 'Fira Code Fallback 2', monospace; }
 
     .toast {
       position: fixed;
@@ -781,7 +781,7 @@
       border-radius: 8px;
       font-size: 0.85rem;
       font-weight: 600;
-      font-family: 'Fira Code', monospace;
+      font-family: 'Fira Code', 'Fira Code Fallback', 'Fira Code Fallback 2', monospace;
       transition: transform 0.4s cubic-bezier(.4,0,.2,1);
       z-index: 9999;
     }
@@ -797,7 +797,7 @@
       border-top: 1px solid var(--border);
       font-size: 0.8rem;
       color: var(--muted);
-      font-family: 'Fira Code', monospace;
+      font-family: 'Fira Code', 'Fira Code Fallback', 'Fira Code Fallback 2', monospace;
     }
 
     footer a { color: var(--yellow); }
@@ -931,3 +931,9 @@ dialog .icon-button { border: 1px solid var(--border); background: none; color: 
  html, *, *::before, *::after { scroll-behavior: auto!important; transition: none!important; animation: none!important; }
  .reveal { opacity: 1!important; transform: none!important; }
 }
+/* Font Awesome loads without blocking render; reserve icon boxes so its arrival does not shift layout. */
+i[class*="fa-"] { display: inline-block; min-width: 1em; min-height: 1em; }
+/* Local fallbacks sized to the web fonts' width, so the swap does not rewrap the hero. Ratios measured in Edge. */
+@font-face { font-family: 'Fira Code Fallback'; src: local('Consolas'); size-adjust: 109%; }
+@font-face { font-family: 'Fira Code Fallback 2'; src: local('Courier New'); size-adjust: 100%; }
+@font-face { font-family: 'DM Sans Fallback'; src: local('Arial'); size-adjust: 103%; }

@@ -109,3 +109,13 @@ test('subpath resolve assets sem erro de módulo ou imagem', async ({ page }) =>
   expect(errors).toEqual([]); expect(failed).toEqual([]);
   expect(await page.locator('img').evaluateAll(images => images.every(i => i.complete && i.naturalWidth > 0))).toBeTruthy();
 });
+
+test('carregamento no mobile não desloca o layout (CLS)', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.addInitScript(() => {
+    window.__cls = 0;
+    new PerformanceObserver(list => list.getEntries().forEach(e => { if (!e.hadRecentInput) window.__cls += e.value; })).observe({ type: 'layout-shift', buffered: true });
+  });
+  await page.goto('./'); await page.waitForLoadState('networkidle');
+  expect(await page.evaluate(() => window.__cls)).toBeLessThan(0.05);
+});

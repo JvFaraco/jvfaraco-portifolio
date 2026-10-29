@@ -17,7 +17,7 @@
       --accent: #FFC72C;
       --accent-ink: #0a0f1e;
       --raised: #1a2235;
-      --mono: 'Fira Code', monospace;
+      --mono: 'Fira Code', 'Fira Code Fallback', 'Fira Code Fallback 2', monospace;
     }
 
     :root[data-theme=light] {
@@ -40,7 +40,7 @@
     body {
       background-color: var(--bg);
       color: var(--text);
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'DM Sans', 'DM Sans Fallback', sans-serif;
       line-height: 1.6;
       transition: background-color var(--transition), color var(--transition);
     }
@@ -83,7 +83,7 @@
       display: flex;
       align-items: center;
       gap: 0.6rem;
-      font-family: 'Fira Code', monospace;
+      font-family: 'Fira Code', 'Fira Code Fallback', 'Fira Code Fallback 2', monospace;
       font-weight: 600;
       font-size: 1.1rem;
       color: var(--yellow);
@@ -98,7 +98,7 @@
     }
 
     .nav-links a {
-      font-family: 'Fira Code', monospace;
+      font-family: 'Fira Code', 'Fira Code Fallback', 'Fira Code Fallback 2', monospace;
       font-size: 0.85rem;
       letter-spacing: 0.05em;
       color: var(--muted);
@@ -179,7 +179,7 @@
 
     .hero-tag {
       display: inline-block;
-      font-family: 'Fira Code', monospace;
+      font-family: 'Fira Code', 'Fira Code Fallback', 'Fira Code Fallback 2', monospace;
       font-size: 0.8rem;
       color: var(--yellow);
       border: 1px solid rgba(255,199,44,0.35);
@@ -190,7 +190,7 @@
     }
 
     .hero-title {
-      font-family: 'Fira Code', monospace;
+      font-family: 'Fira Code', 'Fira Code Fallback', 'Fira Code Fallback 2', monospace;
       font-size: clamp(2rem, 5vw, 3.5rem);
       font-weight: 700;
       line-height: 1.15;
@@ -202,7 +202,7 @@
     .hero-title .highlight { color: var(--yellow); }
 
     #typing-animation {
-      font-family: 'Fira Code', monospace;
+      font-family: 'Fira Code', 'Fira Code Fallback', 'Fira Code Fallback 2', monospace;
       font-size: clamp(1rem, 2.5vw, 1.3rem);
       color: var(--muted);
       min-height: 2em;
@@ -293,7 +293,7 @@
     }
 
     .section-tag {
-      font-family: 'Fira Code', monospace;
+      font-family: 'Fira Code', 'Fira Code Fallback', 'Fira Code Fallback 2', monospace;
       font-size: 0.75rem;
       color: var(--yellow);
       letter-spacing: 0.15em;
@@ -302,7 +302,7 @@
     }
 
     .section-title {
-      font-family: 'Fira Code', monospace;
+      font-family: 'Fira Code', 'Fira Code Fallback', 'Fira Code Fallback 2', monospace;
       font-size: clamp(1.5rem, 3vw, 2.2rem);
       font-weight: 700;
       margin-bottom: 0.5rem;
@@ -382,7 +382,7 @@
       display: block;
       font-size: 0.72rem;
       color: var(--muted);
-      font-family: 'Fira Code', monospace;
+      font-family: 'Fira Code', 'Fira Code Fallback', 'Fira Code Fallback 2', monospace;
       letter-spacing: 0.05em;
       margin-bottom: 0.15rem;
     }
@@ -426,7 +426,7 @@
       gap: 0.6rem;
     }
     .skill-card i { font-size: 2.4rem; }
-    .skill-card span { font-size: 0.78rem; font-family: 'Fira Code', monospace; color: var(--muted); letter-spacing: 0.05em; text-align: center; }
+    .skill-card span { font-size: 0.78rem; font-family: 'Fira Code', 'Fira Code Fallback', 'Fira Code Fallback 2', monospace; color: var(--muted); letter-spacing: 0.05em; text-align: center; }
 
     .skill-html  i { color: #F16529; }
     .skill-css   i { color: #2076A0; }
@@ -448,7 +448,7 @@
     .skill-groups { display: flex; flex-direction: column; gap: 2.5rem; }
 
     .skill-group-title {
-      font-family: 'Fira Code', monospace;
+      font-family: 'Fira Code', 'Fira Code Fallback', 'Fira Code Fallback 2', monospace;
       font-size: 0.8rem;
       color: var(--text);
       letter-spacing: 0.08em;
@@ -519,7 +519,7 @@
 
     .project-tag {
       font-size: 0.7rem;
-      font-family: 'Fira Code', monospace;
+      font-family: 'Fira Code', 'Fira Code Fallback', 'Fira Code Fallback 2', monospace;
       padding: 0.2rem 0.6rem;
       border-radius: 4px;
       background: rgba(255,199,44,0.1);
@@ -554,7 +554,7 @@
 
     .project-link {
       font-size: 0.8rem;
-      font-family: 'Fira Code', monospace;
+      font-family: 'Fira Code', 'Fira Code Fallback', 'Fira Code Fallback 2', monospace;
       color: var(--muted);
       display: flex;
       align-items: center;
@@ -566,7 +566,7 @@
 
     .badge-wip {
       font-size: 0.65rem;
-      font-family: 'Fira Code', monospace;
+      font-family: 'Fira Code', 'Fira Code Fallback', 'Fira Code Fallback 2', monospace;
       padding: 0.15rem 0.5rem;
       border-radius: 4px;
       background: rgba(255,199,44,0.15);
@@ -576,7 +576,7 @@
 
     .badge-private {
       font-size: 0.65rem;
-      font-family: 'Fira Code', monospace;
+      font-family: 'Fira Code', 'Fira Code Fallback', 'Fira Code Fallback 2', monospace;
       padding: 0.15rem 0.5rem;
       border-radius: 4px;
       background: rgba(148,163,184,0.12);
@@ -611,7 +611,7 @@
 
     .project-note {
       font-size: 0.75rem;
-      font-family: 'Fira Code', monospace;
+      font-family: 'Fira Code', 'Fira Code Fallback', 'Fira Code Fallback 2', monospace;
       color: var(--muted);
       margin-top: auto;
       padding-top: 0.8rem;
@@ -644,7 +644,7 @@
     }
 
     .timeline-date {
-      font-family: 'Fira Code', monospace;
+      font-family: 'Fira Code', 'Fira Code Fallback', 'Fira Code Fallback 2', monospace;
       font-size: 0.72rem;
       color: var(--muted);
       text-align: right;
@@ -680,7 +680,7 @@
     .timeline-company {
       font-size: 0.82rem;
       color: var(--yellow);
-      font-family: 'Fira Code', monospace;
+      font-family: 'Fira Code', 'Fira Code Fallback', 'Fira Code Fallback 2', monospace;
       margin-bottom: 0.7rem;
     }
 
@@ -717,7 +717,7 @@
     }
 
     .contact-text h2 {
-      font-family: 'Fira Code', monospace;
+      font-family: 'Fira Code', 'Fira Code Fallback', 'Fira Code Fallback 2', monospace;
       font-size: clamp(1.5rem, 3vw, 2rem);
       margin-bottom: 1rem;
       animation: glow 2.5s ease-in-out infinite;
@@ -751,7 +751,7 @@
 
     .contact-item:hover { border-color: var(--yellow); transform: translateX(4px); }
     .contact-item i { color: var(--yellow); width: 20px; }
-    .contact-item small { display: block; font-size: 0.7rem; color: var(--muted); font-family: 'Fira Code', monospace; }
+    .contact-item small { display: block; font-size: 0.7rem; color: var(--muted); font-family: 'Fira Code', 'Fira Code Fallback', 'Fira Code Fallback 2', monospace; }
     .contact-item span { font-size: 0.9rem; }
 
     .contact-socials { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
@@ -768,7 +768,7 @@
 
     .social-card:hover { transform: translateY(-4px); border-color: var(--yellow); color: var(--yellow); }
     .social-card i { font-size: 1.6rem; margin-bottom: 0.4rem; display: block; }
-    .social-card span { font-size: 0.78rem; font-family: 'Fira Code', monospace; }
+    .social-card span { font-size: 0.78rem; font-family: 'Fira Code', 'Fira Code Fallback', 'Fira Code Fallback 2', monospace; }
 
     .toast {
       position: fixed;
@@ -781,7 +781,7 @@
       border-radius: 8px;
       font-size: 0.85rem;
       font-weight: 600;
-      font-family: 'Fira Code', monospace;
+      font-family: 'Fira Code', 'Fira Code Fallback', 'Fira Code Fallback 2', monospace;
       transition: transform 0.4s cubic-bezier(.4,0,.2,1);
       z-index: 9999;
     }
@@ -797,7 +797,7 @@
       border-top: 1px solid var(--border);
       font-size: 0.8rem;
       color: var(--muted);
-      font-family: 'Fira Code', monospace;
+      font-family: 'Fira Code', 'Fira Code Fallback', 'Fira Code Fallback 2', monospace;
     }
 
     footer a { color: var(--yellow); }
@@ -931,3 +931,127 @@ dialog .icon-button { border: 1px solid var(--border); background: none; color: 
  html, *, *::before, *::after { scroll-behavior: auto!important; transition: none!important; animation: none!important; }
  .reveal { opacity: 1!important; transform: none!important; }
 }
+/* Font Awesome loads without blocking render; reserve icon boxes so its arrival does not shift layout. */
+i[class*="fa-"] { display: inline-block; min-width: 1em; min-height: 1em; }
+/* Local fallbacks sized to the web fonts' width, so the swap does not rewrap the hero. Ratios measured in Edge. */
+@font-face { font-family: 'Fira Code Fallback'; src: local('Consolas'); size-adjust: 109%; }
+@font-face { font-family: 'Fira Code Fallback 2'; src: local('Courier New'), local('Liberation Mono'); size-adjust: 100%; }
+@font-face { font-family: 'DM Sans Fallback'; src: local('Arial'), local('Liberation Sans'), local('Roboto'); size-adjust: 103%; }
+
+/* ===== Hero entrance (stage 1). Runs from first paint under .intro, set in <head> only when motion is on. ===== */
+:root { --flow-line: rgba(148,163,184,.22); --flow-node: rgba(120,150,230,.7); }
+:root[data-theme=light] { --flow-line: rgba(30,58,138,.16); --flow-node: rgba(30,58,138,.45); }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.hero-line, .hero-title .highlight { display: inline-block; }
+#home { position: relative; isolation: isolate; }
+.hero-flow { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; animation: hero-fade 1.2s ease both; }
+@keyframes hero-rise { from { opacity: 0; transform: translateY(.45em); } }
+@keyframes hero-fade { from { opacity: 0; } }
+@keyframes hero-unmask { from { transform: scaleY(1); } to { transform: scaleY(0); } }
+.intro[data-motion=on] .hero-tag { animation: hero-rise .6s cubic-bezier(.2,.7,.2,1) both; }
+.intro[data-motion=on] .hero-line { animation: hero-rise .7s .1s cubic-bezier(.2,.7,.2,1) both; }
+.intro[data-motion=on] .hero-title .highlight { animation: hero-rise .7s .22s cubic-bezier(.2,.7,.2,1) both; }
+/* Fallback if hero.js never runs: the subtitle still appears. */
+.intro[data-motion=on] #typing-animation { animation: hero-fade .3s 1.7s both; }
+.intro[data-motion=on] #typing-animation.typing, .intro[data-motion=on] #typing-animation.typed { animation: none; }
+#typing-animation.typing .typed-char:not(.on) { opacity: 0; }
+#typing-animation .typed-char { position: relative; }
+#typing-animation .typed-char.caret::after { content: ''; position: absolute; left: 100%; top: .15em; width: .5em; height: 1em; margin-left: 1px; background: var(--yellow); }
+.intro[data-motion=on] .hero-desc { animation: hero-rise .6s .55s cubic-bezier(.2,.7,.2,1) both; }
+.intro[data-motion=on] .hero-actions { animation: hero-rise .6s .7s cubic-bezier(.2,.7,.2,1) both; }
+.intro[data-motion=on] .hero-photo::after { content: ''; position: absolute; inset: 0; background: var(--bg); transform-origin: top; animation: hero-unmask .9s .25s cubic-bezier(.7,0,.2,1) both; pointer-events: none; }
+@media (min-width: 901px) { .enhanced[data-motion=on] .hero-photo img { transform: scale(1.06); } }
+
+/* ===== Sobre: três momentos (stage 2) ===== */
+.journey { list-style: none; position: relative; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 4rem; }
+.journey::before { content: ''; position: absolute; left: 0; right: 0; top: 1.1rem; height: 1px; background: var(--border); }
+.journey-rail { position: absolute; left: 0; right: 0; top: calc(1.1rem - 1px); height: 3px; border-radius: 2px; background: var(--yellow); transform: scaleX(0); transform-origin: left; }
+.journey-step { position: relative; padding-top: 3.2rem; }
+.journey-index { position: absolute; top: 0; left: 0; width: 2.2rem; height: 2.2rem; display: grid; place-items: center; border-radius: 50%; background: var(--surface); border: 1px solid var(--yellow); color: var(--yellow); font: 600 .75rem var(--mono); z-index: 1; }
+.journey-date { display: block; font: .72rem var(--mono); color: var(--muted); letter-spacing: .03em; }
+.journey-title { font: 600 1.05rem var(--mono); color: var(--text); margin: .3rem 0 .6rem; }
+.journey-step p { color: var(--muted); font-size: .92rem; line-height: 1.7; }
+.journey.live .journey-step { transition: opacity .5s ease, transform .5s ease; }
+.journey.live .journey-step.is-active:nth-of-type(2) { transition-delay: .15s; }
+.journey.live .journey-step.is-active:nth-of-type(3) { transition-delay: .3s; }
+/* Inactive moments only slide; text keeps full contrast. The decorative index dims instead. */
+.journey.live .journey-step:not(.is-active) { transform: translateY(16px); }
+.journey.live .journey-index { transition: opacity .5s ease; }
+.journey.live .journey-step:not(.is-active) .journey-index { opacity: .35; }
+.enhanced[data-motion=on] .section-line.reveal { transform-origin: left; }
+.enhanced[data-motion=on] .section-line.reveal:not(.visible) { opacity: 1; transform: scaleX(0); }
+@media (max-width: 900px) {
+  .journey { grid-template-columns: 1fr; }
+  .journey::before { left: 1.1rem; right: auto; top: 0; bottom: 0; width: 1px; height: auto; }
+  .journey-rail { left: calc(1.1rem - 1px); right: auto; top: 0; bottom: 0; width: 3px; height: auto; transform: scaleY(0); transform-origin: top; }
+  .journey-step { padding: 0 0 0 3.4rem; }
+}
+
+/* ===== Projetos: thumbs que mostram o fluxo (stage 3). Static frame without JS or with motion off. ===== */
+.thumb-svg { position: relative; z-index: 1; width: 100%; max-width: 340px; height: 100%; }
+.thumb-svg .t-box { fill: rgba(10,15,30,.35); stroke: rgba(226,232,240,.55); stroke-width: 1.2; }
+.thumb-svg .t-hot { stroke: #FFC72C; }
+.thumb-svg .t-label { fill: #e2e8f0; font: 500 11px 'Fira Code', 'Fira Code Fallback', monospace; text-anchor: middle; }
+.thumb-svg .t-small { font-size: 9.5px; fill: #cbd5e1; }
+.thumb-svg .t-link { stroke: rgba(226,232,240,.45); stroke-width: 1.2; fill: none; stroke-dasharray: 3 4; }
+.thumb-svg .t-packet, .thumb-svg .t-pin { fill: #FFC72C; }
+.thumb-svg .t-ink { stroke: #1E3A8A; stroke-width: 1.2; }
+.thumb-svg .t-shape { fill: rgba(255,199,44,.12); stroke: #FFC72C; stroke-width: 1.2; }
+.thumb-svg .t-thin { fill: none; stroke-width: .9; }
+.thumb-svg .t-ring { fill: none; stroke: rgba(226,232,240,.6); stroke-width: 1.2; }
+.thumb-svg .t-hand { stroke: #FFC72C; stroke-width: 1.5; stroke-linecap: round; transform-box: fill-box; transform-origin: 50% 100%; }
+.thumb-svg .t-check { fill: none; stroke: #FFC72C; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+@keyframes t-travel { 0% { transform: translateX(0); opacity: 0; } 12%, 82% { opacity: 1; } 100% { transform: translateX(var(--dx)); opacity: 0; } }
+@keyframes t-blocked { 0% { transform: translateX(0); opacity: 0; } 12% { opacity: 1; } 45% { transform: translateX(var(--dx)); opacity: 1; } 60%, 100% { transform: translateX(var(--dx)); opacity: 0; } }
+@keyframes t-sequence { 0%, 100% { opacity: .3; } 12%, 55% { opacity: 1; } 75% { opacity: .3; } }
+@keyframes t-glow { 0%, 100% { opacity: .55; } 50% { opacity: 1; } }
+@keyframes t-spin { to { transform: rotate(360deg); } }
+@keyframes t-late { 0%, 70% { opacity: 0; } 80%, 95% { opacity: 1; } 100% { opacity: 0; } }
+.enhanced[data-motion=on] .project-card.in-view .t-move { animation: t-travel var(--dur, 3s) var(--delay, 0s) ease-in-out infinite both; }
+.enhanced[data-motion=on] .project-card.in-view .t-stop { animation-name: t-blocked; }
+.enhanced[data-motion=on] .project-card.in-view .t-seq { animation: t-sequence 3.6s var(--delay) ease-in-out infinite both; }
+.enhanced[data-motion=on] .project-card.in-view .t-pulse { animation: t-glow 3s ease-in-out infinite; }
+.enhanced[data-motion=on] .project-card.in-view .t-hand { animation: t-spin 2.8s linear infinite; }
+.enhanced[data-motion=on] .project-card.in-view .t-late { animation: t-late 3s ease-in-out infinite both; }
+.project-card { position: relative; }
+.card-spot { position: absolute; top: 0; left: 0; width: 260px; height: 260px; border-radius: 50%; background: radial-gradient(circle, rgba(255,199,44,.13), transparent 65%); pointer-events: none; opacity: 0; transition: opacity .3s; z-index: 2; }
+.project-card:hover .card-spot { opacity: 1; }
+/* Case-study flow diagram */
+.dialog-flow { list-style: none; display: flex; flex-wrap: wrap; align-items: center; gap: 10px 26px; padding: 18px 0 4px; }
+.dialog-flow li { position: relative; font: 12px/1.4 var(--mono); color: var(--text); border: 1px solid var(--yellow); border-radius: 6px; padding: 7px 11px; background: var(--raised); }
+.dialog-flow li:not(:last-child)::after { content: '→'; position: absolute; right: -20px; top: 50%; transform: translateY(-50%); color: var(--accent); }
+.dialog-flow li:last-child { background: var(--yellow); color: var(--accent-ink); }
+.dialog-flow-note { font: 12px var(--mono); color: var(--muted); margin-top: 8px; }
+@keyframes flow-in { from { opacity: 0; transform: translateY(8px); } }
+.enhanced[data-motion=on] dialog[open] .dialog-flow li { animation: flow-in .4s calc(var(--i) * 140ms) cubic-bezier(.2,.7,.2,1) both; }
+@media (max-width: 600px) {
+  .dialog-flow { flex-direction: column; align-items: flex-start; gap: 22px; }
+  .dialog-flow li:not(:last-child)::after { content: '↓'; right: auto; left: 14px; top: auto; bottom: -21px; transform: none; }
+}
+
+/* ===== Competências e timeline (stage 4) ===== */
+.competencias { list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr)); gap: 1rem; }
+.competencia { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.3rem 1.4rem; display: flex; flex-direction: column; gap: .45rem; }
+.competencia h3 { font: 600 .95rem/1.4 var(--mono); color: var(--text); }
+.competencia h3::before { content: '▸ '; color: var(--yellow); }
+.competencia p { color: var(--muted); font-size: .92rem; line-height: 1.6; }
+.competencia small { color: var(--muted); font: .72rem/1.5 var(--mono); border-top: 1px solid var(--border); padding-top: .55rem; margin-top: auto; }
+.enhanced[data-motion=on] .competencia.fade-in { transition-delay: calc(var(--i) * 40ms); }
+.timeline { position: relative; }
+.timeline-rail { position: absolute; top: 0; bottom: 0; left: calc(140px + 2rem - 1px); width: 3px; border-radius: 2px; background: var(--yellow); transform: scaleY(0); transform-origin: top; pointer-events: none; }
+.timeline-body::before { transition: transform .35s ease; }
+.timeline-item.passed .timeline-body::before { transform: scale(1.45); }
+@media (max-width: 900px) { .timeline-rail { left: -1px; } .timeline-date { padding-left: 1rem; } }
+
+/* ===== Contato: fechamento (stage 5) ===== */
+#contact { position: relative; overflow: hidden; isolation: isolate; }
+#contact::before { content: ''; position: absolute; z-index: -1; width: 640px; height: 640px; left: 50%; top: 40%; border-radius: 50%; background: radial-gradient(circle, rgba(255,199,44,.10), transparent 62%); transform: translate(-50%, -50%); pointer-events: none; }
+.contact-lead { color: var(--text) !important; font-weight: 500; margin: -1.2rem 0 1.4rem !important; }
+.contact-cta { display: inline-flex; align-items: center; gap: .6rem; font-size: 1rem; padding: .9rem 1.8rem; margin-bottom: 1.6rem; box-shadow: 0 10px 30px rgba(255,199,44,.18); }
+.cta-arrow { display: inline-block; transition: transform .25s ease; }
+.contact-cta:hover .cta-arrow, .contact-cta:focus-visible .cta-arrow { transform: translateX(5px); }
+.contact-cta:active, #copy-email:active { transform: scale(.97); }
+#copy-email { transition: transform .15s ease, border-color .2s, color .2s; align-self: flex-start; }
+#copy-email.copied { border-color: var(--yellow); color: var(--yellow); }
+@keyframes cta-nudge { 0%, 100% { transform: none; } 40% { transform: scale(1.05); } 70% { transform: scale(.99); } }
+.enhanced[data-motion=on] .contact-cta.visible { animation: cta-nudge .7s .45s ease both; }

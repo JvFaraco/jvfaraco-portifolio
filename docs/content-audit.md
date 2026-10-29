@@ -50,3 +50,27 @@ Não foram incorporados todos os efeitos populares: animação infinita, cursor 
 ## Verificação da apresentação
 
 A primeira versão passou em 12 testes locais e na CI Ubuntu. Antes da integração, o autor pediu menos mudanças no portfólio e uma apresentação menos centrada em IA. A versão revisada restaura a identidade azul/amarelo e as seções originais, usa foto em cores, textos diretos e coloca automação e projetos públicos primeiro. Remove a demonstração de IA da página e mantém filtros, estudos de caso, temas e animações discretas. Google Fonts e Font Awesome são preservados do original. A suíte atual tem 12 testes: remove o teste do cenário excluído e adiciona a regressão do botão de voltar ao início, identificado pela segunda revisão independente. Não foram executados testes em Safari/Firefox nem validação com leitor de tela.
+
+## Linha de base de desempenho (28/10/2026)
+
+Lighthouse 12, perfil mobile, Edge headless, mediana de 3 execuções.
+
+| Medição | Performance | FCP | LCP | CLS |
+|---|---|---|---|---|
+| Produção antes de `feat/perf-base` (site publicado) | 53–55 | 4,2–4,3 s | 4,4–4,6 s | 0,43 |
+| `feat/perf-base`, local com gzip (linha de base das etapas) | 100 | 0,98 s | 1,20 s | 0 |
+
+O site publicado deve ser medido de novo depois do merge de `feat/perf-base`; a medição local não inclui a latência real do GitHub Pages e das CDNs. Critério das etapas seguintes: Performance ≥ 90 e CLS ≤ 0,1, medidos antes e depois de cada etapa no mesmo ambiente.
+
+| Etapa | Antes | Depois |
+|---|---|---|
+| 1. Hero | 100 · FCP 0,98 s · LCP 1,20 s · CLS 0 | 100 · FCP 1,05 s · LCP 1,35 s · CLS 0 |
+| 2. Narrativa | 100 · FCP 1,05 s · LCP 1,35 s · CLS 0 | 100 · FCP 1,16 s · LCP 1,35 s · CLS 0 |
+| 3. Projetos | 100 · FCP 1,16 s · LCP 1,35 s · CLS 0 | 100 · FCP 1,16 s · LCP 1,35 s · CLS 0 |
+| 4. Experiência e competências | 100 · FCP 1,16 s · LCP 1,35 s · CLS 0 | 100 · FCP 1,17 s · LCP 1,35 s · CLS 0 |
+| 5. Contato | 100 · FCP 1,17 s · LCP 1,35 s · CLS 0 | 100 · FCP 1,19 s · LCP 1,35 s · CLS 0 |
+| 6. Polimento | 100 · FCP 1,19 s · LCP 1,35 s · CLS 0 | 100 · FCP 1,17 s · LCP 1,35 s · CLS 0 |
+
+Depois da etapa 6: acessibilidade, boas práticas e SEO em 100 no Lighthouse. Peso adicional das etapas 1–6 em relação ao `main` de 28/10/2026: ~8 KB gzip de JS+CSS (orçamento: 60 KB) e ~1,3 KB gzip de HTML. A suíte tem 37 testes Playwright, incluindo pausa, movimento reduzido, sem JS, 320 px e axe com o movimento ligado nos dois temas.
+
+Removidos por decisão do autor: Portal Operacional A365 (card, estudo e dois bullets da Experiência) e as competências Flask, Playwright e Linux. As competências do site e do README do perfil usam o mesmo bloco. `img/Eu.jpeg` foi removido depois de confirmar que nada o referenciava (repositório, README do perfil e busca de código no GitHub).

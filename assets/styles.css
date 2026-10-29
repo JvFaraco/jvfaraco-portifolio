@@ -428,19 +428,16 @@
     .skill-card i { font-size: 2.4rem; }
     .skill-card span { font-size: 0.78rem; font-family: 'Fira Code', monospace; color: var(--muted); letter-spacing: 0.05em; text-align: center; }
 
-    .skill-html  i { color: #F16529; }
-    .skill-css   i { color: #2076A0; }
     .skill-js    i { color: #F7DF1E; }
     .skill-py    i { color: #3776ab; }
     .skill-ai    i { color: var(--yellow); }
-    .skill-bi    i { color: #F2C811; }
     .skill-azure i { color: #0078D4; }
     .skill-api   i { color: #009688; }
     .skill-db    i { color: #4479A1; }
     .skill-data  i { color: #150458; }
-    .skill-flask i { color: #7f8c9b; }
     .skill-map   i { color: #199900; }
-    .skill-chart i { color: #FF6384; }
+    .skill-git   i { color: #F05032; }
+    .skill-gh    i { color: var(--text); }
 
     :root[data-theme=light] .skill-data i { color: #3b3bb3; }
 
@@ -465,6 +462,8 @@
       height: 1px;
       background: var(--border);
     }
+
+    .skill-evidence { margin-top: 0.8rem; font-size: 0.85rem; color: var(--muted); }
 
     /* =============================================
        PROJETOS

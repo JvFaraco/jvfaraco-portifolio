@@ -937,3 +937,27 @@ i[class*="fa-"] { display: inline-block; min-width: 1em; min-height: 1em; }
 @font-face { font-family: 'Fira Code Fallback'; src: local('Consolas'); size-adjust: 109%; }
 @font-face { font-family: 'Fira Code Fallback 2'; src: local('Courier New'), local('Liberation Mono'); size-adjust: 100%; }
 @font-face { font-family: 'DM Sans Fallback'; src: local('Arial'), local('Liberation Sans'), local('Roboto'); size-adjust: 103%; }
+
+/* ===== Hero entrance (stage 1). Runs from first paint under .intro, set in <head> only when motion is on. ===== */
+:root { --flow-line: rgba(148,163,184,.22); --flow-node: rgba(120,150,230,.7); }
+:root[data-theme=light] { --flow-line: rgba(30,58,138,.16); --flow-node: rgba(30,58,138,.45); }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.hero-line, .hero-title .highlight { display: inline-block; }
+#home { position: relative; isolation: isolate; }
+.hero-flow { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; animation: hero-fade 1.2s ease both; }
+@keyframes hero-rise { from { opacity: 0; transform: translateY(.45em); } }
+@keyframes hero-fade { from { opacity: 0; } }
+@keyframes hero-unmask { from { transform: scaleY(1); } to { transform: scaleY(0); } }
+.intro[data-motion=on] .hero-tag { animation: hero-rise .6s cubic-bezier(.2,.7,.2,1) both; }
+.intro[data-motion=on] .hero-line { animation: hero-rise .7s .1s cubic-bezier(.2,.7,.2,1) both; }
+.intro[data-motion=on] .hero-title .highlight { animation: hero-rise .7s .22s cubic-bezier(.2,.7,.2,1) both; }
+/* Fallback if hero.js never runs: the subtitle still appears. */
+.intro[data-motion=on] #typing-animation { animation: hero-fade .3s 1.7s both; }
+.intro[data-motion=on] #typing-animation.typing, .intro[data-motion=on] #typing-animation.typed { animation: none; }
+#typing-animation.typing .typed-char:not(.on) { opacity: 0; }
+#typing-animation .typed-char { position: relative; }
+#typing-animation .typed-char.caret::after { content: ''; position: absolute; left: 100%; top: .15em; width: .5em; height: 1em; margin-left: 1px; background: var(--yellow); }
+.intro[data-motion=on] .hero-desc { animation: hero-rise .6s .55s cubic-bezier(.2,.7,.2,1) both; }
+.intro[data-motion=on] .hero-actions { animation: hero-rise .6s .7s cubic-bezier(.2,.7,.2,1) both; }
+.intro[data-motion=on] .hero-photo::after { content: ''; position: absolute; inset: 0; background: var(--bg); transform-origin: top; animation: hero-unmask .9s .25s cubic-bezier(.7,0,.2,1) both; pointer-events: none; }
+@media (min-width: 901px) { .enhanced[data-motion=on] .hero-photo img { transform: scale(1.06); } }

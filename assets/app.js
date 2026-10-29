@@ -1,4 +1,5 @@
 import { projects } from './projects.js';
+import { setMotion } from './motion.js';
 
 const root = document.documentElement;
 const storage = {
@@ -11,6 +12,9 @@ const motionToggle = document.querySelector('#motion-toggle');
 const savedTheme = storage.get('jvf-theme');
 root.dataset.theme = savedTheme === 'light' ? 'light' : 'dark';
 let motionPaused = storage.get('jvf-motion') === 'off';
+// Optional effects are fetched only the first time motion is on.
+const effectModules = ['./hero.js'];
+let effectsLoaded = false;
 
 function syncTheme() {
   themeToggle.setAttribute('aria-label', root.dataset.theme === 'dark' ? 'Ativar tema claro' : 'Ativar tema escuro');
@@ -23,6 +27,8 @@ function syncMotion() {
   motionToggle.setAttribute('aria-pressed', String(off));
   motionToggle.disabled = reducedMotion.matches;
   motionToggle.title = reducedMotion.matches ? 'Movimento reduzido conforme a preferência do sistema' : 'Alternar animações';
+  setMotion(!off);
+  if (!off && !effectsLoaded) { effectsLoaded = true; effectModules.forEach(path => import(path)); }
 }
 syncTheme(); syncMotion();
 themeToggle.addEventListener('click', () => {

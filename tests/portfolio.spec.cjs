@@ -121,3 +121,56 @@ test('carregamento no mobile não desloca o layout (CLS)', async ({ page }) => {
   await page.goto('./'); await page.waitForLoadState('networkidle');
   expect(await page.evaluate(() => window.__cls)).toBeLessThan(0.05);
 });
+
+test('hero: nome acessível e subtítulo completo enquanto digita', async ({ page }) => {
+  await page.goto('./');
+  await expect(page.getByRole('heading', { level: 1 })).toHaveAccessibleName('João Victor Faraco');
+  await expect(page.locator('#typing-animation .sr-only')).toHaveText('Python · Automação · Integração de sistemas');
+  await expect(page.locator('#typing-animation')).toHaveClass(/typed/, { timeout: 4000 });
+  await expect(page.locator('#typing-animation .typed-char:not(.on)')).toHaveCount(0);
+});
+
+test('hero: fundo de fluxo roda no topo e pausa fora da viewport', async ({ page }) => {
+  await page.goto('./');
+  const canvas = page.locator('canvas.hero-flow');
+  await expect(canvas).toHaveAttribute('data-running', 'true', { timeout: 4000 });
+  await expect(canvas).toHaveAttribute('aria-hidden', 'true');
+  await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight));
+  await expect(canvas).toHaveAttribute('data-running', 'false');
+});
+
+test('hero: pausar remove o canvas, completa o typing e deixa tudo visível', async ({ page }) => {
+  await page.goto('./');
+  await page.getByRole('button', { name: 'Pausar animações' }).click();
+  await expect(page.locator('canvas.hero-flow')).toHaveCount(0);
+  await expect(page.locator('#typing-animation .typed-char:not(.on)')).toHaveCount(0);
+  for (const selector of ['.hero-tag', '.hero-line', '.hero-title .highlight', '#typing-animation', '.hero-desc', '.hero-actions'])
+    await expect(page.locator(selector)).toHaveCSS('opacity', '1');
+  expect(await page.locator('.hero-photo').evaluate(el => getComputedStyle(el, '::after').content)).toBe('none');
+  await expect(page.locator('.hero-photo img')).toHaveCSS('transform', 'none');
+});
+
+test('hero: movimento reduzido não carrega efeitos nem esconde conteúdo', async ({ page }) => {
+  const requested = []; page.on('request', r => requested.push(r.url()));
+  await page.emulateMedia({ reducedMotion: 'reduce' }); await page.goto('./'); await page.waitForLoadState('networkidle');
+  expect(requested.some(url => url.endsWith('/hero.js'))).toBeFalsy();
+  await expect(page.locator('html')).not.toHaveClass(/intro/);
+  await expect(page.locator('canvas.hero-flow')).toHaveCount(0);
+  await expect(page.locator('#typing-animation')).toHaveText('Python · Automação · Integração de sistemas');
+  await expect(page.locator('.hero-actions')).toHaveCSS('opacity', '1');
+});
+
+test('hero: sem JavaScript o hero aparece completo', async ({ browser }) => {
+  const context = await browser.newContext({ javaScriptEnabled: false });
+  const page = await context.newPage(); await page.goto('http://127.0.0.1:4173/jvfaraco-portifolio/');
+  await expect(page.locator('html')).not.toHaveClass(/intro/);
+  await expect(page.locator('#typing-animation')).toHaveText('Python · Automação · Integração de sistemas');
+  await expect(page.locator('.hero-actions')).toHaveCSS('opacity', '1');
+  await context.close();
+});
+
+test('hero: 320px com movimento ligado não cria rolagem horizontal', async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 700 }); await page.goto('./');
+  await expect(page.locator('canvas.hero-flow')).toHaveAttribute('data-running', 'true', { timeout: 4000 });
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBeTruthy();
+});

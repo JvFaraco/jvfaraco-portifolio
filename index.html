@@ -3,7 +3,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>João Victor Faraco | Python e Automação</title>
-  <script>document.documentElement.classList.add('enhanced')</script>
+  <script>(function (root) {
+    root.classList.add('enhanced');
+    var paused; try { paused = localStorage.getItem('jvf-motion') === 'off'; } catch (e) {}
+    if (paused || matchMedia('(prefers-reduced-motion: reduce)').matches) root.dataset.motion = 'off';
+    else root.classList.add('intro');
+  })(document.documentElement)</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
@@ -60,7 +65,7 @@
     <div class="hero-text">
       <span class="hero-tag">// analista de sistemas</span>
       <h1 class="hero-title">
-        João Victor <span class="highlight">Faraco</span>
+        <span class="hero-line">João Victor</span> <span class="highlight">Faraco</span>
       </h1>
       <span id="typing-animation">Python · Automação · Integração de sistemas</span>
       <p class="hero-desc">Desenvolvo ferramentas para automatizar tarefas, integrar sistemas e organizar dados. Aqui você encontra meus projetos, as tecnologias que uso e minha trajetória em TI.</p>

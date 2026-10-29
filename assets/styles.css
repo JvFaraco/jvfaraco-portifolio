@@ -935,5 +935,5 @@ dialog .icon-button { border: 1px solid var(--border); background: none; color: 
 i[class*="fa-"] { display: inline-block; min-width: 1em; min-height: 1em; }
 /* Local fallbacks sized to the web fonts' width, so the swap does not rewrap the hero. Ratios measured in Edge. */
 @font-face { font-family: 'Fira Code Fallback'; src: local('Consolas'); size-adjust: 109%; }
-@font-face { font-family: 'Fira Code Fallback 2'; src: local('Courier New'); size-adjust: 100%; }
-@font-face { font-family: 'DM Sans Fallback'; src: local('Arial'); size-adjust: 103%; }
+@font-face { font-family: 'Fira Code Fallback 2'; src: local('Courier New'), local('Liberation Mono'); size-adjust: 100%; }
+@font-face { font-family: 'DM Sans Fallback'; src: local('Arial'), local('Liberation Sans'), local('Roboto'); size-adjust: 103%; }

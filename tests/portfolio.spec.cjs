@@ -111,6 +111,8 @@ test('subpath resolve assets sem erro de módulo ou imagem', async ({ page }) =>
 });
 
 test('carregamento no mobile não desloca o layout (CLS)', async ({ page }) => {
+  // Web font swap depends on the OS fonts available; this guards the structural shifts (nav, icons, photo).
+  await page.route(/fonts\.(googleapis|gstatic)\.com/, route => route.abort());
   await page.setViewportSize({ width: 390, height: 844 });
   await page.addInitScript(() => {
     window.__cls = 0;

@@ -1055,3 +1055,14 @@ i[class*="fa-"] { display: inline-block; min-width: 1em; min-height: 1em; }
 #copy-email.copied { border-color: var(--yellow); color: var(--yellow); }
 @keyframes cta-nudge { 0%, 100% { transform: none; } 40% { transform: scale(1.05); } 70% { transform: scale(.99); } }
 .enhanced[data-motion=on] .contact-cta.visible { animation: cta-nudge .7s .45s ease both; }
+
+/* Contato: o card do e-mail e as redes ficam na mesma linha de base e na mesma altura. */
+.contact-grid { align-items: end; }
+.contact-socials { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 600px) { .social-card { padding: 1rem .35rem; } .social-card span { font-size: .72rem; } }
+@media (min-width: 901px) {
+  .contact-items { flex-direction: row; align-items: stretch; }
+  .contact-items .contact-item { flex: 1; min-width: 0; }
+  #copy-email { align-self: stretch; align-items: center; white-space: nowrap; }
+  .social-card { min-height: 100%; height: 76px; display: flex; flex-direction: column; justify-content: center; }
+}

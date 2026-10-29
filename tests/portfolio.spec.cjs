@@ -355,3 +355,14 @@ test('polimento: teclado alcança o CTA com foco visível', async ({ page }) => 
   await expect(cta).toBeFocused();
   await expect(cta).toHaveCSS('outline-style', 'solid');
 });
+
+test('contato: card do e-mail e redes alinhados no desktop; redes cabem em 320px', async ({ page }) => {
+  await page.goto('./');
+  const box = s => page.locator(s).first().boundingBox();
+  const email = await box('.contact-item'), social = await box('.social-card');
+  expect(Math.abs(email.y + email.height - (social.y + social.height))).toBeLessThan(2);
+  expect(Math.abs(email.y - social.y)).toBeLessThan(3);
+  await page.setViewportSize({ width: 320, height: 700 });
+  expect(await page.locator('.social-card span').evaluateAll(spans => spans.every(s => s.scrollWidth <= s.parentElement.clientWidth))).toBeTruthy();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBeTruthy();
+});

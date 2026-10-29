@@ -209,43 +209,70 @@
       <p class="section-tag fade-in reveal">// portfólio</p>
       <h2 class="section-title fade-in reveal">Projetos</h2>
       <div class="section-line fade-in reveal"></div>
-      <div class="filter-bar js-control" role="group" aria-label="Filtrar projetos"><button class="filter active" data-filter="all" aria-pressed="true">Todos</button><button class="filter" data-filter="ia" aria-pressed="false">IA aplicada</button><button class="filter" data-filter="automation" aria-pressed="false">Automação</button><button class="filter" data-filter="data" aria-pressed="false">Dados e web</button><span id="filter-count" role="status" aria-live="polite">6 projetos</span></div><div class="projects-grid">
-<article class="project-card fade-in reveal" data-project="routes" data-category="data"><div class="project-thumb" aria-hidden="true"><i class="fa-solid fa-map-location-dot"></i></div>
+      <div class="filter-bar js-control" role="group" aria-label="Filtrar projetos"><button class="filter active" data-filter="all" aria-pressed="true">Todos</button><button class="filter" data-filter="ia" aria-pressed="false">IA aplicada</button><button class="filter" data-filter="automation" aria-pressed="false">Automação</button><button class="filter" data-filter="data" aria-pressed="false">Dados e web</button><span id="filter-count" role="status" aria-live="polite">5 projetos</span></div><div class="projects-grid">
+<article class="project-card fade-in reveal" data-project="routes" data-category="data"><div class="project-thumb" aria-hidden="true"><svg class="thumb-svg" viewBox="0 0 300 120" focusable="false">
+<g class="t-seq" style="--delay:0s"><circle class="t-pin" cx="30" cy="40" r="4"/><circle class="t-pin" cx="58" cy="30" r="4"/><circle class="t-pin" cx="44" cy="62" r="4"/><circle class="t-pin" cx="72" cy="56" r="4"/><text class="t-label t-small" x="52" y="100">geocodificação</text></g>
+<path class="t-link" d="M96 50 H116"/>
+<g class="t-seq" style="--delay:1.2s"><path class="t-shape" d="M128 26 L170 20 L184 48 L166 76 L134 70 L122 46 Z"/><text class="t-label t-small" x="153" y="100">IBGE</text></g>
+<path class="t-link" d="M194 50 H214"/>
+<g class="t-seq" style="--delay:2.4s"><path class="t-shape" d="M224 24 L282 22 L286 76 L226 78 Z"/><path class="t-shape t-thin" d="M224 24 L250 50 L282 22 M250 50 L246 78 M250 50 L286 60"/><text class="t-label t-small" x="255" y="100">Voronoi</text></g>
+</svg></div>
 <div class="project-body">
 <div class="project-tags"><span class="project-tag">Python</span><span class="project-tag">Leaflet</span><span class="project-tag">GIS</span></div>
 <h3 class="project-title">Route Coverage Map</h3>
 <p class="project-desc">Descrições de território viram áreas navegáveis. Geocodificação em cascata, limites do IBGE e tratamento explícito das aproximações.</p>
 <p class="project-note">Demo pública</p>
 <div class="project-links"><a href="https://jvfaraco.github.io/mapaderotas/" target="_blank" rel="noopener noreferrer" class="project-link">Ver demo ↗</a><a href="https://github.com/JvFaraco/mapaderotas" target="_blank" rel="noopener noreferrer" class="project-link">Código ↗</a><button class="project-link case-link js-control" data-case="routes" aria-label="Explorar caso: Route Coverage Map">Caso ↗</button></div></div></article>
-<article class="project-card fade-in reveal" data-project="crm" data-category="automation"><div class="project-thumb" aria-hidden="true"><i class="fa-solid fa-file-signature"></i></div>
+<article class="project-card fade-in reveal" data-project="crm" data-category="automation"><div class="project-thumb" aria-hidden="true"><svg class="thumb-svg" viewBox="0 0 300 120" focusable="false">
+<rect class="t-box" x="30" y="42" width="72" height="34" rx="7"/><text class="t-label" x="66" y="63">OS</text>
+<rect class="t-box t-hot" x="198" y="42" width="72" height="34" rx="7"/><text class="t-label" x="234" y="63">CRM</text>
+<path class="t-link" d="M102 59 H198"/>
+<g class="t-move" style="--dx:-80px;--dur:2.8s"><rect class="t-packet" x="176" y="50" width="14" height="18" rx="2"/><path class="t-ink" d="M179 56h8M179 60h8M179 64h5"/></g>
+<text class="t-label t-small" x="150" y="28">a cada 5 min</text>
+<g transform="translate(150 98)"><circle class="t-ring" r="8"/><path class="t-hand" d="M0 0V-5.5"/></g>
+</svg></div>
 <div class="project-body">
 <div class="project-tags"><span class="project-tag">Python</span><span class="project-tag">APIs</span><span class="project-tag">PDF</span></div>
 <h3 class="project-title">Integração de OS com CRM</h3>
 <p class="project-desc">Contratos, anexos e timeline no atendimento certo. Sincronização que considera mudanças, deduplicação e falhas de comunicação.</p>
 <p class="project-note">Projeto interno</p>
 <div class="project-links"><button class="project-link case-link js-control" data-case="crm" aria-label="Explorar caso: Integração de OS com CRM">Explorar caso <span aria-hidden="true">↗</span></button></div></div></article>
-<article class="project-card fade-in reveal" data-project="portal" data-category="data"><div class="project-thumb" aria-hidden="true"><i class="fa-solid fa-shield-halved"></i></div>
-<div class="project-body">
-<div class="project-tags"><span class="project-tag">FastAPI</span><span class="project-tag">SQLite</span><span class="project-tag">JavaScript</span></div>
-<h3 class="project-title">Portal Operacional A365</h3>
-<p class="project-desc">OS, produtividade, rotas e contas em um portal com autenticação, coleta incremental e dados projetados para a operação.</p>
-<p class="project-note">Projeto interno</p>
-<div class="project-links"><button class="project-link case-link js-control" data-case="portal" aria-label="Explorar caso: Portal Operacional A365">Explorar caso <span aria-hidden="true">↗</span></button></div></div></article>
-<article class="project-card fade-in reveal" data-project="toolkit" data-category="automation"><div class="project-thumb" aria-hidden="true"><i class="fa-solid fa-toolbox"></i></div>
+<article class="project-card fade-in reveal" data-project="toolkit" data-category="automation"><div class="project-thumb" aria-hidden="true"><svg class="thumb-svg" viewBox="0 0 300 120" focusable="false">
+<rect class="t-box" x="14" y="42" width="72" height="34" rx="7"/><text class="t-label" x="50" y="63">relê</text>
+<rect class="t-box" x="114" y="42" width="72" height="34" rx="7"/><text class="t-label" x="150" y="63">altera</text>
+<rect class="t-box t-hot" x="214" y="42" width="72" height="34" rx="7"/><text class="t-label" x="250" y="63">confere</text>
+<path class="t-link" d="M86 59 H114 M186 59 H214"/>
+<circle class="t-packet t-move" cx="50" cy="92" r="4" style="--dx:200px;--dur:3s"/>
+<path class="t-check t-late" d="M243 30 l5 5 l9 -10"/>
+</svg></div>
 <div class="project-body">
 <div class="project-tags"><span class="project-tag">Python</span><span class="project-tag">openpyxl</span><span class="project-tag">pytest</span><span class="project-tag">Chrome MV3</span></div>
 <h3 class="project-title">Ferramentas para a operação</h3>
 <p class="project-desc">Comissão, equipamentos removidos, auditoria de rotas e reagendamento. Uma base de autenticação e contratos medidos também sustenta um assistente de agenda em validação.</p>
 <p class="project-note">Projetos internos</p>
 <div class="project-links"><button class="project-link case-link js-control" data-case="toolkit" aria-label="Explorar caso: Ferramentas para a operação">Explorar caso <span aria-hidden="true">↗</span></button></div></div></article>
-<article class="project-card fade-in reveal" data-project="bot" data-category="automation"><div class="project-thumb" aria-hidden="true"><i class="fa-solid fa-paper-plane"></i></div>
+<article class="project-card fade-in reveal" data-project="bot" data-category="automation"><div class="project-thumb" aria-hidden="true"><svg class="thumb-svg" viewBox="0 0 300 120" focusable="false">
+<rect class="t-box" x="14" y="42" width="72" height="34" rx="7"/><text class="t-label" x="50" y="63">coleta</text>
+<rect class="t-box" x="114" y="42" width="72" height="34" rx="7"/><text class="t-label" x="150" y="63">filtros</text>
+<rect class="t-box t-hot" x="214" y="42" width="72" height="34" rx="7"/><text class="t-label" x="250" y="63">Telegram</text>
+<path class="t-link" d="M86 59 H114 M186 59 H214"/>
+<circle class="t-packet t-move" cx="50" cy="92" r="4" style="--dx:200px;--dur:3.2s"/>
+<circle class="t-packet t-move t-stop" cx="50" cy="92" r="4" style="--dx:100px;--dur:3.2s;--delay:1.6s"/>
+<text class="t-label t-small" x="150" y="28">sem repetir</text>
+</svg></div>
 <div class="project-body">
 <div class="project-tags"><span class="project-tag">Python</span><span class="project-tag">Scraping</span><span class="project-tag">GitHub Actions</span></div>
 <h3 class="project-title">Bot de alertas no Telegram</h3>
 <p class="project-desc">Coleta ofertas, aplica critérios configuráveis e envia alertas sem repetir notificações. Execução agendada com estado no GitHub Actions.</p>
 <p class="project-note">Código público</p>
 <div class="project-links"><a href="https://github.com/JvFaraco/bot-telegram" target="_blank" rel="noopener noreferrer" class="project-link">Ver código ↗</a><button class="project-link case-link js-control" data-case="bot" aria-label="Explorar caso: Bot de alertas no Telegram">Explorar caso ↗</button></div></div></article>
-<article class="project-card fade-in reveal" data-project="validator" data-category="ia"><div class="project-thumb" aria-hidden="true"><i class="fa-solid fa-list-check"></i></div>
+<article class="project-card fade-in reveal" data-project="validator" data-category="ia"><div class="project-thumb" aria-hidden="true"><svg class="thumb-svg" viewBox="0 0 300 120" focusable="false">
+<rect class="t-box" x="14" y="42" width="72" height="34" rx="7"/><text class="t-label" x="50" y="63">regras</text>
+<rect class="t-box" x="114" y="42" width="72" height="34" rx="7"/><text class="t-label" x="150" y="63">IA</text>
+<rect class="t-box t-hot t-pulse" x="214" y="36" width="76" height="46" rx="7"/><text class="t-label" x="252" y="56">decisão</text><text class="t-label" x="252" y="70">humana</text>
+<path class="t-link" d="M86 59 H114 M186 59 H214"/>
+<circle class="t-packet t-move" cx="50" cy="96" r="4" style="--dx:202px;--dur:3s"/>
+</svg></div>
 <div class="project-body">
 <div class="project-tags"><span class="project-tag">Python</span><span class="project-tag">Copilot Studio</span><span class="project-tag">OCR</span><span class="project-tag">SQLite</span></div>
 <h3 class="project-title">Validador de O.S. com IA</h3>

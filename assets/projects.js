@@ -1,6 +1,7 @@
 export const projects = {
   validator: {
     title: 'Validador de O.S. com IA', category: 'IA aplicada / projeto interno',
+    flow: ['Coleta do pacote', 'OCR local', 'Regras determinísticas', 'Classificação com IA', 'Decisão humana'],
     intro: 'Pré-validação de pós-venda e instalação com evidências, regras verificáveis e interpretação assistida por IA.',
     problem: 'Conferir um atendimento exige cruzar histórico, equipamentos, movimentações, eventos, notas e documentos. A observação isolada não sustenta toda a análise.',
     approach: 'Um pipeline coleta e normaliza o pacote, lê contrato e comprovantes por OCR local e aplica regras determinísticas antes do modelo. A classificação é limitada ao catálogo operacional.',
@@ -8,17 +9,9 @@ export const projects = {
     decisions: ['Escopo e coleta separados da interpretação da IA.', 'Sanitização e projeção antes de enviar contexto ao modelo.', 'Locks, reconciliação e releitura para controlar duplicação e escrita incerta.', '1.503 testes locais passando em 12/10/2026; medida da suíte, não da acurácia da IA.'],
     limits: 'Repositório privado. Os exemplos do portfólio são fictícios. Aprovação final humana e leitura inconclusiva continuam explícitas.', links: []
   },
-  portal: {
-    title: 'Portal Operacional A365', category: 'Sistemas web / projeto interno',
-    intro: 'Uma camada de consulta para OS, produtividade, rotas, contas e administração.',
-    problem: 'Dados e ferramentas dispersos dificultam uma visão compartilhada das filas de trabalho e da cobertura dos especialistas.',
-    approach: 'FastAPI e SQLite organizam autenticação e dados coletados. O pipeline distingue fila operacional de histórico finalizado, usa coleta incremental e resolve cobertura por fontes específicas.',
-    result: 'Dashboards e mapas reúnem contexto para supervisão. Auditorias diferenciam conta sem rota, rota sem especialista e informação ainda não verificada.',
-    decisions: ['Watermark com sobreposição para reprocessar alterações sem duplicar registros.', 'Catálogo de rotas independente da presença de OS ou técnicos no ciclo.', 'Credenciais protegidas por DPAPI nos inicializadores Windows.', 'Projeção de campos antes da publicação dos dados nos dashboards.'],
-    limits: 'Aplicação interna. O estudo não publica telas, contas, nomes de clientes nem dados de produção.', links: []
-  },
   routes: {
     title: 'Route Coverage Map', category: 'Geoprocessamento / código público',
+    flow: ['Descrições de território', 'Geocodificação em cascata', 'Limites do IBGE', 'Fallback por Voronoi', 'Mapa navegável'],
     intro: 'Descrições tabulares de território transformadas em um mapa autocontido.',
     problem: 'Nomes de bairros e cidades nem sempre têm coordenadas ou limites confiáveis. Aproximações podem se sobrepor e esconder a precisão real do mapa.',
     approach: 'Geocodificação progressiva, cache, limites oficiais do IBGE e fallback por Voronoi. Geometrias são recortadas e a precisão é registrada no payload.',
@@ -28,6 +21,7 @@ export const projects = {
   },
   crm: {
     title: 'Integração de OS com CRM', category: 'Automação e integrações / projeto interno',
+    flow: ['OS', 'Documentos e negócios no CRM', 'Contrato e anexos na OS', 'Conferência da escrita'], flowNote: 'Sincronização a cada 5 minutos.',
     intro: 'Contratos, respostas do cliente e histórico sincronizados com a ordem de serviço.',
     problem: 'Buscar contratos no CRM e anexar documentos à OS exige repetição manual. Reenvios podem duplicar anexos e mudanças posteriores precisam de acompanhamento.',
     approach: 'Consultas HTTP resolvem documentos e negócios, processam PDF e acompanham versões/timeline. O fluxo mantém estado e confere os efeitos das escritas.',
@@ -37,6 +31,7 @@ export const projects = {
   },
   toolkit: {
     title: 'Ferramentas para a operação', category: 'Automação de processos / projetos internos',
+    flow: ['Relê a OS', 'Altera', 'Confere depois', 'Inconclusivos separados'],
     intro: 'Relatórios, auditorias, reagendamento e recomendação de agenda sobre contratos compartilhados.',
     problem: 'Conferências repetidas consomem atenção e podem misturar falha de leitura com ausência de informação.',
     approach: 'Módulos específicos de comissionamento, equipamentos removidos e auditoria de contas/rotas. Reagendamento relê a OS antes de alterar e confere depois. O assistente de agenda combina contexto de cidade/bairro e estimativas de esforço.',
@@ -46,6 +41,7 @@ export const projects = {
   },
   bot: {
     title: 'Bot de alertas no Telegram', category: 'Automação agendada / código público',
+    flow: ['Scrapers', 'Filtros de preço, desconto e palavras-chave', 'Estado das notificações', 'Alerta no Telegram'],
     intro: 'Monitoramento de ofertas com critérios configuráveis e notificações deduplicadas.',
     problem: 'Revisar páginas de produto e categorias manualmente para encontrar uma oferta relevante é repetitivo; alertas sem critério geram ruído.',
     approach: 'Scrapers extraem ofertas e cupons; filtros de preço, desconto e palavras-chave selecionam o que notificar. Um workflow agendado executa o processo e mantém o estado das notificações.',

@@ -16,4 +16,8 @@ export function setMotion(value) {
     if (enabled) effect.stop = effect.start() || null;
     else { effect.stop?.(); effect.stop = null; }
   }
+  // One-off scripted animations (e.g. filter FLIP) jump to their end state on pause.
+  if (!enabled) document.getAnimations?.().forEach(animation => {
+    if (!(animation instanceof CSSAnimation) && !(animation instanceof CSSTransition)) animation.finish();
+  });
 }

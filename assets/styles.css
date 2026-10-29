@@ -981,3 +981,45 @@ i[class*="fa-"] { display: inline-block; min-width: 1em; min-height: 1em; }
   .journey-rail { left: calc(1.1rem - 1px); right: auto; top: 0; bottom: 0; width: 3px; height: auto; transform: scaleY(0); transform-origin: top; }
   .journey-step { padding: 0 0 0 3.4rem; }
 }
+
+/* ===== Projetos: thumbs que mostram o fluxo (stage 3). Static frame without JS or with motion off. ===== */
+.thumb-svg { position: relative; z-index: 1; width: 100%; max-width: 340px; height: 100%; }
+.thumb-svg .t-box { fill: rgba(10,15,30,.35); stroke: rgba(226,232,240,.55); stroke-width: 1.2; }
+.thumb-svg .t-hot { stroke: #FFC72C; }
+.thumb-svg .t-label { fill: #e2e8f0; font: 500 11px 'Fira Code', 'Fira Code Fallback', monospace; text-anchor: middle; }
+.thumb-svg .t-small { font-size: 9.5px; fill: #cbd5e1; }
+.thumb-svg .t-link { stroke: rgba(226,232,240,.45); stroke-width: 1.2; fill: none; stroke-dasharray: 3 4; }
+.thumb-svg .t-packet, .thumb-svg .t-pin { fill: #FFC72C; }
+.thumb-svg .t-ink { stroke: #1E3A8A; stroke-width: 1.2; }
+.thumb-svg .t-shape { fill: rgba(255,199,44,.12); stroke: #FFC72C; stroke-width: 1.2; }
+.thumb-svg .t-thin { fill: none; stroke-width: .9; }
+.thumb-svg .t-ring { fill: none; stroke: rgba(226,232,240,.6); stroke-width: 1.2; }
+.thumb-svg .t-hand { stroke: #FFC72C; stroke-width: 1.5; stroke-linecap: round; transform-box: fill-box; transform-origin: 50% 100%; }
+.thumb-svg .t-check { fill: none; stroke: #FFC72C; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+@keyframes t-travel { 0% { transform: translateX(0); opacity: 0; } 12%, 82% { opacity: 1; } 100% { transform: translateX(var(--dx)); opacity: 0; } }
+@keyframes t-blocked { 0% { transform: translateX(0); opacity: 0; } 12% { opacity: 1; } 45% { transform: translateX(var(--dx)); opacity: 1; } 60%, 100% { transform: translateX(var(--dx)); opacity: 0; } }
+@keyframes t-sequence { 0%, 100% { opacity: .3; } 12%, 55% { opacity: 1; } 75% { opacity: .3; } }
+@keyframes t-glow { 0%, 100% { opacity: .55; } 50% { opacity: 1; } }
+@keyframes t-spin { to { transform: rotate(360deg); } }
+@keyframes t-late { 0%, 70% { opacity: 0; } 80%, 95% { opacity: 1; } 100% { opacity: 0; } }
+.enhanced[data-motion=on] .project-card.in-view .t-move { animation: t-travel var(--dur, 3s) var(--delay, 0s) ease-in-out infinite both; }
+.enhanced[data-motion=on] .project-card.in-view .t-stop { animation-name: t-blocked; }
+.enhanced[data-motion=on] .project-card.in-view .t-seq { animation: t-sequence 3.6s var(--delay) ease-in-out infinite both; }
+.enhanced[data-motion=on] .project-card.in-view .t-pulse { animation: t-glow 3s ease-in-out infinite; }
+.enhanced[data-motion=on] .project-card.in-view .t-hand { animation: t-spin 2.8s linear infinite; }
+.enhanced[data-motion=on] .project-card.in-view .t-late { animation: t-late 3s ease-in-out infinite both; }
+.project-card { position: relative; }
+.card-spot { position: absolute; top: 0; left: 0; width: 260px; height: 260px; border-radius: 50%; background: radial-gradient(circle, rgba(255,199,44,.13), transparent 65%); pointer-events: none; opacity: 0; transition: opacity .3s; z-index: 2; }
+.project-card:hover .card-spot { opacity: 1; }
+/* Case-study flow diagram */
+.dialog-flow { list-style: none; display: flex; flex-wrap: wrap; align-items: center; gap: 10px 26px; padding: 18px 0 4px; }
+.dialog-flow li { position: relative; font: 12px/1.4 var(--mono); color: var(--text); border: 1px solid var(--yellow); border-radius: 6px; padding: 7px 11px; background: var(--raised); }
+.dialog-flow li:not(:last-child)::after { content: '→'; position: absolute; right: -20px; top: 50%; transform: translateY(-50%); color: var(--accent); }
+.dialog-flow li:last-child { background: var(--yellow); color: var(--accent-ink); }
+.dialog-flow-note { font: 12px var(--mono); color: var(--muted); margin-top: 8px; }
+@keyframes flow-in { from { opacity: 0; transform: translateY(8px); } }
+.enhanced[data-motion=on] dialog[open] .dialog-flow li { animation: flow-in .4s calc(var(--i) * 140ms) cubic-bezier(.2,.7,.2,1) both; }
+@media (max-width: 600px) {
+  .dialog-flow { flex-direction: column; align-items: flex-start; gap: 22px; }
+  .dialog-flow li:not(:last-child)::after { content: '↓'; right: auto; left: 14px; top: auto; bottom: -21px; transform: none; }
+}

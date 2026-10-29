@@ -208,3 +208,63 @@ test('sobre: movimento reduzido não baixa journey.js e mostra os momentos', asy
   expect(requested.some(url => url.endsWith('/journey.js'))).toBeFalsy();
   await expect(page.locator('.journey-step').nth(2)).toHaveCSS('opacity', '1');
 });
+
+test('projetos: Portal A365 fora do portfólio e contador com 5', async ({ page }) => {
+  await page.goto('./');
+  await expect(page.getByText('Portal Operacional A365')).toHaveCount(0);
+  await expect(page.locator('.project-card')).toHaveCount(5);
+  await expect(page.locator('#filter-count')).toHaveText('5 projetos');
+  expect(await page.evaluate(async () => Object.keys((await import('./assets/projects.js')).projects))).not.toContain('portal');
+});
+
+test('projetos: thumbs mostram o fluxo e animam só com o card visível', async ({ page }) => {
+  await page.goto('./');
+  await expect(page.locator('.project-thumb svg.thumb-svg')).toHaveCount(5);
+  const packet = page.locator('[data-project="crm"] .t-move');
+  await expect.poll(() => packet.evaluate(el => getComputedStyle(el).animationName)).toBe('none');
+  await page.locator('[data-project="crm"]').scrollIntoViewIfNeeded();
+  await expect.poll(() => packet.evaluate(el => getComputedStyle(el).animationName)).toBe('t-travel');
+  await page.getByRole('button', { name: 'Pausar animações' }).click();
+  await expect.poll(() => packet.evaluate(el => getComputedStyle(el).animationName)).toBe('none');
+  await expect(page.locator('.project-card.in-view')).toHaveCount(0);
+  await expect(page.locator('.card-spot')).toHaveCount(0);
+});
+
+test('projetos: tilt segue o ponteiro e some na pausa', async ({ page }) => {
+  await page.goto('./');
+  const card = page.locator('[data-project="routes"]');
+  await card.scrollIntoViewIfNeeded();
+  const box = await card.boundingBox();
+  await page.mouse.move(box.x + box.width * .8, box.y + box.height * .2);
+  await expect.poll(() => card.evaluate(el => el.style.transform)).toContain('rotateY');
+  await page.getByRole('button', { name: 'Pausar animações' }).click();
+  expect(await card.evaluate(el => el.style.transform)).toBe('');
+});
+
+test('projetos: filtro com FLIP termina no estado final e respeita a pausa', async ({ page }) => {
+  await page.goto('./');
+  await page.getByRole('button', { name: 'Automação', exact: true }).click();
+  await expect(page.locator('#filter-count')).toHaveText('3 projetos');
+  await expect(page.getByRole('heading', { name: 'Route Coverage Map', exact: true })).toBeHidden();
+  await page.getByRole('button', { name: 'Todos', exact: true }).click();
+  await page.getByRole('button', { name: 'Pausar animações' }).click();
+  expect(await page.evaluate(() => document.getAnimations().filter(a => a.playState === 'running' && !(a instanceof CSSAnimation) && !(a instanceof CSSTransition)).length)).toBe(0);
+  for (const card of await page.locator('.project-card').all()) await expect(card).toHaveCSS('opacity', '1');
+});
+
+test('projetos: estudo de caso mostra o fluxo em etapas', async ({ page }) => {
+  await page.goto('./');
+  await page.getByRole('button', { name: 'Explorar caso: Integração de OS com CRM' }).click();
+  const flow = page.getByRole('dialog').getByRole('list', { name: 'Fluxo do projeto' });
+  await expect(flow.getByRole('listitem')).toHaveCount(4);
+  await expect(page.getByRole('dialog')).toContainText('Sincronização a cada 5 minutos.');
+  await expect(flow.getByRole('listitem').last()).toHaveCSS('opacity', '1');
+});
+
+test('projetos: diálogo com movimento ligado não tem violações axe', async ({ page }) => {
+  await page.goto('./');
+  await page.getByRole('button', { name: 'Explorar caso: Validador de O.S. com IA' }).click();
+  await page.waitForTimeout(1200);
+  const results = await new AxeBuilder({ page }).include('dialog').withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze();
+  expect(results.violations.map(v => v.id)).toEqual([]);
+});

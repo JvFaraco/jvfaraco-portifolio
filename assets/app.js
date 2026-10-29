@@ -13,7 +13,7 @@ const savedTheme = storage.get('jvf-theme');
 root.dataset.theme = savedTheme === 'light' ? 'light' : 'dark';
 let motionPaused = storage.get('jvf-motion') === 'off';
 // Optional effects are fetched only the first time motion is on.
-const effectModules = ['./hero.js', './journey.js'];
+const effectModules = ['./hero.js', './journey.js', './cards.js'];
 let effectsLoaded = false;
 
 function syncTheme() {
@@ -60,10 +60,19 @@ document.querySelectorAll('[data-filter]').forEach(button => button.addEventList
   document.querySelectorAll('[data-filter]').forEach(filter => {
     const active = filter === button; filter.classList.toggle('active', active); filter.setAttribute('aria-pressed', String(active));
   });
+  // FLIP: cards that stay glide to their new slot; cards that return fade in.
+  const flip = root.dataset.motion === 'on';
+  const before = flip ? new Map(cards.filter(card => !card.hidden).map(card => [card, card.getBoundingClientRect()])) : null;
   let count = 0;
   cards.forEach(card => {
     card.hidden = button.dataset.filter !== 'all' && card.dataset.category !== button.dataset.filter;
     if (!card.hidden) { count++; card.classList.add('visible'); }
+  });
+  if (flip) cards.filter(card => !card.hidden).forEach(card => {
+    const first = before.get(card), last = card.getBoundingClientRect();
+    if (!first) card.animate([{ opacity: 0, transform: 'scale(.96)' }, { opacity: 1, transform: 'none' }], { duration: 300, easing: 'ease-out' });
+    else if (first.left !== last.left || first.top !== last.top)
+      card.animate([{ transform: `translate(${first.left - last.left}px, ${first.top - last.top}px)` }, { transform: 'none' }], { duration: 380, easing: 'cubic-bezier(.2,.7,.2,1)' });
   });
   document.querySelector('#filter-count').textContent = `${count} ${count === 1 ? 'projeto' : 'projetos'}`;
 }));
@@ -86,6 +95,12 @@ document.querySelectorAll('[data-case]').forEach(button => button.addEventListen
   document.querySelector('#dialog-category').textContent = project.category;
   document.querySelector('#dialog-intro').textContent = project.intro;
   const content = document.querySelector('#dialog-content'); content.replaceChildren();
+  if (project.flow) {
+    const flow = document.createElement('ol'); flow.className = 'dialog-flow'; flow.setAttribute('aria-label', 'Fluxo do projeto');
+    project.flow.forEach((step, index) => { const item = document.createElement('li'); item.textContent = step; item.style.setProperty('--i', index); flow.append(item); });
+    content.append(flow);
+    if (project.flowNote) { const note = document.createElement('p'); note.className = 'dialog-flow-note'; note.textContent = project.flowNote; content.append(note); }
+  }
   addSection(content, 'O problema', project.problem); addSection(content, 'A abordagem', project.approach);
   addSection(content, 'O resultado', project.result); addSection(content, 'Decisões de engenharia', project.decisions);
   addSection(content, 'Limites e contexto', project.limits);

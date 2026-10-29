@@ -67,3 +67,4 @@ O site publicado deve ser medido de novo depois do merge de `feat/perf-base`; a 
 | 1. Hero | 100 · FCP 0,98 s · LCP 1,20 s · CLS 0 | 100 · FCP 1,05 s · LCP 1,35 s · CLS 0 |
 | 2. Narrativa | 100 · FCP 1,05 s · LCP 1,35 s · CLS 0 | 100 · FCP 1,16 s · LCP 1,35 s · CLS 0 |
 | 3. Projetos | 100 · FCP 1,16 s · LCP 1,35 s · CLS 0 | 100 · FCP 1,16 s · LCP 1,35 s · CLS 0 |
+| 4. Experiência e competências | 100 · FCP 1,16 s · LCP 1,35 s · CLS 0 | 100 · FCP 1,17 s · LCP 1,35 s · CLS 0 |

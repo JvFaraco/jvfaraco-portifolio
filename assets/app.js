@@ -13,7 +13,7 @@ const savedTheme = storage.get('jvf-theme');
 root.dataset.theme = savedTheme === 'light' ? 'light' : 'dark';
 let motionPaused = storage.get('jvf-motion') === 'off';
 // Optional effects are fetched only the first time motion is on.
-const effectModules = ['./hero.js', './journey.js', './cards.js'];
+const effectModules = ['./hero.js', './journey.js', './cards.js', './timeline.js'];
 let effectsLoaded = false;
 
 function syncTheme() {

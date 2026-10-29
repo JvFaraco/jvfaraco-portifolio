@@ -268,3 +268,36 @@ test('projetos: diálogo com movimento ligado não tem violações axe', async (
   const results = await new AxeBuilder({ page }).include('dialog').withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze();
   expect(results.violations.map(v => v.id)).toEqual([]);
 });
+
+test('competências: mesmo bloco do README, em texto e sem itens removidos', async ({ browser }) => {
+  const context = await browser.newContext({ javaScriptEnabled: false });
+  const page = await context.newPage(); await page.goto('http://127.0.0.1:4173/jvfaraco-portifolio/');
+  const section = page.locator('#habilidades');
+  await expect(section.getByRole('heading', { level: 2 })).toHaveText('Competências');
+  await expect(section.locator('.competencia')).toHaveCount(7);
+  await expect(section).toContainText('pandas, SQL/SQLite, pipelines (ETL) e Power BI.');
+  await expect(section).toContainText('Copilot Studio, Azure OpenAI, OCR e JSON Schema, com decisão final humana.');
+  for (const removed of ['Flask', 'Playwright', 'Linux', 'AWS', 'GCP', 'Docker', 'Kubernetes', 'Terraform', 'RAG', 'Portal'])
+    await expect(section).not.toContainText(removed);
+  await expect(page.locator('#experiencia')).not.toContainText('portal interno');
+  await context.close();
+});
+
+test('competências: entrada escalonada curta', async ({ page }) => {
+  await page.goto('./');
+  const delays = await page.locator('.competencia').evaluateAll(els => els.map(el => getComputedStyle(el).transitionDelay));
+  expect(delays[0]).toContain('0s'); expect(delays[6]).toContain('0.24s');
+});
+
+test('experiência: a linha se desenha com o scroll e some na pausa', async ({ page }) => {
+  await page.goto('./');
+  const rail = page.locator('.timeline-rail');
+  await expect(rail).toHaveCount(1);
+  expect(await rail.evaluate(el => parseFloat(el.style.transform.slice(7)))).toBe(0);
+  await page.locator('.timeline').evaluate(el => window.scrollTo(0, el.getBoundingClientRect().top + window.scrollY));
+  await expect.poll(() => rail.evaluate(el => parseFloat(el.style.transform.slice(7)))).toBeGreaterThan(0.2);
+  await expect.poll(() => page.locator('.timeline-item.passed').count()).toBeGreaterThan(0);
+  await page.getByRole('button', { name: 'Pausar animações' }).click();
+  await expect(rail).toHaveCount(0);
+  await expect(page.locator('.timeline-item.passed')).toHaveCount(0);
+});

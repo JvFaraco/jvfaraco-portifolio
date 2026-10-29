@@ -15,7 +15,7 @@ O usuário pediu revisão dos projetos locais e do GitHub, pesquisa de tendênci
 ## Evidência de conteúdo
 
 - Perfil existente: João Victor Faraco, São José/SC, Analista de Sistemas na Orsegups desde março/2025. Hardware de setembro/2024 a março/2025; estágios Figueirense e Instituto São José; Gestão de TI concluída em 2025 e MBA em IA em andamento. Preservar sem acrescentar títulos ou certificações.
-- Projetos públicos: `mapaderotas` (pipeline geoespacial; demo fictícia, CI e 83% de cobertura reportados no README), `operational-dashboard-platform` (Flask/pandas; demo estática fictícia), `bot-telegram` (scraping, critérios de preço, Telegram, Actions e estado persistido). Não acessar nem copiar configurações ou secrets do bot.
+- Projetos públicos: `mapaderotas` (pipeline geoespacial; demo fictícia, CI e 83% de cobertura reportados no README), `bot-telegram` (scraping, critérios de preço, Telegram, Actions e estado persistido). Não acessar nem copiar configurações ou secrets do bot.
 - Projetos locais: a365-ia (regras determinísticas, OCR, integração CRM, catálogo de labels, locks e reconciliação); a365-portal (FastAPI/SQLite, contas/rota, produtividade e privacidade); coletores, comissionamento, reagendamento, divisão de rotas e assistente de agenda. Repositórios internos são privados; descrevê-los com contexto técnico e sem links mortos para recrutadores.
 - Medições de testes podem ser publicadas somente como snapshot com data e escopo, com evidência salva em `docs/content-audit.md`. Não inventar economia financeira, percentuais de produtividade, clientes ou disponibilidade imediata para trabalho.
 

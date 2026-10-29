@@ -174,3 +174,37 @@ test('hero: 320px com movimento ligado não cria rolagem horizontal', async ({ p
   await expect(page.locator('canvas.hero-flow')).toHaveAttribute('data-running', 'true', { timeout: 4000 });
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBeTruthy();
 });
+
+test('sobre: três momentos legíveis sem JavaScript', async ({ browser }) => {
+  const context = await browser.newContext({ javaScriptEnabled: false });
+  const page = await context.newPage(); await page.goto('http://127.0.0.1:4173/jvfaraco-portifolio/');
+  const steps = page.locator('.journey-step');
+  await expect(steps).toHaveCount(3);
+  for (const title of ['suporte e infraestrutura', 'testes de hardware', 'sistemas e IA'])
+    await expect(page.getByRole('heading', { name: title, exact: true })).toBeVisible();
+  await expect(steps.last()).toHaveCSS('opacity', '1');
+  await context.close();
+});
+
+test('sobre: o trilho avança com o scroll e a pausa deixa tudo visível', async ({ page }) => {
+  await page.goto('./');
+  const journey = page.locator('.journey');
+  await expect(journey).toHaveClass(/live/);
+  await expect(page.locator('.journey-step.is-active')).toHaveCount(0);
+  await journey.evaluate(el => window.scrollTo(0, el.getBoundingClientRect().top + window.scrollY - window.innerHeight * .5));
+  await expect.poll(() => page.locator('.journey-step.is-active').count()).toBeGreaterThan(0);
+  await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight));
+  await expect(page.locator('.journey-step.is-active')).toHaveCount(3);
+  await page.getByRole('button', { name: 'Pausar animações' }).click();
+  await expect(journey).not.toHaveClass(/live/);
+  await expect(page.locator('.journey-rail')).toHaveCount(0);
+  await expect(page.locator('.journey-step').first()).toHaveCSS('opacity', '1');
+  await expect(page.locator('#reading-progress')).toHaveCSS('transform', 'matrix(1, 0, 0, 1, 0, 0)');
+});
+
+test('sobre: movimento reduzido não baixa journey.js e mostra os momentos', async ({ page }) => {
+  const requested = []; page.on('request', r => requested.push(r.url()));
+  await page.emulateMedia({ reducedMotion: 'reduce' }); await page.goto('./'); await page.waitForLoadState('networkidle');
+  expect(requested.some(url => url.endsWith('/journey.js'))).toBeFalsy();
+  await expect(page.locator('.journey-step').nth(2)).toHaveCSS('opacity', '1');
+});

@@ -120,9 +120,14 @@ function announce(message) {
   clearTimeout(feedbackTimeout); feedback.textContent = message; feedback.classList.add('visible');
   feedbackTimeout = setTimeout(() => feedback.classList.remove('visible'), 4000);
 }
-document.querySelector('#copy-email').addEventListener('click', async () => {
+const copyButton = document.querySelector('#copy-email'); let copyTimeout;
+copyButton.addEventListener('click', async () => {
   const address = 'joaovictorfaraco@gmail.com';
-  try { await navigator.clipboard.writeText(address); announce('E-mail copiado.'); }
+  try {
+    await navigator.clipboard.writeText(address); announce('E-mail copiado.');
+    clearTimeout(copyTimeout); copyButton.classList.add('copied'); copyButton.textContent = 'Copiado ✓';
+    copyTimeout = setTimeout(() => { copyButton.classList.remove('copied'); copyButton.textContent = 'Copiar e-mail'; }, 2000);
+  }
   catch { announce('E-mail: ' + address + '. Use o link para abrir seu aplicativo de e-mail.'); }
 });
 document.querySelector('#year').textContent = new Date().getFullYear();

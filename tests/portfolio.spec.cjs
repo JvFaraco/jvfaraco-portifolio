@@ -301,3 +301,31 @@ test('experiência: a linha se desenha com o scroll e some na pausa', async ({ p
   await expect(rail).toHaveCount(0);
   await expect(page.locator('.timeline-item.passed')).toHaveCount(0);
 });
+
+test('contato: CTA leva ao e-mail e funciona sem JavaScript', async ({ browser }) => {
+  const context = await browser.newContext({ javaScriptEnabled: false });
+  const page = await context.newPage(); await page.goto('http://127.0.0.1:4173/jvfaraco-portifolio/');
+  const cta = page.getByRole('link', { name: 'Mandar e-mail' });
+  await expect(cta).toBeVisible(); await expect(cta).toHaveCSS('opacity', '1');
+  await expect(cta).toHaveAttribute('href', 'mailto:joaovictorfaraco@gmail.com');
+  await expect(page.locator('#contact')).toContainText('O caminho mais rápido é o e-mail.');
+  await context.close();
+});
+
+test('contato: copiar mostra confirmação no botão e mantém o aviso', async ({ page, context }) => {
+  await context.grantPermissions(['clipboard-read', 'clipboard-write']);
+  await page.goto('./');
+  const copy = page.getByRole('button', { name: 'Copiar e-mail' });
+  await copy.click();
+  await expect(page.locator('#feedback')).toHaveText('E-mail copiado.');
+  await expect(page.locator('#copy-email')).toHaveText('Copiado ✓');
+  await expect(page.locator('#copy-email')).toHaveText('Copiar e-mail', { timeout: 4000 });
+});
+
+test('contato: com pausa o CTA fica visível e sem animação', async ({ page }) => {
+  await page.goto('./');
+  await page.getByRole('button', { name: 'Pausar animações' }).click();
+  await page.locator('.contact-cta').scrollIntoViewIfNeeded();
+  await expect(page.locator('.contact-cta')).toHaveCSS('opacity', '1');
+  await expect(page.locator('.contact-cta')).toHaveCSS('animation-name', 'none');
+});

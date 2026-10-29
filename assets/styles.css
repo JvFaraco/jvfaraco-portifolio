@@ -1037,3 +1037,16 @@ i[class*="fa-"] { display: inline-block; min-width: 1em; min-height: 1em; }
 .timeline-body::before { transition: transform .35s ease; }
 .timeline-item.passed .timeline-body::before { transform: scale(1.45); }
 @media (max-width: 900px) { .timeline-rail { left: -1px; } .timeline-date { padding-left: 1rem; } }
+
+/* ===== Contato: fechamento (stage 5) ===== */
+#contact { position: relative; overflow: hidden; isolation: isolate; }
+#contact::before { content: ''; position: absolute; z-index: -1; width: 640px; height: 640px; left: 50%; top: 40%; border-radius: 50%; background: radial-gradient(circle, rgba(255,199,44,.10), transparent 62%); transform: translate(-50%, -50%); pointer-events: none; }
+.contact-lead { color: var(--text) !important; font-weight: 500; margin: -1.2rem 0 1.4rem !important; }
+.contact-cta { display: inline-flex; align-items: center; gap: .6rem; font-size: 1rem; padding: .9rem 1.8rem; margin-bottom: 1.6rem; box-shadow: 0 10px 30px rgba(255,199,44,.18); }
+.cta-arrow { display: inline-block; transition: transform .25s ease; }
+.contact-cta:hover .cta-arrow, .contact-cta:focus-visible .cta-arrow { transform: translateX(5px); }
+.contact-cta:active, #copy-email:active { transform: scale(.97); }
+#copy-email { transition: transform .15s ease, border-color .2s, color .2s; align-self: flex-start; }
+#copy-email.copied { border-color: var(--yellow); color: var(--yellow); }
+@keyframes cta-nudge { 0%, 100% { transform: none; } 40% { transform: scale(1.05); } 70% { transform: scale(.99); } }
+.enhanced[data-motion=on] .contact-cta.visible { animation: cta-nudge .7s .45s ease both; }

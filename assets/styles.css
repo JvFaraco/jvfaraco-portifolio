@@ -972,7 +972,12 @@ i[class*="fa-"] { display: inline-block; min-width: 1em; min-height: 1em; }
 .journey-title { font: 600 1.05rem var(--mono); color: var(--text); margin: .3rem 0 .6rem; }
 .journey-step p { color: var(--muted); font-size: .92rem; line-height: 1.7; }
 .journey.live .journey-step { transition: opacity .5s ease, transform .5s ease; }
-.journey.live .journey-step:not(.is-active) { opacity: .35; transform: translateY(12px); }
+.journey.live .journey-step.is-active:nth-of-type(2) { transition-delay: .15s; }
+.journey.live .journey-step.is-active:nth-of-type(3) { transition-delay: .3s; }
+/* Inactive moments only slide; text keeps full contrast. The decorative index dims instead. */
+.journey.live .journey-step:not(.is-active) { transform: translateY(16px); }
+.journey.live .journey-index { transition: opacity .5s ease; }
+.journey.live .journey-step:not(.is-active) .journey-index { opacity: .35; }
 .enhanced[data-motion=on] .section-line.reveal { transform-origin: left; }
 .enhanced[data-motion=on] .section-line.reveal:not(.visible) { opacity: 1; transform: scaleX(0); }
 @media (max-width: 900px) {

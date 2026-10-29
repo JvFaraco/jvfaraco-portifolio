@@ -5,7 +5,7 @@
   <title>João Victor Faraco | Python e Automação</title>
   <script>(function (root) {
     root.classList.add('enhanced');
-    var paused; try { paused = localStorage.getItem('jvf-motion') === 'off'; } catch (e) {}
+    var paused; try { paused = localStorage.getItem('jvf-motion') === 'off'; if (localStorage.getItem('jvf-theme') === 'light') root.dataset.theme = 'light'; } catch (e) {}
     if (paused || matchMedia('(prefers-reduced-motion: reduce)').matches) root.dataset.motion = 'off';
     else root.classList.add('intro');
   })(document.documentElement)</script>
@@ -326,7 +326,7 @@
           <p class="contact-lead">O caminho mais rápido é o e-mail.</p>
           <a href="mailto:joaovictorfaraco@gmail.com" class="btn-primary contact-cta fade-in reveal">Mandar e-mail <span class="cta-arrow" aria-hidden="true">→</span></a>
           <div class="contact-items">
-            <a href="mailto:joaovictorfaraco@gmail.com" class="contact-item" aria-label="Enviar e-mail">
+            <a href="mailto:joaovictorfaraco@gmail.com" class="contact-item" aria-label="Enviar e-mail joaovictorfaraco@gmail.com">
               <i class="fa-regular fa-envelope"></i>
               <div>
                 <small>e-mail</small>

@@ -69,3 +69,8 @@ O site publicado deve ser medido de novo depois do merge de `feat/perf-base`; a 
 | 3. Projetos | 100 · FCP 1,16 s · LCP 1,35 s · CLS 0 | 100 · FCP 1,16 s · LCP 1,35 s · CLS 0 |
 | 4. Experiência e competências | 100 · FCP 1,16 s · LCP 1,35 s · CLS 0 | 100 · FCP 1,17 s · LCP 1,35 s · CLS 0 |
 | 5. Contato | 100 · FCP 1,17 s · LCP 1,35 s · CLS 0 | 100 · FCP 1,19 s · LCP 1,35 s · CLS 0 |
+| 6. Polimento | 100 · FCP 1,19 s · LCP 1,35 s · CLS 0 | 100 · FCP 1,17 s · LCP 1,35 s · CLS 0 |
+
+Depois da etapa 6: acessibilidade, boas práticas e SEO em 100 no Lighthouse. Peso adicional das etapas 1–6 em relação ao `main` de 28/10/2026: ~8 KB gzip de JS+CSS (orçamento: 60 KB) e ~1,3 KB gzip de HTML. A suíte tem 37 testes Playwright, incluindo pausa, movimento reduzido, sem JS, 320 px e axe com o movimento ligado nos dois temas.
+
+Removidos por decisão do autor: Portal Operacional A365 (card, estudo e dois bullets da Experiência) e as competências Flask, Playwright e Linux. As competências do site e do README do perfil usam o mesmo bloco. `img/Eu.jpeg` foi removido depois de confirmar que nada o referenciava (repositório, README do perfil e busca de código no GitHub).

@@ -1030,12 +1030,12 @@ i[class*="fa-"] { display: inline-block; min-width: 1em; min-height: 1em; }
 }
 
 /* ===== Competências e timeline (stage 4) ===== */
-.competencias { list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr)); gap: 1rem; }
-.competencia { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.3rem 1.4rem; display: flex; flex-direction: column; gap: .45rem; }
+.competencias { list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr)); gap: 1rem; }
+.competencia { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.2rem 1.3rem; display: flex; flex-direction: column; gap: .8rem; }
 .competencia h3 { font: 600 .95rem/1.4 var(--mono); color: var(--text); }
 .competencia h3::before { content: '▸ '; color: var(--yellow); }
-.competencia p { color: var(--muted); font-size: .92rem; line-height: 1.6; }
-.competencia small { color: var(--muted); font: .72rem/1.5 var(--mono); border-top: 1px solid var(--border); padding-top: .55rem; margin-top: auto; }
+.competencia-tags { list-style: none; display: flex; flex-wrap: wrap; gap: .45rem; }
+.competencia-tags li { font: .78rem/1.4 var(--mono); padding: .3rem .65rem; border-radius: 5px; background: rgba(255,199,44,.1); color: var(--yellow); border: 1px solid rgba(255,199,44,.22); }
 .enhanced[data-motion=on] .competencia.fade-in { transition-delay: calc(var(--i) * 40ms); }
 .timeline { position: relative; }
 .timeline-rail { position: absolute; top: 0; bottom: 0; left: calc(140px + 2rem - 1px); width: 3px; border-radius: 2px; background: var(--yellow); transform: scaleY(0); transform-origin: top; pointer-events: none; }

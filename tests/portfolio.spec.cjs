@@ -366,3 +366,76 @@ test('contato: card do e-mail e redes alinhados no desktop; redes cabem em 320px
   expect(await page.locator('.social-card span').evaluateAll(spans => spans.every(s => s.scrollWidth <= s.parentElement.clientWidth))).toBeTruthy();
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBeTruthy();
 });
+
+test('certificados: card abre o documento, mostra os links e devolve o foco', async ({ page }) => {
+  await page.goto('./');
+  const card = page.getByRole('link', { name: /MBA em Inteligência Artificial/ });
+  await card.click();
+  const dialog = page.getByRole('dialog', { name: 'MBA em Inteligência Artificial' });
+  await expect(dialog).toBeVisible();
+  await expect(dialog.getByRole('img', { name: /MBA em Inteligência Artificial, frente/ })).toHaveAttribute('src', 'certificados/mba-ia.jpg');
+  await expect(dialog.getByRole('link', { name: /Abrir PDF/ })).toHaveAttribute('href', 'certificados/mba-ia.pdf');
+  await expect(dialog.getByRole('button', { name: /Ver verso/ })).toBeHidden();
+  await expect(dialog).toContainText('CPF, matrícula e data de nascimento foram cobertos');
+  await page.keyboard.press('Escape');
+  await expect(dialog).toBeHidden(); await expect(card).toBeFocused();
+});
+
+test('certificados: Estácio vira para o verso e Udemy tem verificação', async ({ page }) => {
+  await page.goto('./');
+  await page.getByRole('link', { name: /Implantação de Governança de T.I./ }).click();
+  const flip = page.getByRole('button', { name: /Ver verso/ });
+  await flip.click();
+  await expect(page.getByRole('button', { name: /Ver frente/ })).toHaveAttribute('aria-pressed', 'true');
+  await expect(page.locator('.cert-flipper')).toHaveClass(/flipped/);
+  await page.getByRole('button', { name: 'Fechar certificado' }).click();
+  await page.getByRole('link', { name: /Programação Python do Zero ao Avançado/ }).click();
+  await expect(page.getByRole('link', { name: /Verificar na Udemy/ })).toHaveAttribute('href', /ude\.my\/UC-5867c04c/);
+});
+
+test('certificados: sem JavaScript os cards levam ao PDF', async ({ browser }) => {
+  const context = await browser.newContext({ javaScriptEnabled: false });
+  const page = await context.newPage(); await page.goto('http://127.0.0.1:4173/jvfaraco-portifolio/');
+  const cards = page.locator('.cert-card');
+  await expect(cards).toHaveCount(6);
+  expect(await cards.evaluateAll(links => links.every(a => /^certificados\/[a-z-]+\.pdf$/.test(a.getAttribute('href'))))).toBeTruthy();
+  await context.close();
+});
+
+test('certificados: entrada animada termina no lugar e a pausa não deixa animação pendente', async ({ page }) => {
+  await page.goto('./');
+  await page.getByRole('link', { name: /Aplicação da Melhoria Contínua/ }).click();
+  await expect.poll(() => page.evaluate(() => document.querySelector('.cert-tilt').getAnimations().length)).toBeGreaterThan(0);
+  await page.waitForTimeout(2300);
+  expect(await page.evaluate(() => document.querySelectorAll('.cert-spark').length)).toBe(0);
+  await expect(page.locator('.cert-seal')).toHaveCSS('opacity', '1');
+  await page.getByRole('button', { name: 'Fechar certificado' }).click();
+  await page.getByRole('button', { name: 'Pausar animações' }).click();
+  await page.getByRole('link', { name: /Programação para Internet/ }).click();
+  expect(await page.evaluate(() => document.querySelector('.cert-tilt').getAnimations().length)).toBe(0);
+  await expect(page.locator('.cert-seal')).toHaveCSS('opacity', '1');
+});
+
+test('certificados: diálogo sem violações axe e sem rolagem horizontal em 320px', async ({ page }) => {
+  await page.goto('./');
+  await page.getByRole('link', { name: /Gestão de Projetos e de Informação/ }).click();
+  await page.waitForTimeout(2200);
+  const results = await new AxeBuilder({ page }).include('#cert-dialog').withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze();
+  expect(results.violations.map(v => ({ rule: v.id, nodes: v.nodes.map(n => n.target) }))).toEqual([]);
+  await page.keyboard.press('Escape');
+  await page.setViewportSize({ width: 320, height: 700 });
+  await page.getByRole('link', { name: /MBA em Inteligência Artificial/ }).click();
+  await page.waitForTimeout(2500); // depois das faíscas, que podem passar da borda durante o voo
+  expect(await page.evaluate(() => { const d = document.querySelector('#cert-dialog'); return d.scrollWidth <= d.clientWidth + 1; })).toBeTruthy();
+});
+
+test('diálogos modais abrem centralizados', async ({ page }) => {
+  await page.goto('./');
+  const centered = selector => page.evaluate(sel => { const r = document.querySelector(sel).getBoundingClientRect(); return Math.abs(r.left - (innerWidth - r.right)) <= 2; }, selector);
+  await page.getByRole('button', { name: 'Explorar caso: Validador de O.S. com IA' }).click();
+  expect(await centered('#project-dialog')).toBeTruthy();
+  await page.keyboard.press('Escape');
+  await page.getByRole('link', { name: /MBA em Inteligência Artificial/ }).click();
+  await page.waitForTimeout(1200);
+  expect(await centered('#cert-dialog')).toBeTruthy();
+});

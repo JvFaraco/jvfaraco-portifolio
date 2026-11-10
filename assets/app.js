@@ -1,5 +1,6 @@
 import { projects } from './projects.js';
 import { setMotion } from './motion.js';
+import './certificates.js';
 
 const root = document.documentElement;
 const storage = {

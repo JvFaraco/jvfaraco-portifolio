@@ -10,6 +10,7 @@ Portfólio de **Python, automação e integração de sistemas**, orientado a re
 - Filtros por IA, automação e dados/web; detalhes acessíveis em diálogo.
 - Projetos públicos e ferramentas de automação aparecem antes do projeto de IA.
 - Tema claro/escuro persistente, navegação mobile e feedback ao copiar e-mail.
+- Certificados abrem o documento com animação (voo do card, selo e verso das certificações); sem JavaScript, o card leva ao PDF. Na declaração do MBA, CPF, matrícula e data de nascimento foram cobertos e o PDF publicado é só imagem.
 - Revelação por scroll, progresso de leitura e microinterações curtas.
 - Movimento reduzido conforme o sistema e controle manual de animações.
 - Leitura e links preservados sem JavaScript. Fontes e ícones mantêm Google Fonts e Font Awesome do site original; não há framework de produção.

@@ -1066,3 +1066,59 @@ i[class*="fa-"] { display: inline-block; min-width: 1em; min-height: 1em; }
   #copy-email { align-self: stretch; align-items: center; white-space: nowrap; }
   .social-card { min-height: 100%; height: 76px; display: flex; flex-direction: column; justify-content: center; }
 }
+
+/* =============================================
+   CERTIFICADOS
+============================================= */
+.cert-intro { color: var(--muted); font-size: 14px; margin: -6px 0 28px; }
+.cert-grid { list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 22px; }
+.cert-card { display: flex; flex-direction: column; height: 100%; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: transform .35s cubic-bezier(.2,.7,.2,1), border-color .35s, box-shadow .35s; }
+.cert-card:hover, .cert-card:focus-visible { transform: translateY(-4px); border-color: var(--yellow); box-shadow: 0 18px 40px -22px rgba(0,0,0,.6); }
+.cert-card:focus-visible { outline: 2px solid var(--yellow); outline-offset: 3px; }
+.cert-thumb { width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; background: #fff; border-bottom: 1px solid var(--border); transition: transform .5s cubic-bezier(.2,.7,.2,1); }
+.cert-card:hover .cert-thumb { transform: scale(1.04); }
+.cert-meta { display: flex; flex-direction: column; gap: 4px; padding: 16px 18px 18px; flex: 1; }
+.cert-date { font: 11px/1.6 var(--mono); color: var(--yellow); }
+.cert-title { font-weight: 700; font-size: 16px; line-height: 1.35; color: var(--text); }
+.cert-kind { font-size: 13px; color: var(--muted); }
+.cert-cta { margin-top: auto; padding-top: 10px; font-size: 13px; color: var(--accent); }
+
+.cert-dialog { width: min(1000px, calc(100% - 32px)); max-height: 94dvh; padding: 26px 28px; overflow-x: hidden; }
+.cert-dialog h2 { font-size: 26px; }
+.cert-dialog.flying { overflow: visible; }
+.enhanced[data-motion=on] .cert-dialog[open] { animation: cert-dialog-in .35s cubic-bezier(.2,.8,.2,1); }
+.enhanced[data-motion=on] .cert-dialog[open]::backdrop { animation: cert-fade .35s ease both; }
+.cert-stage { display: flex; justify-content: center; perspective: 1600px; padding: 18px 8px 10px; }
+.cert-tilt { position: relative; max-width: 100%; transform-style: preserve-3d; transition: transform .25s ease-out; border-radius: 6px; }
+.cert-flipper { position: relative; transform-style: preserve-3d; transition: transform .9s cubic-bezier(.2,.7,.2,1); }
+.cert-flipper.flipped { transform: rotateY(180deg); }
+.cert-face { width: auto; height: auto; max-width: 100%; max-height: min(64dvh, 620px); border-radius: 6px; background: #fff; box-shadow: 0 28px 60px -24px rgba(0,0,0,.7); backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+.cert-back { position: absolute; inset: 0; width: 100%; height: 100%; max-height: none; object-fit: contain; transform: rotateY(180deg); }
+.cert-gloss { position: absolute; inset: 0; border-radius: 6px; overflow: hidden; pointer-events: none; }
+.cert-gloss::before { content: ''; position: absolute; top: -10%; bottom: -10%; left: -60%; width: 60%; background: linear-gradient(105deg, transparent, rgba(255,255,255,.7), transparent); transform: skewX(-12deg); opacity: 0; }
+.enhanced[data-motion=on] .cert-gloss.shine::before { animation: cert-shine 1.2s .6s cubic-bezier(.35,.6,.2,1) both; }
+.cert-glare { position: absolute; inset: 0; border-radius: 6px; pointer-events: none; background: radial-gradient(circle at var(--gx, 50%) var(--gy, 50%), rgba(255,255,255,.22), transparent 55%); opacity: 0; transition: opacity .3s; }
+.cert-tilt.glaring .cert-glare { opacity: 1; }
+.cert-seal { position: absolute; right: -12px; bottom: -12px; width: 84px; height: 84px; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: radial-gradient(circle at 35% 30%, #fff1b8, #ffc72c 45%, #d99a00 100%); color: #1a1300; font: 700 9.5px/1.2 var(--mono); letter-spacing: .08em; text-transform: uppercase; box-shadow: 0 10px 24px -8px rgba(0,0,0,.6), inset 0 0 0 3px rgba(255,255,255,.35), inset 0 0 0 6px rgba(160,110,0,.35); transform: translateZ(30px) rotate(-12deg); pointer-events: none; }
+.cert-seal span { font-size: 24px; line-height: 1; }
+.enhanced[data-motion=on] .cert-seal.stamp { animation: cert-stamp .55s 1s cubic-bezier(.3,1.5,.5,1) both; }
+.cert-spark { position: absolute; width: 7px; height: 7px; border-radius: 50%; background: #ffd75e; box-shadow: 0 0 8px 2px rgba(255,199,44,.8); pointer-events: none; transform: translate(-50%, -50%); }
+.cert-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 22px; margin-top: 22px; }
+.cert-actions .dialog-links { margin-top: 0; }
+.cert-flip { font: 600 13px/1 'DM Sans', 'DM Sans Fallback', sans-serif; padding: 10px 16px; border-radius: 999px; border: 1px solid var(--yellow); background: none; color: var(--accent); cursor: pointer; transition: background .2s, color .2s; }
+.cert-flip:hover, .cert-flip:focus-visible { background: var(--yellow); color: var(--accent-ink); }
+.cert-flip[hidden] { display: none; }
+.cert-dialog .dialog-note { margin-top: 14px; font-size: 12px; }
+@keyframes cert-dialog-in { from { opacity: 0; transform: translateY(14px) scale(.98); } }
+@keyframes cert-fade { from { opacity: 0; } }
+@keyframes cert-shine { 0% { opacity: 0; transform: translateX(0) skewX(-12deg); } 15% { opacity: 1; } 100% { opacity: 0; transform: translateX(330%) skewX(-12deg); } }
+@keyframes cert-stamp { from { opacity: 0; transform: translateZ(30px) scale(2.6) rotate(-45deg); } to { opacity: 1; transform: translateZ(30px) scale(1) rotate(-12deg); } }
+@media (max-width: 600px) {
+  .cert-dialog { padding: 20px 16px; }
+  .cert-dialog h2 { font-size: 21px; }
+  .cert-face { max-height: 56dvh; }
+  .cert-seal { width: 64px; height: 64px; font-size: 8px; right: -6px; bottom: -6px; }
+  .cert-seal span { font-size: 18px; }
+}
+/* O reset global zera a margem; sem isto os diálogos modais grudam no canto superior esquerdo. */
+dialog:modal { margin: auto; }

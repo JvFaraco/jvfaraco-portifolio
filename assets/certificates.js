@@ -9,6 +9,10 @@ export const certificates = {
     title: 'MBA em Inteligência Artificial', issuer: 'Universidade Estácio de Sá', size: [1132, 1600],
     note: 'Declaração de conclusão de pós-graduação lato sensu, 360 h. CPF, matrícula e data de nascimento foram cobertos antes da publicação.'
   },
+  'gestao-ti': {
+    title: 'Tecnólogo em Gestão da Tecnologia da Informação', issuer: 'Centro Universitário Estácio de Santa Catarina', size: [1600, 1076], back: true,
+    note: 'Diploma digital de graduação tecnológica: conclusão em dezembro de 2024 e colação de grau em setembro de 2025. Data de nascimento e RG foram cobertos antes da publicação. O verso traz o registro do diploma.'
+  },
   'governanca-ti': {
     title: 'Implantação de Governança de T.I.', issuer: 'Centro Universitário Estácio de Santa Catarina', size: [1600, 1132], back: true,
     note: 'Certificação intermediária da graduação em Gestão da TI, 240 h. O verso lista as disciplinas e o código de verificação.'
@@ -83,7 +87,7 @@ async function open(id, card) {
   dialog.querySelector('#cert-note').textContent = cert.note;
   const front = face(`${BASE}${id}.jpg`, `Certificado ${cert.title}, frente`, cert.size, 'cert-front');
   const faces = [front];
-  if (cert.back) faces.push(face(`${BASE}${id}-verso.jpg`, `Certificado ${cert.title}, verso com as disciplinas`, cert.size, 'cert-back'));
+  if (cert.back) faces.push(face(`${BASE}${id}-verso.jpg`, `Certificado ${cert.title}, verso`, cert.size, 'cert-back'));
   flipper.replaceChildren(...faces);
   flipButton.hidden = !cert.back; setFlipped(false);
   tilt.classList.toggle('portrait', cert.size[1] > cert.size[0]);
@@ -100,7 +104,7 @@ async function open(id, card) {
   if (!motionOn()) return true;
   try { await front.decode(); } catch { /* imagem segue carregando; anima mesmo assim */ }
   if (!dialog.open) return true;
-  const from = card.querySelector('.cert-thumb')?.getBoundingClientRect(); const to = tilt.getBoundingClientRect();
+  const from = (card.querySelector('.cert-thumb') || card).getBoundingClientRect(); const to = tilt.getBoundingClientRect();
   const dx = from ? from.left + from.width / 2 - (to.left + to.width / 2) : 0;
   const dy = from ? from.top + from.height / 2 - (to.top + to.height / 2) : 120;
   const scale = from ? Math.max(.15, from.width / to.width) : .6;
@@ -116,7 +120,8 @@ async function open(id, card) {
   return true;
 }
 
-document.querySelectorAll('.cert-card').forEach(card => card.addEventListener('click', event => {
+// Cards da seção e os de formação no "sobre": qualquer link com data-cert abre o diálogo.
+document.querySelectorAll('a[data-cert]').forEach(card => card.addEventListener('click', event => {
   if (event.defaultPrevented || event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
   event.preventDefault(); open(card.dataset.cert, card);
 }));

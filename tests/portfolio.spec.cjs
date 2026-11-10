@@ -209,17 +209,17 @@ test('sobre: movimento reduzido não baixa journey.js e mostra os momentos', asy
   await expect(page.locator('.journey-step').nth(2)).toHaveCSS('opacity', '1');
 });
 
-test('projetos: Portal A365 fora do portfólio e contador com 5', async ({ page }) => {
+test('projetos: Portal A365 fora do portfólio e contador com 6', async ({ page }) => {
   await page.goto('./');
   await expect(page.getByText('Portal Operacional A365')).toHaveCount(0);
-  await expect(page.locator('.project-card')).toHaveCount(5);
-  await expect(page.locator('#filter-count')).toHaveText('5 projetos');
+  await expect(page.locator('.project-card')).toHaveCount(6);
+  await expect(page.locator('#filter-count')).toHaveText('6 projetos');
   expect(await page.evaluate(async () => Object.keys((await import('./assets/projects.js')).projects))).not.toContain('portal');
 });
 
 test('projetos: thumbs mostram o fluxo e animam só com o card visível', async ({ page }) => {
   await page.goto('./');
-  await expect(page.locator('.project-thumb svg.thumb-svg')).toHaveCount(5);
+  await expect(page.locator('.project-thumb svg.thumb-svg')).toHaveCount(6);
   const packet = page.locator('[data-project="crm"] .t-move');
   await expect.poll(() => packet.evaluate(el => getComputedStyle(el).animationName)).toBe('none');
   await page.locator('[data-project="crm"]').scrollIntoViewIfNeeded();
@@ -370,7 +370,7 @@ test('contato: card do e-mail e redes alinhados no desktop; redes cabem em 320px
 
 test('certificados: card abre o documento, mostra os links e devolve o foco', async ({ page }) => {
   await page.goto('./');
-  const card = page.getByRole('link', { name: /MBA em Inteligência Artificial/ });
+  const card = page.getByRole('link', { name: /Estácio de Sá MBA em Inteligência Artificial/ });
   await card.click();
   const dialog = page.getByRole('dialog', { name: 'MBA em Inteligência Artificial' });
   await expect(dialog).toBeVisible();
@@ -398,7 +398,7 @@ test('certificados: sem JavaScript os cards levam ao PDF', async ({ browser }) =
   const context = await browser.newContext({ javaScriptEnabled: false });
   const page = await context.newPage(); await page.goto('http://127.0.0.1:4173/jvfaraco-portifolio/');
   const cards = page.locator('.cert-card');
-  await expect(cards).toHaveCount(6);
+  await expect(cards).toHaveCount(7);
   expect(await cards.evaluateAll(links => links.every(a => /^certificados\/[a-z-]+\.pdf$/.test(a.getAttribute('href'))))).toBeTruthy();
   await context.close();
 });
@@ -425,7 +425,7 @@ test('certificados: diálogo sem violações axe e sem rolagem horizontal em 320
   expect(results.violations.map(v => ({ rule: v.id, nodes: v.nodes.map(n => n.target) }))).toEqual([]);
   await page.keyboard.press('Escape');
   await page.setViewportSize({ width: 320, height: 700 });
-  await page.getByRole('link', { name: /MBA em Inteligência Artificial/ }).click();
+  await page.getByRole('link', { name: /Estácio de Sá MBA em Inteligência Artificial/ }).click();
   await page.waitForTimeout(2500); // depois das faíscas, que podem passar da borda durante o voo
   expect(await page.evaluate(() => { const d = document.querySelector('#cert-dialog'); return d.scrollWidth <= d.clientWidth + 1; })).toBeTruthy();
 });
@@ -436,7 +436,40 @@ test('diálogos modais abrem centralizados', async ({ page }) => {
   await page.getByRole('button', { name: 'Explorar caso: Validador de O.S. com IA' }).click();
   expect(await centered('#project-dialog')).toBeTruthy();
   await page.keyboard.press('Escape');
-  await page.getByRole('link', { name: /MBA em Inteligência Artificial/ }).click();
+  await page.getByRole('link', { name: /Estácio de Sá MBA em Inteligência Artificial/ }).click();
   await page.waitForTimeout(1200);
   expect(await centered('#cert-dialog')).toBeTruthy();
+});
+
+test('projetos: 3 + 3 no desktop, extensão com código e estudo de caso', async ({ page }) => {
+  await page.goto('./');
+  const tops = await page.locator('.project-card').evaluateAll(cards => cards.map(c => Math.round(c.getBoundingClientRect().top)));
+  expect(new Set(tops).size).toBe(2);
+  expect(tops.filter(t => t === tops[0])).toHaveLength(3);
+  const card = page.locator('[data-project="blip"]');
+  await expect(card.getByRole('link', { name: /Ver código/ })).toHaveAttribute('href', 'https://github.com/JvFaraco/blip-quick-replies-demo');
+  await card.getByRole('button', { name: 'Explorar caso: Extensão de respostas rápidas' }).click();
+  await expect(page.getByRole('dialog')).toContainText('quem revisa e envia é o atendente');
+  await expect(page.getByRole('dialog').getByRole('link', { name: /Baixar a última versão/ })).toHaveAttribute('href', /releases\/latest$/);
+});
+
+test('sobre: cards de formação abrem o certificado e devolvem o foco', async ({ page }) => {
+  await page.goto('./');
+  const mba = page.getByRole('link', { name: /educação MBA em Inteligência Artificial/ });
+  await mba.click();
+  await expect(page.getByRole('dialog', { name: 'MBA em Inteligência Artificial' })).toBeVisible();
+  await page.keyboard.press('Escape'); await expect(mba).toBeFocused();
+  await page.getByRole('link', { name: /graduação Gestão da TI/ }).click();
+  const diploma = page.getByRole('dialog', { name: 'Tecnólogo em Gestão da Tecnologia da Informação' });
+  await expect(diploma).toContainText('Data de nascimento e RG foram cobertos');
+  await expect(diploma.getByRole('button', { name: /Ver verso/ })).toBeVisible();
+});
+
+test('competências: etiqueta sobe no hover e fica parada com a pausa', async ({ page }) => {
+  await page.goto('./');
+  const tag = page.locator('.competencia-tags li').first();
+  await tag.scrollIntoViewIfNeeded(); await tag.hover();
+  await expect.poll(() => tag.evaluate(el => getComputedStyle(el).transform)).toBe('matrix(1, 0, 0, 1, 0, -2)');
+  await page.getByRole('button', { name: 'Pausar animações' }).click();
+  expect(await tag.evaluate(el => getComputedStyle(el).transitionDuration)).toBe('0s');
 });

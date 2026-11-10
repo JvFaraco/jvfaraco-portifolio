@@ -1122,3 +1122,20 @@ i[class*="fa-"] { display: inline-block; min-width: 1em; min-height: 1em; }
 }
 /* O reset global zera a margem; sem isto os diálogos modais grudam no canto superior esquerdo. */
 dialog:modal { margin: auto; }
+
+/* Projetos em 3 colunas no desktop (3 + 3), 2 no tablet, 1 no celular. */
+@media (min-width: 1001px) { .projects-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 641px) and (max-width: 1000px) { .projects-grid { grid-template-columns: repeat(2, 1fr); } }
+
+/* Cards de formação do "sobre" abrem o certificado. */
+.info-link { color: inherit; cursor: pointer; }
+.info-link:hover { border-color: rgba(255,199,44,.55); }
+.info-link:focus-visible { outline: 2px solid var(--yellow); outline-offset: 3px; }
+.info-go { margin-left: auto; font: .72rem/1 var(--mono); color: var(--accent); transition: transform .25s ease; white-space: nowrap; }
+.info-link:hover .info-go, .info-link:focus-visible .info-go { transform: translateX(3px); }
+
+/* Competências: hover mínimo nas etiquetas e na seta do título. */
+.competencia-tags li { transition: transform .2s ease, background-color .2s ease, border-color .2s ease; }
+.competencia-tags li:hover { transform: translateY(-2px); background: rgba(255,199,44,.18); border-color: rgba(255,199,44,.5); }
+.competencia h3::before { display: inline-block; transition: transform .25s ease; }
+.competencia:hover h3::before { transform: translateX(3px); }

@@ -21,6 +21,7 @@ Portfólio de **Python, automação e integração de sistemas**, orientado a re
 |---|---|
 | Route Coverage Map — Python/Leaflet/IBGE | [Código](https://github.com/JvFaraco/mapaderotas) · [Demo fictícia](https://jvfaraco.github.io/mapaderotas/) |
 | Bot de alertas — Python/Telegram/GitHub Actions | [Código](https://github.com/JvFaraco/bot-telegram) |
+| Extensão de respostas rápidas — JavaScript/Chrome MV3/Playwright | [Código](https://github.com/JvFaraco/blip-quick-replies-demo) · [Última versão](https://github.com/JvFaraco/blip-quick-replies-demo/releases/latest) |
 | Validador de O.S. com IA, versão pública — Python/LLM/avaliação | [Código](https://github.com/JvFaraco/os-validator-demo) |
 
 Estudos internos: validador de OS com IA, portal operacional, integração de OS com CRM e ferramentas de campo/agenda. Não publicam código privado ou dados reais. O assistente de agenda está em validação e seus limites são apresentados no estudo.

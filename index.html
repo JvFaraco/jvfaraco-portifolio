@@ -115,20 +115,22 @@
               <span>Analista de Sistemas · Orsegups</span>
             </div>
           </div>
-          <div class="info-card">
-            <i class="fa-solid fa-graduation-cap"></i>
+          <a class="info-card info-link" href="certificados/mba-ia.pdf" data-cert="mba-ia" target="_blank" rel="noopener noreferrer">
+            <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
             <div class="info-card-text">
               <small>educação</small>
               <span>MBA em Inteligência Artificial</span>
             </div>
-          </div>
-          <div class="info-card">
-            <i class="fa-solid fa-graduation-cap"></i>
+            <span class="info-go" aria-hidden="true">ver →</span>
+          </a>
+          <a class="info-card info-link" href="certificados/gestao-ti.pdf" data-cert="gestao-ti" target="_blank" rel="noopener noreferrer">
+            <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
             <div class="info-card-text">
               <small>graduação</small>
               <span>Gestão da TI · Estácio de Sá · 2025</span>
             </div>
-          </div>
+            <span class="info-go" aria-hidden="true">ver →</span>
+          </a>
           <div class="info-card">
             <i class="fa-solid fa-language"></i>
             <div class="info-card-text">
@@ -181,7 +183,7 @@
       <p class="section-tag fade-in reveal">// portfólio</p>
       <h2 class="section-title fade-in reveal">Projetos</h2>
       <div class="section-line fade-in reveal"></div>
-      <div class="filter-bar js-control" role="group" aria-label="Filtrar projetos"><button class="filter active" data-filter="all" aria-pressed="true">Todos</button><button class="filter" data-filter="ia" aria-pressed="false">IA aplicada</button><button class="filter" data-filter="automation" aria-pressed="false">Automação</button><button class="filter" data-filter="data" aria-pressed="false">Dados e web</button><span id="filter-count" role="status" aria-live="polite">5 projetos</span></div><div class="projects-grid">
+      <div class="filter-bar js-control" role="group" aria-label="Filtrar projetos"><button class="filter active" data-filter="all" aria-pressed="true">Todos</button><button class="filter" data-filter="ia" aria-pressed="false">IA aplicada</button><button class="filter" data-filter="automation" aria-pressed="false">Automação</button><button class="filter" data-filter="data" aria-pressed="false">Dados e web</button><span id="filter-count" role="status" aria-live="polite">6 projetos</span></div><div class="projects-grid">
 <article class="project-card fade-in reveal" data-project="routes" data-category="data"><div class="project-thumb" aria-hidden="true"><svg class="thumb-svg" viewBox="0 0 300 120" focusable="false">
 <g class="t-seq" style="--delay:0s"><circle class="t-pin" cx="30" cy="40" r="4"/><circle class="t-pin" cx="58" cy="30" r="4"/><circle class="t-pin" cx="44" cy="62" r="4"/><circle class="t-pin" cx="72" cy="56" r="4"/><text class="t-label t-small" x="52" y="100">geocodificação</text></g>
 <path class="t-link" d="M96 50 H116"/>
@@ -195,6 +197,20 @@
 <p class="project-desc">Descrições de território viram áreas navegáveis. Geocodificação em cascata, limites do IBGE e tratamento explícito das aproximações.</p>
 <p class="project-note">Demo pública</p>
 <div class="project-links"><a href="https://jvfaraco.github.io/mapaderotas/" target="_blank" rel="noopener noreferrer" class="project-link">Ver demo ↗</a><a href="https://github.com/JvFaraco/mapaderotas" target="_blank" rel="noopener noreferrer" class="project-link">Código ↗</a><button class="project-link case-link js-control" data-case="routes" aria-label="Explorar caso: Route Coverage Map">Caso ↗</button></div></div></article>
+<article class="project-card fade-in reveal" data-project="blip" data-category="data"><div class="project-thumb" aria-hidden="true"><svg class="thumb-svg" viewBox="0 0 300 120" focusable="false">
+<rect class="t-box" x="14" y="42" width="72" height="34" rx="7"/><text class="t-label" x="50" y="63">digita /</text>
+<rect class="t-box" x="114" y="42" width="72" height="34" rx="7"/><text class="t-label" x="150" y="63">escolhe</text>
+<rect class="t-box t-hot" x="214" y="42" width="72" height="34" rx="7"/><text class="t-label" x="250" y="63">insere</text>
+<path class="t-link" d="M86 59 H114 M186 59 H214"/>
+<circle class="t-packet t-move" cx="50" cy="92" r="4" style="--dx:200px;--dur:3s"/>
+<text class="t-label t-small" x="150" y="28">quem envia é o atendente</text>
+</svg></div>
+<div class="project-body">
+<div class="project-tags"><span class="project-tag">JavaScript</span><span class="project-tag">Chrome MV3</span><span class="project-tag">Playwright</span></div>
+<h3 class="project-title">Extensão de respostas rápidas</h3>
+<p class="project-desc">Digite / no chat, escolha a resposta e insira com Tab. Biblioteca da equipe sincronizada por planilha, variáveis automáticas e funcionamento em qualquer sistema de atendimento.</p>
+<p class="project-note">Código público</p>
+<div class="project-links"><a href="https://github.com/JvFaraco/blip-quick-replies-demo" target="_blank" rel="noopener noreferrer" class="project-link">Ver código ↗</a><button class="project-link case-link js-control" data-case="blip" aria-label="Explorar caso: Extensão de respostas rápidas">Caso ↗</button></div></div></article>
 <article class="project-card fade-in reveal" data-project="crm" data-category="automation"><div class="project-thumb" aria-hidden="true"><svg class="thumb-svg" viewBox="0 0 300 120" focusable="false">
 <rect class="t-box" x="30" y="42" width="72" height="34" rx="7"/><text class="t-label" x="66" y="63">OS</text>
 <rect class="t-box t-hot" x="198" y="42" width="72" height="34" rx="7"/><text class="t-label" x="234" y="63">CRM</text>
@@ -319,9 +335,10 @@
       <p class="section-tag fade-in reveal">// formação</p>
       <h2 class="section-title fade-in reveal">Certificados</h2>
       <div class="section-line fade-in reveal"></div>
-      <p class="cert-intro fade-in reveal">Clique em um certificado para ver o documento. Os da Estácio têm verso, com as disciplinas.</p>
+      <p class="cert-intro fade-in reveal">Clique em um certificado para ver o documento. O diploma e as certificações da Estácio têm verso.</p>
       <ul class="cert-grid">
         <li class="fade-in reveal"><a class="cert-card" href="certificados/mba-ia.pdf" data-cert="mba-ia" target="_blank" rel="noopener noreferrer"><img class="cert-thumb" src="certificados/mba-ia-thumb.jpg" alt="" width="640" height="906" decoding="async"><span class="cert-meta"><span class="cert-date">set 2026 · Estácio de Sá</span><span class="cert-title">MBA em Inteligência Artificial</span><span class="cert-kind">Pós-graduação · 360 h</span><span class="cert-cta">Ver certificado <span aria-hidden="true">→</span></span></span></a></li>
+        <li class="fade-in reveal"><a class="cert-card" href="certificados/gestao-ti.pdf" data-cert="gestao-ti" target="_blank" rel="noopener noreferrer"><img class="cert-thumb" src="certificados/gestao-ti-thumb.jpg" alt="" width="640" height="431" decoding="async"><span class="cert-meta"><span class="cert-date">set 2025 · Estácio de Sá</span><span class="cert-title">Tecnólogo em Gestão da Tecnologia da Informação</span><span class="cert-kind">Diploma de graduação tecnológica</span><span class="cert-cta">Ver diploma <span aria-hidden="true">→</span></span></span></a></li>
         <li class="fade-in reveal"><a class="cert-card" href="certificados/governanca-ti.pdf" data-cert="governanca-ti" target="_blank" rel="noopener noreferrer"><img class="cert-thumb" src="certificados/governanca-ti-thumb.jpg" alt="" width="640" height="453" decoding="async"><span class="cert-meta"><span class="cert-date">jun 2024 · Estácio de Sá</span><span class="cert-title">Implantação de Governança de T.I.</span><span class="cert-kind">Certificação intermediária · 240 h</span><span class="cert-cta">Ver certificado <span aria-hidden="true">→</span></span></span></a></li>
         <li class="fade-in reveal"><a class="cert-card" href="certificados/melhoria-continua.pdf" data-cert="melhoria-continua" target="_blank" rel="noopener noreferrer"><img class="cert-thumb" src="certificados/melhoria-continua-thumb.jpg" alt="" width="640" height="453" decoding="async"><span class="cert-meta"><span class="cert-date">jun 2024 · Estácio de Sá</span><span class="cert-title">Aplicação da Melhoria Contínua</span><span class="cert-kind">Certificação intermediária · 240 h</span><span class="cert-cta">Ver certificado <span aria-hidden="true">→</span></span></span></a></li>
         <li class="fade-in reveal"><a class="cert-card" href="certificados/gestao-projetos.pdf" data-cert="gestao-projetos" target="_blank" rel="noopener noreferrer"><img class="cert-thumb" src="certificados/gestao-projetos-thumb.jpg" alt="" width="640" height="453" decoding="async"><span class="cert-meta"><span class="cert-date">mar 2024 · Estácio de Sá</span><span class="cert-title">Gestão de Projetos e de Informação</span><span class="cert-kind">Certificação intermediária · 240 h</span><span class="cert-cta">Ver certificado <span aria-hidden="true">→</span></span></span></a></li>

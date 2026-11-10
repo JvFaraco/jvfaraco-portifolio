@@ -9,6 +9,16 @@ export const projects = {
     decisions: ['Escopo e coleta separados da interpretação da IA.', 'Sanitização e projeção antes de enviar contexto ao modelo.', 'Locks, reconciliação e releitura para controlar duplicação e escrita incerta.', '1.503 testes locais passando em 12/10/2026; medida da suíte, não da acurácia da IA.'],
     limits: 'Repositório privado. A versão pública reproduz o mesmo desenho do zero, com dados fictícios, provedor offline e avaliação contra gabarito. Aprovação final humana e leitura inconclusiva continuam explícitas.', links: [['Ver versão pública', 'https://github.com/JvFaraco/os-validator-demo']]
   },
+  blip: {
+    title: 'Extensão de respostas rápidas', category: 'Automação web / código público',
+    flow: ['Digita / no chat', 'Busca por atalho', 'Preenche variáveis', 'Insere no campo', 'Atendente envia'],
+    intro: 'Extensão Chrome (Manifest V3) de respostas rápidas para quem atende em chat web, nascida de uma versão interna usada pela equipe de atendimento.',
+    problem: 'Quem atende repete as mesmas mensagens o dia inteiro, copiando de documentos soltos. Cada pessoa mantém a própria versão, e o texto da equipe se desatualiza.',
+    approach: 'No campo de mensagem, / abre um menu com busca por atalho, título ou texto, sem diferenciar acentos. Variáveis como saudação, data e nome são preenchidas na hora. A biblioteca da equipe vem de uma planilha do Google, sincronizada a cada 30 minutos.',
+    result: 'Funciona no Blip e em qualquer site ativado pelo atendente, em textarea e em editor rico, preservando o texto em volta e o Ctrl+Z. A extensão só preenche o campo: quem revisa e envia é o atendente.',
+    decisions: ['Sem servidor próprio: biblioteca, variáveis e sites ficam em chrome.storage.local.', 'Permissão pedida por site, na hora de ativar, e removível pelo atendente.', 'Mensagens inseridas como texto, sem interpretar HTML.', 'Testes unitários (node:test) e no navegador (Playwright), rodando no CI.'],
+    limits: 'Versão pública com bibliotecas fictícias. A sincronização depende de a planilha estar compartilhada por link.', links: [['Ver código', 'https://github.com/JvFaraco/blip-quick-replies-demo'], ['Baixar a última versão', 'https://github.com/JvFaraco/blip-quick-replies-demo/releases/latest']]
+  },
   routes: {
     title: 'Route Coverage Map', category: 'Geoprocessamento / código público',
     flow: ['Descrições de território', 'Geocodificação em cascata', 'Limites do IBGE', 'Fallback por Voronoi', 'Mapa navegável'],

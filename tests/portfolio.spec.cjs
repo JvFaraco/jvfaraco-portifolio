@@ -357,7 +357,8 @@ test('polimento: teclado alcança o CTA com foco visível', async ({ page }) => 
 });
 
 test('contato: card do e-mail e redes alinhados no desktop; redes cabem em 320px', async ({ page }) => {
-  await page.goto('./');
+  // Font Awesome chega depois do load e muda a altura dos ícones: mede com a rede ociosa.
+  await page.goto('./'); await page.waitForLoadState('networkidle');
   const box = s => page.locator(s).first().boundingBox();
   const email = await box('.contact-item'), social = await box('.social-card');
   expect(Math.abs(email.y + email.height - (social.y + social.height))).toBeLessThan(2);

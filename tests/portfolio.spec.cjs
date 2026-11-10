@@ -368,6 +368,11 @@ test('contato: card do e-mail e redes alinhados no desktop; redes cabem em 320px
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBeTruthy();
 });
 
+// Espera a entrada do certificado terminar (sem faíscas nem animação no documento).
+async function certSettled(page) {
+  await expect.poll(() => page.evaluate(() => document.querySelectorAll('.cert-spark').length + document.querySelector('.cert-tilt').getAnimations().length), { timeout: 8000 }).toBe(0);
+}
+
 test('certificados: card abre o documento, mostra os links e devolve o foco', async ({ page }) => {
   await page.goto('./');
   const card = page.getByRole('link', { name: /Estácio de Sá MBA em Inteligência Artificial/ });
@@ -407,8 +412,9 @@ test('certificados: entrada animada termina no lugar e a pausa não deixa anima�
   await page.goto('./');
   await page.getByRole('link', { name: /Aplicação da Melhoria Contínua/ }).click();
   await expect.poll(() => page.evaluate(() => document.querySelector('.cert-tilt').getAnimations().length)).toBeGreaterThan(0);
-  await page.waitForTimeout(2300);
-  expect(await page.evaluate(() => document.querySelectorAll('.cert-spark').length)).toBe(0);
+  // a entrada só começa depois de a imagem decodificar, que no CI demora mais: espera as faíscas sumirem
+  await expect.poll(() => page.evaluate(() => document.querySelectorAll('.cert-spark').length), { timeout: 8000 }).toBe(0);
+  await expect.poll(() => page.evaluate(() => document.querySelector('.cert-tilt').getAnimations().length), { timeout: 4000 }).toBe(0);
   await expect(page.locator('.cert-seal')).toHaveCSS('opacity', '1');
   await page.getByRole('button', { name: 'Fechar certificado' }).click();
   await page.getByRole('button', { name: 'Pausar animações' }).click();
@@ -420,13 +426,13 @@ test('certificados: entrada animada termina no lugar e a pausa não deixa anima�
 test('certificados: diálogo sem violações axe e sem rolagem horizontal em 320px', async ({ page }) => {
   await page.goto('./');
   await page.getByRole('link', { name: /Gestão de Projetos e de Informação/ }).click();
-  await page.waitForTimeout(2200);
+  await certSettled(page);
   const results = await new AxeBuilder({ page }).include('#cert-dialog').withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze();
   expect(results.violations.map(v => ({ rule: v.id, nodes: v.nodes.map(n => n.target) }))).toEqual([]);
   await page.keyboard.press('Escape');
   await page.setViewportSize({ width: 320, height: 700 });
   await page.getByRole('link', { name: /Estácio de Sá MBA em Inteligência Artificial/ }).click();
-  await page.waitForTimeout(2500); // depois das faíscas, que podem passar da borda durante o voo
+  await certSettled(page);
   expect(await page.evaluate(() => { const d = document.querySelector('#cert-dialog'); return d.scrollWidth <= d.clientWidth + 1; })).toBeTruthy();
 });
 

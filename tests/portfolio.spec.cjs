@@ -468,7 +468,8 @@ test('sobre: cards de formação abrem o certificado e devolvem o foco', async (
 test('competências: etiqueta sobe no hover e fica parada com a pausa', async ({ page }) => {
   await page.goto('./');
   const tag = page.locator('.competencia-tags li').first();
-  await tag.scrollIntoViewIfNeeded(); await tag.hover();
+  // centraliza: no topo, a barra de navegação fixa ficaria entre o mouse e a etiqueta
+  await tag.evaluate(el => el.scrollIntoView({ block: 'center' })); await tag.hover();
   await expect.poll(() => tag.evaluate(el => getComputedStyle(el).transform)).toBe('matrix(1, 0, 0, 1, 0, -2)');
   await page.getByRole('button', { name: 'Pausar animações' }).click();
   expect(await tag.evaluate(el => getComputedStyle(el).transitionDuration)).toBe('0s');

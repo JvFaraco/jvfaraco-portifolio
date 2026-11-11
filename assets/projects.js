@@ -17,7 +17,7 @@ export const projects = {
     approach: 'No campo de mensagem, / abre um menu com busca por atalho, título ou texto, sem diferenciar acentos. Variáveis como saudação, data e nome são preenchidas na hora. A biblioteca da equipe vem de uma planilha do Google, sincronizada a cada 30 minutos.',
     result: 'Funciona em qualquer canal de atendimento na web, ativado pelo atendente com um clique, em textarea e em editor rico, preservando o texto em volta e o Ctrl+Z. A extensão só preenche o campo: quem revisa e envia é o atendente.',
     decisions: ['Sem servidor próprio: biblioteca, variáveis e sites ficam em chrome.storage.local.', 'Permissão pedida por site, na hora de ativar, e removível pelo atendente.', 'Mensagens inseridas como texto, sem interpretar HTML.', 'Testes unitários (node:test) e no navegador (Playwright), rodando no CI.'],
-    limits: 'Versão pública com bibliotecas fictícias. A sincronização depende de a planilha estar compartilhada por link.', links: [['Ver código', 'https://github.com/JvFaraco/quick-replies'], ['Baixar a última versão', 'https://github.com/JvFaraco/quick-replies/releases/latest']]
+    limits: 'Versão pública com bibliotecas fictícias. A sincronização depende de a planilha estar compartilhada por link.', links: [['Ver demonstração', 'https://jvfaraco.github.io/quick-replies/'], ['Ver código', 'https://github.com/JvFaraco/quick-replies'], ['Baixar a última versão', 'https://github.com/JvFaraco/quick-replies/releases/latest']]
   },
   routes: {
     title: 'Route Coverage Map', category: 'Geoprocessamento / código público',

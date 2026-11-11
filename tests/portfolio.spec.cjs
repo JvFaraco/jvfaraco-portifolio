@@ -453,9 +453,11 @@ test('projetos: 3 + 3 no desktop, extensão com código e estudo de caso', async
   expect(new Set(tops).size).toBe(2);
   expect(tops.filter(t => t === tops[0])).toHaveLength(3);
   const card = page.locator('[data-project="quickreplies"]');
-  await expect(card.getByRole('link', { name: /Ver código/ })).toHaveAttribute('href', 'https://github.com/JvFaraco/quick-replies');
+  await expect(card.getByRole('link', { name: /Ver demo/ })).toHaveAttribute('href', 'https://jvfaraco.github.io/quick-replies/');
+  await expect(card.getByRole('link', { name: /^Código/ })).toHaveAttribute('href', 'https://github.com/JvFaraco/quick-replies');
   await card.getByRole('button', { name: 'Explorar caso: Extensão de respostas rápidas' }).click();
   await expect(page.getByRole('dialog')).toContainText('quem revisa e envia é o atendente');
+  await expect(page.getByRole('dialog').getByRole('link', { name: /Ver demonstração/ })).toHaveAttribute('href', 'https://jvfaraco.github.io/quick-replies/');
   await expect(page.getByRole('dialog').getByRole('link', { name: /Baixar a última versão/ })).toHaveAttribute('href', /releases\/latest$/);
 });
 

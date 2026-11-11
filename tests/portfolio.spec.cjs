@@ -452,8 +452,8 @@ test('projetos: 3 + 3 no desktop, extensão com código e estudo de caso', async
   const tops = await page.locator('.project-card').evaluateAll(cards => cards.map(c => Math.round(c.getBoundingClientRect().top)));
   expect(new Set(tops).size).toBe(2);
   expect(tops.filter(t => t === tops[0])).toHaveLength(3);
-  const card = page.locator('[data-project="blip"]');
-  await expect(card.getByRole('link', { name: /Ver código/ })).toHaveAttribute('href', 'https://github.com/JvFaraco/blip-quick-replies-demo');
+  const card = page.locator('[data-project="quickreplies"]');
+  await expect(card.getByRole('link', { name: /Ver código/ })).toHaveAttribute('href', 'https://github.com/JvFaraco/quick-replies');
   await card.getByRole('button', { name: 'Explorar caso: Extensão de respostas rápidas' }).click();
   await expect(page.getByRole('dialog')).toContainText('quem revisa e envia é o atendente');
   await expect(page.getByRole('dialog').getByRole('link', { name: /Baixar a última versão/ })).toHaveAttribute('href', /releases\/latest$/);
@@ -495,7 +495,7 @@ test('projetos: cada thumb de fluxo tem um movimento próprio', async ({ page })
     return card.locator('svg *').evaluateAll(els => [...new Set(els.map(e => getComputedStyle(e).animationName).filter(n => n !== 'none'))].sort().join(','));
   };
   const nomes = [];
-  for (const projeto of ['toolkit', 'bot', 'validator', 'blip']) nomes.push(await assinatura(projeto));
+  for (const projeto of ['toolkit', 'bot', 'validator', 'quickreplies']) nomes.push(await assinatura(projeto));
   expect(nomes.every(Boolean)).toBeTruthy();
   expect(new Set(nomes).size).toBe(4);
 });

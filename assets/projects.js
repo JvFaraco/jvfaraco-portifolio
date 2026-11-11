@@ -6,7 +6,7 @@ export const projects = {
     problem: 'Conferir um atendimento exige cruzar histórico, equipamentos, movimentações, eventos, notas e documentos. A observação isolada não sustenta toda a análise.',
     approach: 'Um pipeline coleta e normaliza o pacote, lê contrato e comprovantes por OCR local e aplica regras determinísticas antes do modelo. A classificação é limitada ao catálogo operacional.',
     result: 'A conferência recebe classificação, observação e pendências com evidências. Casos incompletos retornam para correção; o agente não aprova nem reprova definitivamente a OS.',
-    decisions: ['Escopo e coleta separados da interpretação da IA.', 'Sanitização e projeção antes de enviar contexto ao modelo.', 'Locks, reconciliação e releitura para controlar duplicação e escrita incerta.', '1.503 testes locais passando em 12/10/2026; medida da suíte, não da acurácia da IA.'],
+    decisions: ['Escopo e coleta separados da interpretação da IA.', 'Sanitização e projeção antes de enviar contexto ao modelo.', 'Locks, reconciliação e releitura para controlar duplicação e escrita incerta.', '2.222 testes locais passando em 09/11/2026; medida da suíte, não da acurácia da IA.'],
     limits: 'Repositório privado. A versão pública reproduz o mesmo desenho do zero, com dados fictícios, provedor offline e avaliação contra gabarito. Aprovação final humana e leitura inconclusiva continuam explícitas.', links: [['Ver versão pública', 'https://github.com/JvFaraco/os-validator-demo']]
   },
   blip: {

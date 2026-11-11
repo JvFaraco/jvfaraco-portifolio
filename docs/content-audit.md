@@ -29,6 +29,8 @@ Data: 12/10/2026. Público escolhido pelo autor: recrutadores de automação, Py
 
 `python -m pytest -q` executado no a365-ia em 12/10/2026: **1503 passed in 21.80s**. O número apresentado é snapshot da suíte local do validador. Não mede acurácia do modelo, confiabilidade de produção, horas economizadas ou ROI. Não é uma contagem geral de testes de todo o GitHub.
 
+Atualização: em 09/11/2026 a mesma suíte registrou **2222 passed in 37.40s**, e o portfólio passou a citar esse número, com a mesma ressalva.
+
 Trajetória, instituições, formação e contatos foram preservados do perfil/site fornecidos pelo autor. Não foram inventadas disponibilidade imediata, certificações, clientes, receita ou resultados percentuais. A antiga menção de “22 regionais” e deploy específico não foi ampliada: a atualização prefere descrever capacidades verificáveis sem publicar indicadores internos desnecessários.
 
 ## Estado e privacidade

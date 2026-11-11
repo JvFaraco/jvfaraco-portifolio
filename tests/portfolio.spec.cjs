@@ -368,9 +368,9 @@ test('contato: card do e-mail e redes alinhados no desktop; redes cabem em 320px
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBeTruthy();
 });
 
-// Espera a entrada do certificado terminar (sem faíscas nem animação no documento).
+// Espera a entrada do certificado terminar: voo, faíscas, selo e brilho (todas as animações do diálogo).
 async function certSettled(page) {
-  await expect.poll(() => page.evaluate(() => document.querySelectorAll('.cert-spark').length + document.querySelector('.cert-tilt').getAnimations().length), { timeout: 8000 }).toBe(0);
+  await expect.poll(() => page.evaluate(() => document.querySelectorAll('.cert-spark').length + document.querySelector('#cert-dialog').getAnimations({ subtree: true }).filter(an => an.playState === 'running').length), { timeout: 8000 }).toBe(0);
 }
 
 test('certificados: card abre o documento, mostra os links e devolve o foco', async ({ page }) => {
@@ -471,12 +471,41 @@ test('sobre: cards de formação abrem o certificado e devolvem o foco', async (
   await expect(diploma.getByRole('button', { name: /Ver verso/ })).toBeVisible();
 });
 
-test('competências: etiqueta sobe no hover e fica parada com a pausa', async ({ page }) => {
+test('competências: brilho em volta do card no hover, sem mexer no título', async ({ page }) => {
   await page.goto('./');
-  const tag = page.locator('.competencia-tags li').first();
-  // centraliza: no topo, a barra de navegação fixa ficaria entre o mouse e a etiqueta
-  await tag.evaluate(el => el.scrollIntoView({ block: 'center' })); await tag.hover();
-  await expect.poll(() => tag.evaluate(el => getComputedStyle(el).transform)).toBe('matrix(1, 0, 0, 1, 0, -2)');
+  const card = page.locator('.competencia').first();
+  await card.evaluate(el => el.scrollIntoView({ block: 'center' }));
+  // espera a entrada do card (revelação ao rolar) terminar antes de medir o título
+  await expect.poll(() => card.evaluate(el => el.classList.contains('visible') && el.getAnimations().length === 0)).toBeTruthy();
+  const titulo = await card.locator('h3').boundingBox();
+  await card.hover();
+  await expect.poll(() => card.evaluate(el => getComputedStyle(el, '::after').opacity)).toBe('1');
+  expect(await card.locator('h3').boundingBox()).toEqual(titulo);
+  expect(await card.locator('h3').evaluate(el => getComputedStyle(el, '::before').display)).toBe('inline');
   await page.getByRole('button', { name: 'Pausar animações' }).click();
-  expect(await tag.evaluate(el => getComputedStyle(el).transitionDuration)).toBe('0s');
+  expect(await card.evaluate(el => getComputedStyle(el, '::after').transitionDuration)).toBe('0s');
+});
+
+test('projetos: cada thumb de fluxo tem um movimento próprio', async ({ page }) => {
+  await page.goto('./');
+  const assinatura = async projeto => {
+    const card = page.locator(`[data-project="${projeto}"]`);
+    await card.evaluate(el => el.scrollIntoView({ block: 'center' }));
+    await expect(card).toHaveClass(/in-view/);
+    return card.locator('svg *').evaluateAll(els => [...new Set(els.map(e => getComputedStyle(e).animationName).filter(n => n !== 'none'))].sort().join(','));
+  };
+  const nomes = [];
+  for (const projeto of ['toolkit', 'bot', 'validator', 'blip']) nomes.push(await assinatura(projeto));
+  expect(nomes.every(Boolean)).toBeTruthy();
+  expect(new Set(nomes).size).toBe(4);
+});
+
+test('diálogos: X de fechar fica no centro do botão', async ({ page }) => {
+  await page.goto('./');
+  const offset = button => button.evaluate(b => { const r = b.getBoundingClientRect(), s = b.querySelector('svg').getBoundingClientRect(); return Math.max(Math.abs(r.left + r.width / 2 - s.left - s.width / 2), Math.abs(r.top + r.height / 2 - s.top - s.height / 2)); });
+  await page.getByRole('button', { name: 'Explorar caso: Validador de O.S. com IA' }).click();
+  expect(await offset(page.getByRole('button', { name: 'Fechar estudo de caso' }))).toBeLessThan(1);
+  await page.keyboard.press('Escape');
+  await page.getByRole('link', { name: /graduação Gestão da TI/ }).click();
+  expect(await offset(page.getByRole('button', { name: 'Fechar certificado' }))).toBeLessThan(1);
 });

@@ -1134,8 +1134,40 @@ dialog:modal { margin: auto; }
 .info-go { margin-left: auto; font: .72rem/1 var(--mono); color: var(--accent); transition: transform .25s ease; white-space: nowrap; }
 .info-link:hover .info-go, .info-link:focus-visible .info-go { transform: translateX(3px); }
 
-/* Competências: hover mínimo nas etiquetas e na seta do título. */
-.competencia-tags li { transition: transform .2s ease, background-color .2s ease, border-color .2s ease; }
-.competencia-tags li:hover { transform: translateY(-2px); background: rgba(255,199,44,.18); border-color: rgba(255,199,44,.5); }
-.competencia h3::before { display: inline-block; transition: transform .25s ease; }
-.competencia:hover h3::before { transform: translateX(3px); }
+/* Competências: brilho em volta do card no hover, num pseudo-elemento (o card e o título não se mexem). */
+.competencia { position: relative; }
+.competencia::after { content: ''; position: absolute; inset: -1px; border-radius: inherit; border: 1px solid var(--yellow); box-shadow: 0 0 0 1px rgba(255,199,44,.12), 0 0 22px -2px rgba(255,199,44,.35); opacity: 0; pointer-events: none; transition: opacity .3s ease; }
+.competencia:hover::after { opacity: 1; }
+
+/* Botão de fechar dos diálogos: X desenhado, centralizado, com borda visível e hover discreto. */
+dialog .dialog-header .icon-button { display: grid; place-items: center; padding: 0; line-height: 1; border-color: rgba(148,163,184,.35); transition: border-color .2s ease, background-color .2s ease, color .2s ease; }
+dialog .icon-button:hover, dialog .icon-button:focus-visible { border-color: var(--yellow); color: var(--yellow); background: rgba(255,199,44,.08); }
+dialog .icon-button:focus-visible { outline: 2px solid var(--yellow); outline-offset: 2px; }
+.icon-x { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; transition: transform .25s ease; }
+dialog .icon-button:hover .icon-x { transform: rotate(90deg); }
+
+/* Thumbs com movimento próprio por projeto. Estado parado (sem JS ou com pausa) continua legível. */
+.thumb-svg .t-flash { fill: rgba(255,199,44,.14); stroke: #FFC72C; stroke-width: 1.6; opacity: 0; }
+.thumb-svg .t-reject { fill: none; stroke: #fca5a5; stroke-width: 2.2; stroke-linecap: round; opacity: 0; }
+.thumb-svg .t-scan { stroke: #FFC72C; stroke-width: 2; stroke-linecap: round; opacity: 0; }
+.thumb-svg .t-caret { stroke: #FFC72C; stroke-width: 1.4; }
+.thumb-svg .t-inserted { opacity: 0; }
+.thumb-svg .t-pick { fill: rgba(255,199,44,.2); stroke: rgba(255,199,44,.6); stroke-width: 1; }
+@keyframes t-flash { 0%, 100% { opacity: 0; } 8%, 26% { opacity: 1; } 40% { opacity: 0; } }
+@keyframes t-done { 0%, 72% { opacity: 0; } 78%, 95% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes t-reject { 0%, 40% { opacity: 0; } 47%, 62% { opacity: 1; } 72%, 100% { opacity: 0; } }
+@keyframes t-scan { 0% { transform: translateX(0); opacity: 0; } 10% { opacity: .95; } 50% { transform: translateX(60px); } 90% { opacity: .95; } 100% { transform: translateX(0); opacity: 0; } }
+@keyframes t-blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+@keyframes t-typed { 0%, 58% { opacity: 1; } 64%, 96% { opacity: 0; } 100% { opacity: 1; } }
+@keyframes t-inserted { 0%, 60% { opacity: 0; } 66%, 94% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes t-pick { 0%, 24% { transform: translateY(0); } 32%, 100% { transform: translateY(18px); } }
+.enhanced[data-motion=on] .project-card.in-view .t-flash { animation: t-flash 3.6s var(--delay, 0s) ease-in-out infinite both; }
+.enhanced[data-motion=on] .project-card.in-view .t-done { animation: t-done 3.6s ease-in-out infinite both; }
+.enhanced[data-motion=on] .project-card.in-view .t-reject { animation: t-reject 3s 1s ease-in-out infinite both; }
+.enhanced[data-motion=on] .project-card.in-view .t-scan { animation: t-scan 2.4s ease-in-out infinite both; }
+.enhanced[data-motion=on] .project-card.in-view .t-caret { animation: t-blink 1s steps(1) infinite; }
+.enhanced[data-motion=on] .project-card.in-view .t-typed, .enhanced[data-motion=on] .project-card.in-view .t-menu { animation: t-typed 4.4s ease-in-out infinite both; }
+.enhanced[data-motion=on] .project-card.in-view .t-inserted { animation: t-inserted 4.4s ease-in-out infinite both; }
+.enhanced[data-motion=on] .project-card.in-view .t-pick { animation: t-pick 4.4s ease-in-out infinite both; }
+/* A regra global de pausa usa `*`, que não alcança pseudo-elementos. */
+[data-motion=off] .competencia::after { transition: none; }

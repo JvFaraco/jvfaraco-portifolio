@@ -198,12 +198,19 @@
 <p class="project-note">Demo pública</p>
 <div class="project-links"><a href="https://jvfaraco.github.io/mapaderotas/" target="_blank" rel="noopener noreferrer" class="project-link">Ver demo ↗</a><a href="https://github.com/JvFaraco/mapaderotas" target="_blank" rel="noopener noreferrer" class="project-link">Código ↗</a><button class="project-link case-link js-control" data-case="routes" aria-label="Explorar caso: Route Coverage Map">Caso ↗</button></div></div></article>
 <article class="project-card fade-in reveal" data-project="blip" data-category="data"><div class="project-thumb" aria-hidden="true"><svg class="thumb-svg" viewBox="0 0 300 120" focusable="false">
-<rect class="t-box" x="14" y="42" width="72" height="34" rx="7"/><text class="t-label" x="50" y="63">digita /</text>
-<rect class="t-box" x="114" y="42" width="72" height="34" rx="7"/><text class="t-label" x="150" y="63">escolhe</text>
-<rect class="t-box t-hot" x="214" y="42" width="72" height="34" rx="7"/><text class="t-label" x="250" y="63">insere</text>
-<path class="t-link" d="M86 59 H114 M186 59 H214"/>
-<circle class="t-packet t-move" cx="50" cy="92" r="4" style="--dx:200px;--dur:3s"/>
-<text class="t-label t-small" x="150" y="28">quem envia é o atendente</text>
+<rect class="t-box" x="20" y="12" width="200" height="26" rx="6"/>
+<text class="t-label t-typed" x="32" y="29" style="text-anchor:start">/sa</text>
+<line class="t-caret" x1="54" y1="18" x2="54" y2="32"/>
+<text class="t-label t-inserted" x="32" y="29" style="text-anchor:start">Boa tarde! Posso ajudar?</text>
+<g class="t-menu">
+<rect class="t-box" x="20" y="44" width="150" height="62" rx="6"/>
+<rect class="t-pick" x="24" y="48" width="142" height="18" rx="4"/>
+<text class="t-label t-small" x="32" y="61" style="text-anchor:start">saudação</text>
+<text class="t-label t-small" x="32" y="79" style="text-anchor:start">saudação da tarde</text>
+<text class="t-label t-small" x="32" y="97" style="text-anchor:start">encerramento</text>
+</g>
+<rect class="t-box t-hot" x="232" y="12" width="52" height="26" rx="6"/><text class="t-label t-small" x="258" y="29">Tab ↵</text>
+<text class="t-label t-small" x="236" y="80">quem envia</text><text class="t-label t-small" x="236" y="93">é o atendente</text>
 </svg></div>
 <div class="project-body">
 <div class="project-tags"><span class="project-tag">JavaScript</span><span class="project-tag">Chrome MV3</span><span class="project-tag">Playwright</span></div>
@@ -230,8 +237,11 @@
 <rect class="t-box" x="114" y="42" width="72" height="34" rx="7"/><text class="t-label" x="150" y="63">altera</text>
 <rect class="t-box t-hot" x="214" y="42" width="72" height="34" rx="7"/><text class="t-label" x="250" y="63">confere</text>
 <path class="t-link" d="M86 59 H114 M186 59 H214"/>
-<circle class="t-packet t-move" cx="50" cy="92" r="4" style="--dx:200px;--dur:3s"/>
-<path class="t-check t-late" d="M243 30 l5 5 l9 -10"/>
+<rect class="t-flash" x="14" y="42" width="72" height="34" rx="7" style="--delay:0s"/>
+<rect class="t-flash" x="114" y="42" width="72" height="34" rx="7" style="--delay:1.2s"/>
+<rect class="t-flash" x="214" y="42" width="72" height="34" rx="7" style="--delay:2.4s"/>
+<path class="t-check t-done" d="M243 30 l5 5 l9 -10"/>
+<text class="t-label t-small" x="150" y="100">inconclusivos à parte</text>
 </svg></div>
 <div class="project-body">
 <div class="project-tags"><span class="project-tag">Python</span><span class="project-tag">openpyxl</span><span class="project-tag">pytest</span><span class="project-tag">Chrome MV3</span></div>
@@ -242,11 +252,13 @@
 <article class="project-card fade-in reveal" data-project="bot" data-category="automation"><div class="project-thumb" aria-hidden="true"><svg class="thumb-svg" viewBox="0 0 300 120" focusable="false">
 <rect class="t-box" x="14" y="42" width="72" height="34" rx="7"/><text class="t-label" x="50" y="63">coleta</text>
 <rect class="t-box" x="114" y="42" width="72" height="34" rx="7"/><text class="t-label" x="150" y="63">filtros</text>
-<rect class="t-box t-hot" x="214" y="42" width="72" height="34" rx="7"/><text class="t-label" x="250" y="63">Telegram</text>
+<rect class="t-box t-hot t-pulse" x="214" y="42" width="72" height="34" rx="7"/><text class="t-label" x="250" y="63">Telegram</text>
 <path class="t-link" d="M86 59 H114 M186 59 H214"/>
-<circle class="t-packet t-move" cx="50" cy="92" r="4" style="--dx:200px;--dur:3.2s"/>
-<circle class="t-packet t-move t-stop" cx="50" cy="92" r="4" style="--dx:100px;--dur:3.2s;--delay:1.6s"/>
-<text class="t-label t-small" x="150" y="28">sem repetir</text>
+<circle class="t-packet t-move t-on-line" cx="86" cy="59" r="3.5" style="--dx:128px;--dur:3s"/>
+<circle class="t-packet t-move t-stop t-on-line" cx="86" cy="59" r="3.5" style="--dx:64px;--dur:3s;--delay:1s"/>
+<circle class="t-packet t-move t-on-line" cx="86" cy="59" r="3.5" style="--dx:128px;--dur:3s;--delay:2s"/>
+<path class="t-reject" d="M145 28 l10 10 M155 28 l-10 10"/>
+<text class="t-label t-small" x="150" y="100">repetido não passa</text>
 </svg></div>
 <div class="project-body">
 <div class="project-tags"><span class="project-tag">Python</span><span class="project-tag">Scraping</span><span class="project-tag">GitHub Actions</span></div>
@@ -259,7 +271,11 @@
 <rect class="t-box" x="114" y="42" width="72" height="34" rx="7"/><text class="t-label" x="150" y="63">IA</text>
 <rect class="t-box t-hot t-pulse" x="214" y="36" width="76" height="46" rx="7"/><text class="t-label" x="252" y="56">decisão</text><text class="t-label" x="252" y="70">humana</text>
 <path class="t-link" d="M86 59 H114 M186 59 H214"/>
-<circle class="t-packet t-move" cx="50" cy="96" r="4" style="--dx:202px;--dur:3s"/>
+<path class="t-check t-seq" d="M28 27 l3 3 l6 -7" style="--delay:0s"/>
+<path class="t-check t-seq" d="M45 27 l3 3 l6 -7" style="--delay:.4s"/>
+<path class="t-check t-seq" d="M62 27 l3 3 l6 -7" style="--delay:.8s"/>
+<line class="t-scan" x1="120" y1="46" x2="120" y2="72"/>
+<text class="t-label t-small" x="150" y="100">catálogo fechado</text>
 </svg></div>
 <div class="project-body">
 <div class="project-tags"><span class="project-tag">Python</span><span class="project-tag">Copilot Studio</span><span class="project-tag">OCR</span><span class="project-tag">SQLite</span></div>
@@ -403,4 +419,4 @@
 
 
 
-<dialog id="project-dialog" aria-labelledby="dialog-title"><div class="dialog-header"><span id="dialog-category" class="eyebrow"></span><button id="close-dialog" class="icon-button" aria-label="Fechar estudo de caso">×</button></div><h2 id="dialog-title"></h2><p id="dialog-intro" class="dialog-intro"></p><div id="dialog-content"></div><div id="dialog-links" class="dialog-links"></div><p class="dialog-note">Estudo descritivo. Dados e visuais da apresentação são ilustrativos.</p></dialog><dialog id="cert-dialog" class="cert-dialog" aria-labelledby="cert-title"><div class="dialog-header"><span id="cert-issuer" class="eyebrow"></span><button id="close-cert" class="icon-button" aria-label="Fechar certificado">×</button></div><h2 id="cert-title"></h2><div class="cert-stage"><div class="cert-tilt"><div class="cert-flipper"></div><span class="cert-gloss" aria-hidden="true"></span><span class="cert-glare" aria-hidden="true"></span><span class="cert-seal" aria-hidden="true"><span>✓</span>concluído</span></div></div><div class="cert-actions"><button id="cert-flip" class="cert-flip" type="button" aria-pressed="false" hidden>Ver verso ↻</button><div id="cert-links" class="dialog-links"></div></div><p id="cert-note" class="dialog-note"></p></dialog><div id="feedback" class="feedback" role="status" aria-live="polite"></div></body></html>
+<dialog id="project-dialog" aria-labelledby="dialog-title"><div class="dialog-header"><span id="dialog-category" class="eyebrow"></span><button id="close-dialog" class="icon-button" aria-label="Fechar estudo de caso"><svg class="icon-x" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div><h2 id="dialog-title"></h2><p id="dialog-intro" class="dialog-intro"></p><div id="dialog-content"></div><div id="dialog-links" class="dialog-links"></div><p class="dialog-note">Estudo descritivo. Dados e visuais da apresentação são ilustrativos.</p></dialog><dialog id="cert-dialog" class="cert-dialog" aria-labelledby="cert-title"><div class="dialog-header"><span id="cert-issuer" class="eyebrow"></span><button id="close-cert" class="icon-button" aria-label="Fechar certificado"><svg class="icon-x" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div><h2 id="cert-title"></h2><div class="cert-stage"><div class="cert-tilt"><div class="cert-flipper"></div><span class="cert-gloss" aria-hidden="true"></span><span class="cert-glare" aria-hidden="true"></span><span class="cert-seal" aria-hidden="true"><span>✓</span>concluído</span></div></div><div class="cert-actions"><button id="cert-flip" class="cert-flip" type="button" aria-pressed="false" hidden>Ver verso ↻</button><div id="cert-links" class="dialog-links"></div></div><p id="cert-note" class="dialog-note"></p></dialog><div id="feedback" class="feedback" role="status" aria-live="polite"></div></body></html>
